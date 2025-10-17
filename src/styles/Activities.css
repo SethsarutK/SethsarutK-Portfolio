@@ -1,0 +1,260 @@
+.activities-page {
+  min-height: 100vh;
+  background: var(--background-color);
+  color: var(--text-color);
+  padding-top: 80px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.activities-page.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 2rem 0;
+}
+
+.page-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.activity-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.activity-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.activity-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient);
+  border-radius: 1px;
+}
+
+.activity-card {
+  background: var(--surface-color);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  margin-left: 2rem;
+}
+
+.activity-card::before {
+  content: '';
+  position: absolute;
+  left: -2.75rem;
+  top: 2rem;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--background-color);
+}
+
+.activity-card:hover {
+  transform: translateX(10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-color);
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.activity-header h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin: 0;
+  flex: 1;
+}
+
+.activity-period {
+  background: var(--gradient);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.activity-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.activity-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  color: var(--accent-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.activity-cta {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.activity-cta .cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.activity-cta h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.activity-cta p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .activities-page {
+    padding-top: 60px;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .page-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .activity-timeline {
+    padding-left: 1rem;
+  }
+  
+  .activity-timeline::before {
+    left: -0.5rem;
+  }
+  
+  .activity-card {
+    margin-left: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .activity-card::before {
+    left: -1.75rem;
+  }
+  
+  .activity-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .activity-period {
+    align-self: flex-start;
+  }
+  
+  .activity-cta .cta-content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .activity-cta h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .activity-timeline {
+    padding-left: 0.5rem;
+  }
+  
+  .activity-timeline::before {
+    left: -1rem;
+  }
+  
+  .activity-card {
+    margin-left: 0.5rem;
+    padding: 1.2rem;
+  }
+  
+  .activity-card::before {
+    left: -1.25rem;
+  }
+  
+  .activity-header h3 {
+    font-size: 1.2rem;
+  }
+}
