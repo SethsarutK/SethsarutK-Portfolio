@@ -134,8 +134,8 @@
 }
 
 .profile-frame {
-  width: 280px;
-  height: 280px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   border: 4px solid rgba(255, 255, 255, 0.8);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -350,8 +350,8 @@
   }
 
   .profile-frame {
-    width: 280px;
-    height: 280px;
+    width: 320px;
+    height: 320px;
   }
 
   .highlights-grid {
@@ -396,8 +396,8 @@
   }
 
   .profile-frame {
-    width: 220px;
-    height: 220px;
+    width: 250px;
+    height: 250px;
   }
 
   .highlights h2 {
