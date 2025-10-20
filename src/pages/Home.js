@@ -67,7 +67,8 @@ function Home() {
               <div className="highlight-icon">🎓</div>
               <h3>{t('education')}</h3>
               <p>GPA: 3.78 / 4.00</p>
-              <p>Math Gifted Program - โรงเรียนสวนกุหลาบวิทยาลัย</p>
+              <p>Math Gifted Program</p>
+              <p>โรงเรียนสวนกุหลาบวิทยาลัย</p>
             </div>
             <div className="highlight-card card">
               <div className="highlight-icon">🏆</div>
@@ -79,9 +80,9 @@ function Home() {
             <div className="highlight-card card">
               <div className="highlight-icon">💻</div>
               <h3>{t('skills')}</h3>
-              <p>💾 Programming: Python, JavaScript, React</p>
-              <p>🤖 AI/ML: TensorFlow, Data Analysis</p>
-              <p>🔧 IoT: Arduino, Sensor Systems</p>
+              <p>💾 Programming: C, Python, HTML5, </p>
+              <p> CSS3, JavaScript, React, Node.js, </p>
+              <p> Figma, SQL, Postman, git </p>
             </div>
           </div>
         </div>
@@ -95,19 +96,16 @@ function Home() {
               <div className="portfolio-icon">🏆</div>
               <h3>การแข่งขัน</h3>
               <p>รางวัลและความสำเร็จจากการแข่งขันต่างๆ</p>
-              <div className="portfolio-arrow">→</div>
             </Link>
             <Link to="/activities" className="portfolio-card card">
               <div className="portfolio-icon">🎯</div>
               <h3>กิจกรรม</h3>
               <p>กิจกรรมที่เข้าร่วมและผลงานที่โดดเด่น</p>
-              <div className="portfolio-arrow">→</div>
             </Link>
             <Link to="/workpieces" className="portfolio-card card">
               <div className="portfolio-icon">💻</div>
               <h3>ผลงาน</h3>
               <p>โปรเจคและผลงานทางเทคโนโลยี</p>
-              <div className="portfolio-arrow">→</div>
             </Link>
           </div>
         </div>

@@ -17,14 +17,14 @@ function Footer() {
               <div className="contact-item">
                 <span className="contact-icon">📧</span>
                 <div>
-                  <strong>{t('email')}</strong>
+                  <strong>{t('Email')}</strong>
                   <p>bhumjai123@gmail.com</p>
                 </div>
               </div>
               <div className="contact-item">
                 <span className="contact-icon">📱</span>
                 <div>
-                  <strong>{t('phone')}</strong>
+                  <strong>{t('Tel.')}</strong>
                   <p>064-692-2542</p>
                 </div>
               </div>
@@ -54,7 +54,6 @@ function Footer() {
                   switch(name.toLowerCase()) {
                     case 'line': return 'https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg';
                     case 'facebook': return 'https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg';
-                    case 'email': return 'https://img.icons8.com/fluency/48/email.png';
                     case 'instagram': return 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png';
                     default: return 'https://img.icons8.com/material-outlined/24/link.png';
                   }

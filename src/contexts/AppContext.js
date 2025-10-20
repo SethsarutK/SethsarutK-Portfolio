@@ -47,9 +47,9 @@ const translations = {
     about: 'เกี่ยวกับฉัน',
     
     // Home page
-    heroTitle: 'สวัสดีครับ ผมคือ นาย เศรษฐ์ศรุต กตคุณไพศาล',
-    heroSubtitle: 'มีความฝันจะเข้าเรียนที่ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี สาขาวิศวกรรมคอมพิวเตอร์',
-    heroDescription: 'เว็บนี้จัดทำขึ้นเพื่อจัดแสดงข้อมูล การแข่งขัน กิจกรรม และผลงานของผม',
+    heroTitle: 'สวัสดีครับ ผมคือ นายเศรษฐ์ศรุต กตคุณไพศาล',
+    heroSubtitle: 'มีความฝันอยากจะเข้าเรียนที่ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี สาขาวิศวกรรมคอมพิวเตอร์',
+    heroDescription: 'เว็บนี้จัดทำขึ้นเพื่อแสดงข้อมูล การแข่งขัน กิจกรรม และผลงานของผม',
     aboutMe: 'เกี่ยวกับฉัน',
     
     // Home page sections
@@ -57,8 +57,6 @@ const translations = {
     education: 'การศึกษา',
     awards: 'รางวัล',
     skills: 'ทักษะ',
-    readyToStart: 'พร้อมที่จะเริ่มต้น',
-    readyDescription: 'มาร่วมงานกันเพื่อสร้างสิ่งที่ยอดเยี่ยมด้วยกัน',
     
     // About page keys  
     aboutTitle: 'เกี่ยวกับฉัน',
@@ -83,9 +81,9 @@ const translations = {
     about: 'About Me',
     
     // Home page
-    heroTitle: 'Hello, I am Mr. Sethsarut Katakhunpaisarn',
-    heroSubtitle: 'Aspiring Computer Engineering student with dreams to study at KMUTT',
-    heroDescription: 'Passionate about software development, AI, and IoT. Committed to becoming an engineer who uses technology to solve Thai society\'s challenges',
+    heroTitle: 'Hello, I am Mr.Sethsarut Katakhunpaisarn',
+    heroSubtitle: 'I have a dream of wanting to study at King Mongkut\'s University of Technology Thonburi. Computer Engineering',
+    heroDescription: 'This website is created to display about competitions, activities, and my workpieces.',
     aboutMe: 'About Me',
     
     // Home page sections
@@ -93,8 +91,6 @@ const translations = {
     education: 'Education',
     awards: 'Awards',
     skills: 'Skills',
-    readyToStart: 'Ready to Start',
-    readyDescription: 'Let\'s work together to create something amazing',
     
     // About page keys  
     aboutTitle: 'About Me',
