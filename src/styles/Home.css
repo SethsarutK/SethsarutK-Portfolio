@@ -34,8 +34,6 @@
   position: relative;
   overflow: hidden;
   padding: 2rem 0;
-  /* Snap point for hero */
-  scroll-snap-align: start;
 }
 
 /* Hero background elements removed */
@@ -193,8 +191,6 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  /* Snap point for highlights */
-  scroll-snap-align: start;
 }
 
 .highlights .container {
@@ -512,8 +508,6 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  /* Snap point for portfolio */
-  scroll-snap-align: start;
 }
 
 .portfolio-showcase .container {
