@@ -21,19 +21,4 @@ export const SOCIAL_LINKS = [
   }
 ];
 
-export const SKILLS = [
-  {
-    category: 'Frontend',
-    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS']
-  },
-  {
-    category: 'Backend',
-    items: ['Node.js', 'Express', 'Python', 'Django']
-  },
-  {
-    category: 'Tools',
-    items: ['Git', 'Docker', 'AWS', 'Firebase']
-  }
-];
-
 /* ANIMATIONS constants removed - no animations needed */

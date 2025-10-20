@@ -18,14 +18,14 @@ function Footer() {
                 <span className="contact-icon">📧</span>
                 <div>
                   <strong>{t('email')}</strong>
-                  <p>sethsarut.k@gmail.com</p>
+                  <p>bhumjai123@gmail.com</p>
                 </div>
               </div>
               <div className="contact-item">
                 <span className="contact-icon">📱</span>
                 <div>
                   <strong>{t('phone')}</strong>
-                  <p>064-123-4567 (สำหรับติดต่องาน)</p>
+                  <p>064-692-2542</p>
                 </div>
               </div>
               <div className="contact-item">
