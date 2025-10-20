@@ -4,7 +4,7 @@ import { useLanguage } from '../contexts/AppContext';
 import '../styles/NotFound.css';
 
 const NotFound = () => {
-  const { language } = useLanguage();
+  const { t } = useLanguage();
   
   return (
     <div className="not-found">
@@ -13,32 +13,26 @@ const NotFound = () => {
       </div>
       
       <h1 className="error-title">
-        {language === 'th' ? 'หน้าที่ค้นหาไม่พบ' : 'Page Not Found'}
+        {t('pageNotFound')}
       </h1>
       
       <p className="error-description">
-        {language === 'th' 
-          ? 'ขออภัย หน้าที่คุณกำลังค้นหาอาจถูกย้าย ลบ หรือไม่เคยมีอยู่จริง'
-          : 'Sorry, the page you are looking for might have been moved, deleted, or never existed.'
-        }
+        {t('notFoundDesc')}
       </p>
       
       <p className="suggestion">
-        {language === 'th' 
-          ? 'ลองไปดู Portfolio หรือข้อมูลเกี่ยวกับฉันแทนไหม?'
-          : 'Why not check out my portfolio or learn more about me?'
-        }
+        {t('notFoundSuggestion')}
       </p>
       
       <div className="action-buttons">
         <Link to="/" className="home-button primary">
-          {language === 'th' ? '🏠 กลับหน้าแรก' : '🏠 Go Home'}
+          {t('goHome')}
         </Link>
         <Link to="/workpieces" className="home-button secondary">
-          {language === 'th' ? '💼 ดูผลงาน' : '💼 View Workpieces'}
+          {t('viewWorkpieces')}
         </Link>
         <Link to="/about" className="home-button secondary">
-          {language === 'th' ? '👨‍💻 เกี่ยวกับฉัน' : '👨‍💻 About Me'}
+          {t('aboutMeLink')}
         </Link>
       </div>
     </div>

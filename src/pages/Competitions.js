@@ -5,7 +5,7 @@ import PageTransition from '../components/PageTransition';
 import '../styles/Competitions.css';
 
 function Competitions() {
-  const { t, currentLanguage } = useLanguage();
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -15,48 +15,38 @@ function Competitions() {
   const competitions = {
     computer: [
       {
-        title: currentLanguage === 'th' ? 'โครงงานวิทยาศาสตร์ Smart Farm' : 'Smart Farm Science Project',
-        award: currentLanguage === 'th' ? '🥇 รางวัลชนะเลิศ' : '🥇 1st Place',
+        title: t('posnComputer'),
+        award: t('posnComputerAward'),
         year: '2024',
-        description: currentLanguage === 'th' ? 
-          'พัฒนาระบบฟาร์มอัจฉริยะด้วย IoT และ AI เพื่อเพิ่มประสิทธิภาพการเกษตร' : 
-          'Developed smart farm system using IoT and AI to improve agricultural efficiency'
+        description: t('posnComputerDesc')
       },
       {
-        title: currentLanguage === 'th' ? 'การแข่งขันโปรแกรมมิ่ง' : 'Programming Competition',
-        award: currentLanguage === 'th' ? '🥈 รางวัลรองชนะเลิศอันดับ 1' : '🥈 2nd Place',
+        title: 'League of Code AI Hackathon',
+        award: t('aiHackathonAward'),
         year: '2024',
-        description: currentLanguage === 'th' ? 
-          'แข่งขันเขียนโปรแกรมแก้ปัญหาอัลกอริทึม' : 
-          'Algorithm problem solving programming competition'
+        description: t('aiHackathonDesc')
       }
     ],
     academic: [
       {
-        title: currentLanguage === 'th' ? 'โอลิมปิกคณิตศาสตร์' : 'Mathematics Olympiad',
-        award: currentLanguage === 'th' ? '🥉 เหรียญทองแดง' : '🥉 Bronze Medal',
+        title: t('acrpTitle'),
+        award: t('acrpAward'),
         year: '2023',
-        description: currentLanguage === 'th' ? 
-          'การแข่งขันคณิตศาสตร์ระดับประเทศ' : 
-          'National mathematics competition'
+        description: t('acrpDesc')
       },
       {
-        title: currentLanguage === 'th' ? 'การแข่งขันวิทยาศาสตร์' : 'Science Competition',
-        award: currentLanguage === 'th' ? '⭐ รางวัลชมเชย' : '⭐ Honorable Mention',
+        title: t('scienceCompTitle'),
+        award: t('scienceCompAward'),
         year: '2023',
-        description: currentLanguage === 'th' ? 
-          'นำเสนอโครงงานวิทยาศาสตร์นวัตกรรม' : 
-          'Presented innovative science project'
+        description: t('scienceCompDesc')
       }
     ],
     other: [
       {
-        title: currentLanguage === 'th' ? 'รางวัลนักเรียนดีเด่น' : 'Outstanding Student Award',
-        award: currentLanguage === 'th' ? '🏆 นักเรียนดีเด่นด้านเทคโนโลยี' : '🏆 Outstanding in Technology',
+        title: t('outstandingAwardTitle'),
+        award: t('outstandingAward'),
         year: '2024',
-        description: currentLanguage === 'th' ? 
-          'ได้รับการยกย่องในด้านเทคโนโลยีและนวัตกรรม' : 
-          'Recognized for excellence in technology and innovation'
+        description: t('outstandingAwardDesc')
       }
     ]
   };
@@ -64,29 +54,25 @@ function Competitions() {
   return (
     <PageTransition>
       <SEO 
-        title={currentLanguage === 'th' ? 'การแข่งขันและรางวัล' : 'Competitions & Awards'}
-        description={currentLanguage === 'th' ? 
-          'รายการการแข่งขันและรางวัลต่าง ๆ ที่ได้รับ' : 
-          'List of competitions and awards received'}
+        title={t('competitionsTitle')}
+        description={t('competitionsDescription')}
       />
       
       <div className={`competitions-page ${isVisible ? 'fade-in' : ''}`}>
         <div className="container">
           <header className="page-header">
             <h1 className="page-title">
-              {currentLanguage === 'th' ? 'การแข่งขันและรางวัล' : 'Competitions & Awards'}
+              {t('competitionsTitle')}
             </h1>
             <p className="page-subtitle">
-              {currentLanguage === 'th' ? 
-                'ประสบการณ์การแข่งขันและรางวัลที่ได้รับในด้านต่าง ๆ' : 
-                'Competition experiences and awards received in various fields'}
+              {t('competitionsSubtitle')}
             </p>
           </header>
 
           {/* คอมพิวเตอร์และเทคโนโลยี */}
           <section className="competition-section">
             <h2 className="section-title">
-              💻 {currentLanguage === 'th' ? 'คอมพิวเตอร์และเทคโนโลยี' : 'Computer & Technology'}
+              💻 {t('computerTech')}
             </h2>
             <div className="competition-grid">
               {competitions.computer.map((comp, index) => (
@@ -109,7 +95,7 @@ function Competitions() {
           {/* วิชาการ */}
           <section className="competition-section">
             <h2 className="section-title">
-              📚 {currentLanguage === 'th' ? 'วิชาการ' : 'Academic'}
+              📚 {t('academic')}
             </h2>
             <div className="competition-grid">
               {competitions.academic.map((comp, index) => (
@@ -132,7 +118,7 @@ function Competitions() {
           {/* อื่น ๆ */}
           <section className="competition-section">
             <h2 className="section-title">
-              🌟 {currentLanguage === 'th' ? 'อื่น ๆ' : 'Others'}
+              🌟 {t('others')}
             </h2>
             <div className="competition-grid">
               {competitions.other.map((comp, index) => (
@@ -155,12 +141,10 @@ function Competitions() {
           <section className="competition-cta">
             <div className="cta-content card glass">
               <h2>
-                {currentLanguage === 'th' ? 'มุ่งสู่ความสำเร็จในอนาคต' : 'Striving for Future Success'}
+                {t('futureSuccess')}
               </h2>
               <p>
-                {currentLanguage === 'th' ? 
-                  'ประสบการณ์เหล่านี้เป็นรากฐานสำคัญในการเตรียมพร้อมสู่การศึกษาต่อในระดับอุดมศึกษา' :
-                  'These experiences serve as important foundations for preparing for higher education'}
+                {t('futureSuccessDesc')}
               </p>
             </div>
           </section>

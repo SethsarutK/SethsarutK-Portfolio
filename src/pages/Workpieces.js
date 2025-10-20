@@ -5,7 +5,7 @@ import PageTransition from '../components/PageTransition';
 import '../styles/Workpieces.css';
 
 function Workpieces() {
-  const { t, currentLanguage } = useLanguage();
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState('all');
 
@@ -17,10 +17,8 @@ function Workpieces() {
     websites: [
       {
         id: 1,
-        title: currentLanguage === 'th' ? 'Portfolio Website' : 'Portfolio Website',
-        description: currentLanguage === 'th' ? 
-          'เว็บไซต์แสดงผลงานส่วนตัวที่สร้างด้วย React และ CSS' : 
-          'Personal portfolio website built with React and CSS',
+        title: 'Portfolio Website',
+        description: t('portfolioDesc'),
         tech: ['React', 'CSS3', 'JavaScript', 'GitHub Pages'],
         image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe1.jpg',
         link: '#',
@@ -28,10 +26,8 @@ function Workpieces() {
       },
       {
         id: 2,
-        title: currentLanguage === 'th' ? 'เว็บไซต์โรงเรียน' : 'School Website',
-        description: currentLanguage === 'th' ? 
-          'เว็บไซต์แนะนำโรงเรียนและกิจกรรมต่าง ๆ' : 
-          'School introduction and activities website',
+        title: t('schoolWebsiteTitle'),
+        description: t('schoolWebsiteDesc'),
         tech: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
         image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe2.jpg',
         link: '#',
@@ -41,10 +37,8 @@ function Workpieces() {
     games: [
       {
         id: 3,
-        title: currentLanguage === 'th' ? 'เกมผจญภัย 2D' : '2D Adventure Game',
-        description: currentLanguage === 'th' ? 
-          'เกมผจญภัยแบบ 2D ที่สร้างด้วย Python และ Pygame' : 
-          '2D adventure game created with Python and Pygame',
+        title: t('adventureGameTitle'),
+        description: t('adventureGameDesc'),
         tech: ['Python', 'Pygame', 'Game Design'],
         image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe3.jpg',
         link: '#',
@@ -52,10 +46,8 @@ function Workpieces() {
       },
       {
         id: 4,
-        title: currentLanguage === 'th' ? 'เกมปริศนา' : 'Puzzle Game',
-        description: currentLanguage === 'th' ? 
-          'เกมไขปริศนาที่ฝึกทักษะการคิดเชิงตรรกะ' : 
-          'Puzzle game for logical thinking skills',
+        title: t('puzzleGameTitle'),
+        description: t('puzzleGameDesc'),
         tech: ['JavaScript', 'HTML5 Canvas', 'CSS3'],
         image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe4.jpg',
         link: '#',
@@ -65,10 +57,8 @@ function Workpieces() {
     hardware: [
       {
         id: 5,
-        title: currentLanguage === 'th' ? 'Smart Farm IoT' : 'Smart Farm IoT',
-        description: currentLanguage === 'th' ? 
-          'ระบบฟาร์มอัจฉริยะด้วย Arduino และเซ็นเซอร์ต่าง ๆ' : 
-          'Smart farm system with Arduino and various sensors',
+        title: 'Smart Farm IoT',
+        description: t('smartFarmDesc'),
         tech: ['Arduino', 'IoT', 'Sensors', 'C++'],
         image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe5.jpg',
         link: '#',
@@ -76,10 +66,8 @@ function Workpieces() {
       },
       {
         id: 6,
-        title: currentLanguage === 'th' ? 'ระบบรักษาความปลอดภัย' : 'Security System',
-        description: currentLanguage === 'th' ? 
-          'ระบบรักษาความปลอดภัยด้วยกล้องและเซ็นเซอร์' : 
-          'Security system with camera and sensors',
+        title: t('securitySystemTitle'),
+        description: t('securitySystemDesc'),
         tech: ['Raspberry Pi', 'Python', 'OpenCV', 'IoT'],
         image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe6.jpg',
         link: '#',
@@ -89,10 +77,10 @@ function Workpieces() {
   };
 
   const categories = [
-    { id: 'all', label: currentLanguage === 'th' ? 'ทั้งหมด' : 'All' },
-    { id: 'website', label: currentLanguage === 'th' ? 'เว็บไซต์' : 'Websites' },
-    { id: 'game', label: currentLanguage === 'th' ? 'เกม' : 'Games' },
-    { id: 'hardware', label: currentLanguage === 'th' ? 'ฮาร์ดแวร์' : 'Hardware' }
+    { id: 'all', label: t('allCategory') },
+    { id: 'website', label: t('websitesCategory') },
+    { id: 'game', label: t('gamesCategory') },
+    { id: 'hardware', label: t('hardwareCategory') }
   ];
 
   const getAllWorkpieces = () => {
@@ -109,22 +97,18 @@ function Workpieces() {
   return (
     <PageTransition>
       <SEO 
-        title={currentLanguage === 'th' ? 'ผลงานและโปรเจ็กต์' : 'Workpieces & Projects'}
-        description={currentLanguage === 'th' ? 
-          'แสดงผลงานและโปรเจ็กต์ต่าง ๆ ที่ได้สร้างสรรค์' : 
-          'Showcase of various workpieces and projects created'}
+        title={t('workpiecesTitle')}
+        description={t('workpiecesDescription')}
       />
       
       <div className={`workpieces-page ${isVisible ? 'fade-in' : ''}`}>
         <div className="container">
           <header className="page-header">
             <h1 className="page-title">
-              {currentLanguage === 'th' ? 'ผลงานและโปรเจ็กต์' : 'Workpieces & Projects'}
+              {t('workpiecesTitle')}
             </h1>
             <p className="page-subtitle">
-              {currentLanguage === 'th' ? 
-                'แสดงผลงานและโปรเจ็กต์ที่ได้พัฒนาในด้านต่าง ๆ' : 
-                'Showcase of various workpieces and projects developed'}
+              {t('workpiecesSubtitle')}
             </p>
           </header>
 
@@ -159,7 +143,7 @@ function Workpieces() {
                   </div>
                   <div className="workpiece-overlay">
                     <a href={work.link} className="view-btn">
-                      {currentLanguage === 'th' ? 'ดูรายละเอียด' : 'View Details'}
+                      {t('viewDetails')}
                     </a>
                   </div>
                 </div>
@@ -180,19 +164,17 @@ function Workpieces() {
 
           {getFilteredWorkpieces().length === 0 && (
             <div className="empty-state">
-              <p>{currentLanguage === 'th' ? 'ไม่มีผลงานในหมวดหมู่นี้' : 'No workpieces in this category'}</p>
+              <p>{t('noWorkpieces')}</p>
             </div>
           )}
 
           <section className="workpiece-cta">
             <div className="cta-content card glass">
               <h2>
-                {currentLanguage === 'th' ? 'พร้อมสร้างสรรค์ผลงานใหม่' : 'Ready to Create New Works'}
+                {t('readyToCreate')}
               </h2>
               <p>
-                {currentLanguage === 'th' ? 
-                  'ผลงานเหล่านี้เป็นเพียงจุดเริ่มต้น พร้อมที่จะเรียนรู้และพัฒนาต่อไปในอนาคต' :
-                  'These works are just the beginning, ready to learn and develop further in the future'}
+                {t('futureWorks')}
               </p>
             </div>
           </section>
