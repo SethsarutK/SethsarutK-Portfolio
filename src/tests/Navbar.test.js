@@ -23,8 +23,9 @@ describe('Navbar Component', () => {
     
     expect(screen.getByText(/home/i)).toBeInTheDocument();
     expect(screen.getByText(/about/i)).toBeInTheDocument();
-    expect(screen.getByText(/portfolio/i)).toBeInTheDocument();
-    expect(screen.getByText(/contact/i)).toBeInTheDocument();
+    expect(screen.getByText(/competitions/i)).toBeInTheDocument();
+    expect(screen.getByText(/activities/i)).toBeInTheDocument();
+    expect(screen.getByText(/workpieces/i)).toBeInTheDocument();
   });
 
   test('toggles mobile menu', () => {

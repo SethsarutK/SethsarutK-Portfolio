@@ -45,41 +45,25 @@ const translations = {
     // Navigation
     home: 'หน้าแรก',
     about: 'เกี่ยวกับฉัน',
-    portfolio: 'ผลงาน',
     
     // Home page
-    heroTitle: 'สวัสดีครับ ผมคือ นาย เศรษฐ์ศรุต กตคุณไพศาล',
-    heroSubtitle: 'นักเรียนชั้น ม.6 ที่มีความฝันจะเข้าเรียนที่ มจธ. สาขาวิศวกรรมคอมพิวเตอร์',
-    heroDescription: 'ผมมีความหลงใหลในการพัฒนาซอฟต์แวร์ AI และ IoT มุ่งมั่นที่จะเป็นวิศวกรที่นำเทคโนโลยีมาใช้แก้ปัญหาสังคมไทย',
-    viewPortfolio: 'ดูผลงาน',
+    heroTitle: 'สวัสดีครับ ผมคือ นายเศรษฐ์ศรุต กตคุณไพศาล',
+    heroSubtitle: 'มีความฝันอยากจะเข้าเรียนที่ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี สาขาวิศวกรรมคอมพิวเตอร์',
+    heroDescription: 'เว็บนี้จัดทำขึ้นเพื่อแสดงข้อมูล การแข่งขัน กิจกรรม และผลงานของผม',
     aboutMe: 'เกี่ยวกับฉัน',
-    contactMe: 'ติดต่อฉัน',
-    contactTitle: 'ติดต่อฉัน',
-    sendMessage: 'ส่งข้อความ',
-    name: 'ชื่อ',
-    email: 'อีเมล',
-    message: 'ข้อความ',
     
-    // Home page additional keys
+    // Home page sections
     highlights: 'จุดเด่น',
     education: 'การศึกษา',
     awards: 'รางวัล',
     skills: 'ทักษะ',
-    readyToStart: 'พร้อมที่จะเริ่มต้น',
-    readyDescription: 'มาร่วมงานกันเพื่อสร้างสิ่งที่ยอดเยี่ยมด้วยกัน',
     
     // About page keys  
     aboutTitle: 'เกี่ยวกับฉัน',
     personalInfo: 'ข้อมูลส่วนตัว',
     interests: 'ความสนใจ',
     
-    // Portfolio page keys
-    portfolioTitle: 'ผลงานของฉัน',
-    projects: 'โปรเจกต์',
-    achievements: 'ความสำเร็จ',
-    skillsAndAbilities: 'ทักษะและความสามารถ',
-    
-    // New navigation keys
+    // Navigation keys
     competitions: 'การแข่งขัน',
     activities: 'กิจกรรม',
     workpieces: 'ผลงาน',
@@ -89,49 +73,31 @@ const translations = {
     phone: 'เบอร์โทร',
     address: 'ที่อยู่',
     location: 'กรุงเทพมหานคร ประเทศไทย',
-    quickContact: 'ติดต่อด่วน',
-    followMe: 'ติดตามฉัน',
-    thankYouMessage: 'ขอบคุณสำหรับข้อความของคุณ!'
+    followMe: 'ติดตามฉัน'
   },
   en: {
     // Navigation
     home: 'Home',
     about: 'About Me',
-    portfolio: 'Portfolio',
     
     // Home page
-    heroTitle: 'Hello, I am Mr. Sethsarut Katakhunpaisarn',
-    heroSubtitle: 'Aspiring Computer Engineering student with dreams to study at KMUTT',
-    heroDescription: 'Passionate about software development, AI, and IoT. Committed to becoming an engineer who uses technology to solve Thai society\'s challenges',
-    viewPortfolio: 'View Portfolio',
+    heroTitle: 'Hello, I am Mr.Sethsarut Katakhunpaisarn',
+    heroSubtitle: 'I have a dream of wanting to study at King Mongkut\'s University of Technology Thonburi. Computer Engineering',
+    heroDescription: 'This website is created to display about competitions, activities, and my workpieces.',
     aboutMe: 'About Me',
-    contactMe: 'Contact Me',
-    contactTitle: 'Contact Me',
-    sendMessage: 'Send Message',
-    name: 'Name',
-    email: 'Email',
-    message: 'Message',
     
-    // Home page additional keys
+    // Home page sections
     highlights: 'Highlights',
     education: 'Education',
     awards: 'Awards',
     skills: 'Skills',
-    readyToStart: 'Ready to Start',
-    readyDescription: 'Let\'s work together to create something amazing',
     
     // About page keys  
     aboutTitle: 'About Me',
     personalInfo: 'Personal Information',
     interests: 'Interests',
     
-    // Portfolio page keys
-    portfolioTitle: 'My Portfolio',
-    projects: 'Projects',
-    achievements: 'Achievements',
-    skillsAndAbilities: 'Skills & Abilities',
-    
-    // New navigation keys
+    // Navigation keys
     competitions: 'Competitions',
     activities: 'Activities',
     workpieces: 'Workpieces',
@@ -141,9 +107,7 @@ const translations = {
     phone: 'Phone',
     address: 'Address',
     location: 'Bangkok, Thailand',
-    quickContact: 'Quick Contact',
-    followMe: 'Follow Me',
-    thankYouMessage: 'Thank you for your message!'
+    followMe: 'Follow Me'
   }
 };
 
@@ -177,7 +141,7 @@ export const LanguageProvider = ({ children }) => {
   };
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language, currentLanguage: language, toggleLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
