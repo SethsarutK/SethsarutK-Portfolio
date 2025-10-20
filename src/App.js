@@ -5,6 +5,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Loading from './components/Loading';
+import ScrollToTop from './components/ScrollToTop';
 
 // Lazy load pages
 const Home = lazy(() => import('./pages/Home'));
@@ -20,6 +21,7 @@ function App() {
       <LanguageProvider>
         <ErrorBoundary>
           <div className="App">
+            <ScrollToTop />
             <Navbar />
             <Suspense fallback={<Loading />}>
               <Routes>

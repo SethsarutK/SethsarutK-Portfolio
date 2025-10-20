@@ -34,8 +34,8 @@ const NotFound = () => {
         <Link to="/" className="home-button primary">
           {language === 'th' ? '🏠 กลับหน้าแรก' : '🏠 Go Home'}
         </Link>
-        <Link to="/portfolio" className="home-button secondary">
-          {language === 'th' ? '💼 ดูผลงาน' : '💼 View Portfolio'}
+        <Link to="/workpieces" className="home-button secondary">
+          {language === 'th' ? '💼 ดูผลงาน' : '💼 View Workpieces'}
         </Link>
         <Link to="/about" className="home-button secondary">
           {language === 'th' ? '👨‍💻 เกี่ยวกับฉัน' : '👨‍💻 About Me'}

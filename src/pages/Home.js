@@ -2,11 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/AppContext';
 import PageTransition from '../components/PageTransition';
+import useSnapScroll from '../hooks/useSnapScroll';
 import '../styles/Home.css';
 
 function Home() {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
+  
+  // Enable snap scrolling for home page only
+  useSnapScroll();
 
   useEffect(() => {
     setIsVisible(true);
@@ -26,12 +30,12 @@ function Home() {
               {t('heroDescription')}
             </p>
             <div className="hero-buttons">
-              <Link to="/portfolio" className="btn btn-primary">
-                {t('viewPortfolio')}
-              </Link>
-              <Link to="/about" className="btn btn-secondary">
-                {t('aboutMe')}
-              </Link>
+              <button 
+                onClick={() => document.querySelector('.highlights').scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                className="btn btn-primary"
+              >
+                เยี่ยมชมเว็บไซต์
+              </button>
             </div>
           </div>
           <div className="hero-image">
@@ -63,8 +67,7 @@ function Home() {
               <div className="highlight-icon">🎓</div>
               <h3>{t('education')}</h3>
               <p>GPA: 3.78 / 4.00</p>
-              <p>Math Gifted Program - ร.ร.สวนกุหลาบวิทยาลัย</p>
-              <p>เตรียมสมัคร KMUTT วิศวกรรมคอมพิวเตอร์</p>
+              <p>Math Gifted Program - โรงเรียนสวนกุหลาบวิทยาลัย</p>
             </div>
             <div className="highlight-card card">
               <div className="highlight-icon">🏆</div>
@@ -84,17 +87,28 @@ function Home() {
         </div>
       </section>
 
-      <section className="call-to-action">
+      <section className="portfolio-showcase">
         <div className="container">
-          <div className="cta-content card glass">
-            <h2>{t('readyToStart')}</h2>
-            <p>{t('readyDescription')}</p>
-            <button 
-              onClick={() => document.querySelector('.footer').scrollIntoView({ behavior: 'smooth' })}
-              className="btn btn-primary"
-            >
-              {t('contactMe')}
-            </button>
+          <h2 className="section-title">ผลงานต่างๆ</h2>
+          <div className="portfolio-grid">
+            <Link to="/competitions" className="portfolio-card card">
+              <div className="portfolio-icon">🏆</div>
+              <h3>การแข่งขัน</h3>
+              <p>รางวัลและความสำเร็จจากการแข่งขันต่างๆ</p>
+              <div className="portfolio-arrow">→</div>
+            </Link>
+            <Link to="/activities" className="portfolio-card card">
+              <div className="portfolio-icon">🎯</div>
+              <h3>กิจกรรม</h3>
+              <p>กิจกรรมที่เข้าร่วมและผลงานที่โดดเด่น</p>
+              <div className="portfolio-arrow">→</div>
+            </Link>
+            <Link to="/workpieces" className="portfolio-card card">
+              <div className="portfolio-icon">💻</div>
+              <h3>ผลงาน</h3>
+              <p>โปรเจคและผลงานทางเทคโนโลยี</p>
+              <div className="portfolio-arrow">→</div>
+            </Link>
           </div>
         </div>
       </section>
