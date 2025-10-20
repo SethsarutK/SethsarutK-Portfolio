@@ -34,7 +34,7 @@ function Home() {
                 onClick={() => document.querySelector('.highlights').scrollIntoView({ behavior: 'smooth', block: 'center' })}
                 className="btn btn-primary"
               >
-                เยี่ยมชมเว็บไซต์
+                {t('visitWebsite')}
               </button>
             </div>
           </div>
@@ -68,14 +68,14 @@ function Home() {
               <h3>{t('education')}</h3>
               <p>GPA: 3.78 / 4.00</p>
               <p>Math Gifted Program</p>
-              <p>โรงเรียนสวนกุหลาบวิทยาลัย</p>
+              <p>{t('mySchoolName')}</p>
             </div>
             <div className="highlight-card card">
               <div className="highlight-icon">🏆</div>
               <h3>{t('awards')}</h3>
-              <p>🥇 รางวัลชนะเลิศ โครงงานวิทยาศาสตร์ Smart Farm</p>
-              <p>🥉 เหรียญทองแดง โอลิมปิกคณิตศาสตร์</p>
-              <p>⭐ รางวัลนักเรียนดีเด่น ด้านเทคโนโลยี</p>
+              <p>{t('smartFarmAward')}</p>
+              <p>{t('mathOlympicAward')}</p>
+              <p>{t('techStudentAward')}</p>
             </div>
             <div className="highlight-card card">
               <div className="highlight-icon">💻</div>
@@ -90,22 +90,22 @@ function Home() {
 
       <section className="portfolio-showcase">
         <div className="container">
-          <h2 className="section-title">ผลงานต่างๆ</h2>
+          <h2 className="section-title">{t('variousWorks')}</h2>
           <div className="portfolio-grid">
             <Link to="/competitions" className="portfolio-card card">
               <div className="portfolio-icon">🏆</div>
-              <h3>การแข่งขัน</h3>
-              <p>รางวัลและความสำเร็จจากการแข่งขันต่างๆ</p>
+              <h3>{t('competitionsSection')}</h3>
+              <p>{t('competitionsDesc')}</p>
             </Link>
             <Link to="/activities" className="portfolio-card card">
               <div className="portfolio-icon">🎯</div>
-              <h3>กิจกรรม</h3>
-              <p>กิจกรรมที่เข้าร่วมและผลงานที่โดดเด่น</p>
+              <h3>{t('activitiesSection')}</h3>
+              <p>{t('activitiesDesc')}</p>
             </Link>
             <Link to="/workpieces" className="portfolio-card card">
               <div className="portfolio-icon">💻</div>
-              <h3>ผลงาน</h3>
-              <p>โปรเจคและผลงานทางเทคโนโลยี</p>
+              <h3>{t('workpiecesSection')}</h3>
+              <p>{t('workpiecesDesc')}</p>
             </Link>
           </div>
         </div>

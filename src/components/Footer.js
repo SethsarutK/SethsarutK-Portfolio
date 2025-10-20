@@ -31,15 +31,15 @@ function Footer() {
               <div className="contact-item">
                 <span className="contact-icon">🏫</span>
                 <div>
-                  <strong>โรงเรียน</strong>
-                  <p>โรงเรียนสวนกุหลาบวิทยาลัย</p>
+                  <strong>{t('schoolLabel')}</strong>
+                  <p>{t('mySchool')}</p>
                 </div>
               </div>
               <div className="contact-item">
                 <span className="contact-icon">🎯</span>
                 <div>
-                  <strong>เป้าหมาย</strong>
-                  <p>KMUTT วิศวกรรมคอมพิวเตอร์</p>
+                  <strong>{t('goalLabel')}</strong>
+                  <p>{t('goalValue')}</p>
                 </div>
               </div>
             </div>

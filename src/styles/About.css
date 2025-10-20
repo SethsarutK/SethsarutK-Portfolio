@@ -180,6 +180,7 @@
   opacity: 0;
   transform: translateY(20px);
   animation: slideInUp 0.8s ease-out 0.4s forwards;
+  align-items: stretch; /* Make all items same height */
 }
 
 .info-item {
@@ -194,6 +195,7 @@
   opacity: 0;
   transform: translateX(-20px);
   animation: slideInLeft 0.6s ease-out forwards;
+  height: auto; /* Let grid control height */
 }
 
 .info-item:nth-child(1) { animation-delay: 0.6s; }
@@ -220,6 +222,36 @@
   color: var(--primary-color);
   font-weight: 600;
   font-size: 1.1rem;
+}
+
+/* Full width info item for address */
+.info-item.full-width {
+  grid-column: span 2;
+  /* Keep the same horizontal layout as other items */
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; /* Same as other items for consistent height */
+}
+
+.info-item.full-width span {
+  line-height: 1.4;
+  word-wrap: break-word;
+  text-align: right;
+  max-width: 70%;
+}
+
+@media (max-width: 768px) {
+  .info-item.full-width {
+    grid-column: span 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .info-item.full-width span {
+    text-align: left;
+    max-width: 100%;
+  }
 }
 
 /* Interests Section */

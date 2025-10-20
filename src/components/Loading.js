@@ -3,12 +3,7 @@ import { useLanguage } from '../contexts/AppContext';
 import '../styles/Loading.css';
 
 const Loading = () => {
-  const { language } = useLanguage();
-  
-  const loadingText = {
-    th: 'กำลังโหลด...',
-    en: 'Loading...'
-  };
+  const { t } = useLanguage();
 
   return (
     <div className="loading-container">
@@ -20,7 +15,7 @@ const Loading = () => {
           <div className="dot"></div>
         </div>
       </div>
-      <p className="loading-text">{loadingText[language]}</p>
+      <p className="loading-text">{t('loading')}</p>
     </div>
   );
 };
