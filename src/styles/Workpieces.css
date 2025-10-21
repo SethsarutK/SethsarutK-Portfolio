@@ -205,33 +205,7 @@
   font-size: 1.1rem;
 }
 
-.workpiece-cta {
-  margin-top: 5rem;
-  text-align: center;
-}
-
-.workpiece-cta .cta-content {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 3rem;
-}
-
-.workpiece-cta h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.workpiece-cta p {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin: 0;
-}
+/* Responsive Design */
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -271,14 +245,6 @@
   
   .workpiece-content {
     padding: 1.5rem;
-  }
-  
-  .workpiece-cta .cta-content {
-    padding: 2rem 1.5rem;
-  }
-  
-  .workpiece-cta h2 {
-    font-size: 1.8rem;
   }
 }
 

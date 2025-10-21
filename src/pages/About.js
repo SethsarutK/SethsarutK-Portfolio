@@ -1,11 +1,15 @@
 ﻿import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/AppContext';
 import PageTransition from '../components/PageTransition';
+import useSnapScroll from '../hooks/useSnapScroll';
 import '../styles/About.css';
 
 function About() {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
+  
+  // ใช้ snap scroll hook
+  useSnapScroll();
 
   // คำนวณอายุอัตโนมัติจากวันเกิด
   const calculateAge = () => {
@@ -30,7 +34,7 @@ function About() {
     <PageTransition>
       <div className={`about ${isVisible ? 'fade-in' : ''}`}>
       <div className="container">
-        <section className="about-intro">
+        <section className="about-intro snap-section">
           <h1>{t('aboutTitle')}</h1>
           <div className="about-content">
             <div className="about-image">
@@ -61,7 +65,7 @@ function About() {
           </div>
         </section>
 
-        <section className="personal-info">
+        <section className="personal-info snap-section">
           <h2>{t('personalInfo')}</h2>
           <div className="info-grid">
             <div className="info-item">
@@ -98,6 +102,74 @@ function About() {
               <span>{t('myHobbies')}</span>
             </div>
             
+          </div>
+        </section>
+
+        <section className="computer-skills snap-section">
+          <h2>{t('computerSkills')}</h2>
+          <div className="skills-content">
+            <div className="skills-grid">
+              <div className="skill-item">
+                <div className="skill-logo">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" />
+                </div>
+                <span>C</span>
+              </div>
+              <div className="skill-item">
+                <div className="skill-logo">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+                </div>
+                <span>Python</span>
+              </div>
+              <div className="skill-item">
+                <div className="skill-logo">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+                </div>
+                <span>HTML5</span>
+              </div>
+              <div className="skill-item">
+                <div className="skill-logo">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+                </div>
+                <span>CSS3</span>
+              </div>
+              <div className="skill-item">
+                <div className="skill-logo">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                </div>
+                <span>JavaScript</span>
+              </div>
+              <div className="skill-item">
+                <div className="skill-logo">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+                </div>
+                <span>React</span>
+              </div>
+              <div className="skill-item">
+                <div className="skill-logo">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+                </div>
+                <span>Node.js</span>
+              </div>
+              <div className="skill-item">
+                <div className="skill-logo">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+                </div>
+                <span>Figma</span>
+              </div>
+              <div className="skill-item">
+                <div className="skill-logo">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+                </div>
+                <span>SQL</span>
+              </div>
+              <div className="skill-item">
+                <div className="skill-logo">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+                </div>
+                <span>Git</span>
+              </div>
+            </div>
           </div>
         </section>
 

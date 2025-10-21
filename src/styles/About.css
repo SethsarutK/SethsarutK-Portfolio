@@ -1,11 +1,24 @@
 /* Modern About Page Styles */
 .about {
-  padding: 2rem 0;
   background: var(--background-color);
-  min-height: 100vh;
   transition: all 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
+}
+
+.about .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* เมื่อใช้ snap scroll */
+.about .snap-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
 }
 
 .about.fade-in {
@@ -23,12 +36,24 @@
   }
 }
 
+/* Responsive สำหรับ snap scroll */
+@media (max-width: 768px) {
+  .about .snap-section {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+  
+  .about .container {
+    padding: 0 1rem;
+  }
+}
+
 /* About Intro Section */
 .about-intro {
   background: var(--card-bg);
   border-radius: 25px;
   padding: 4rem;
-  margin-bottom: 4rem;
+  margin: 2rem 0;
   box-shadow: 0 15px 50px var(--shadow-color);
   position: relative;
   overflow: hidden;
@@ -138,7 +163,7 @@
   background: var(--card-bg);
   border-radius: 20px;
   padding: 3rem;
-  margin-bottom: 4rem;
+  margin: 2rem 0;
   box-shadow: 0 15px 50px var(--shadow-color);
   position: relative;
 }
@@ -339,12 +364,21 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .about {
+    padding: 0;
+  }
+
+  /* Snap sections บนมือถือ */
+  .about .snap-section {
+    min-height: 100vh;
     padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .about-intro {
     padding: 3rem 2rem;
-    margin-bottom: 3rem;
+    margin: 1rem;
   }
 
   .about-intro h1 {
@@ -691,9 +725,114 @@
   margin: 0;
 }
 
+/* Computer Skills Section */
+.computer-skills {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--surface-color);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.computer-skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient);
+  border-radius: 20px 20px 0 0;
+}
+
+.computer-skills h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--text-color);
+  position: relative;
+}
+
+.computer-skills h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--gradient);
+  border-radius: 2px;
+}
+
+.skills-content {
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: rgba(var(--primary-color-rgb), 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(var(--primary-color-rgb), 0.1);
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  background: rgba(var(--primary-color-rgb), 0.1);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 25px rgba(var(--primary-color-rgb), 0.15);
+}
+
+.skill-logo {
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-color);
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+  padding: 8px;
+}
+
+.skill-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.skill-item:hover .skill-logo {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 15px rgba(var(--primary-color-rgb), 0.2);
+}
+
+.skill-item span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
 /* Education Timeline */
 .education-path {
-  margin: 4rem 0;
+  margin: 2rem 0;
 }
 
 .education-path h2 {
@@ -829,6 +968,30 @@
   
   .education-path h2 {
     font-size: 2rem;
+  }
+  
+  .computer-skills {
+    padding: 1.5rem;
+  }
+  
+  .computer-skills h2 {
+    font-size: 2rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+  
+  .skill-logo {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    padding: 6px;
+  }
+  
+  .skill-item span {
+    font-size: 0.8rem;
   }
   
   .timeline-content {

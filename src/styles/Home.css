@@ -696,3 +696,99 @@
   background: transparent !important;
 }
 
+/* Inspiration Quote Section */
+.inspiration-quote {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, var(--surface-color) 0%, rgba(var(--primary-color-rgb), 0.03) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.inspiration-quote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient);
+  opacity: 0.02;
+  z-index: -1;
+}
+
+.quote-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.quote-text {
+  flex: 1;
+  text-align: center;
+}
+
+.quote-text blockquote {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0 0 1.5rem 0;
+  font-style: italic;
+  position: relative;
+}
+
+.quote-text cite {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-style: normal;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.quote-decoration {
+  display: none;
+}
+
+.quote-mark {
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .inspiration-quote {
+    padding: 4rem 0;
+  }
+  
+  .quote-content {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+  
+  .quote-text blockquote {
+    font-size: 1.5rem;
+  }
+  
+  .quote-text cite {
+    font-size: 1rem;
+  }
+  
+  .quote-decoration {
+    display: none;
+  }
+  
+  .quote-mark {
+    font-size: 4rem;
+  }
+}
+

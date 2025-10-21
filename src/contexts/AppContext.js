@@ -82,6 +82,10 @@ const translations = {
     mySchool: 'โรงเรียนสวนกุหลาบวิทยาลัย',
     myHobbies: 'ฝึกเขียนโปรแกรม, ดูข่าวสารเทคโนโลยี',
     
+    // Computer Skills section
+    computerSkills: 'ทักษะด้านคอมพิวเตอร์',
+    programmingSkills: '💾 Programming: C, Python, HTML5, CSS3, JavaScript, React, Node.js, Figma, SQL, Postman, git',
+    
     // Education section
     educationHistory: 'ประวัติการศึกษา',
     juniorHigh: 'ระดับมัธยมศึกษาตอนต้น',
@@ -149,23 +153,19 @@ const translations = {
     
     // Competition items
     posnComputer: 'สอวน.คอมพิวเตอร์',
-    posnComputerAward: '🥇 ผ่านการเข้าร่วมค่าย 1',
+    posnComputerAward: 'ผ่านการเข้าร่วมค่าย 1',
     posnComputerDesc: 'ได้รับคัดเลือกให้เข้าร่วมค่ายอบรมเชิงปฏิบัติการด้านคอมพิวเตอร์',
     
-    aiHackathonAward: '🥇 Finalist รอบ 15 คนสุดท้าย',
+    aiHackathonAward: '🏆 Finalist รอบ 15 คนสุดท้าย',
     aiHackathonDesc: 'แข่งขันนำเสนอไอเดียการแก้ปัญหาในสังคมผ่านการวิเคราะห์และนำ AI มาช่วยเพื่อแก้ปัญหา',
     
     acrpTitle: 'การแข่งขันโครงงาน ACRP ครั้งที่ 4',
-    acrpAward: '🥇 เหรียญทองแดง',
+    acrpAward: '🥇 เหรียญทอง',
     acrpDesc: 'การแข่งขันประกวดโครงงานคณิตศาสตร์ประเภทนำเสนอบนเวที',
     
-    scienceCompTitle: 'การแข่งขันวิทยาศาสตร์',
-    scienceCompAward: '⭐ รางวัลชมเชย',
-    scienceCompDesc: 'นำเสนอโครงงานวิทยาศาสตร์นวัตกรรม',
-    
-    outstandingAwardTitle: 'รางวัลนักเรียนดีเด่น',
-    outstandingAward: '🏆 นักเรียนดีเด่นด้านเทคโนโลยี',
-    outstandingAwardDesc: 'ได้รับการยกย่องในด้านเทคโนโลยีและนวัตกรรม',
+    engineeringCompTitle: 'การแข่งขันตอบปัญหาทางวิศวกรรม KMUTT',
+    engineeringCompAward: '🏆 เข้ารอบรองชนะเลิศ 50 ทีมสุดท้าย',
+    engineeringCompDesc: 'การแข่งขันตอบปัญหาทางวิศวกรรมและเทคโนโลยี',
     
     // Future success section
     futureSuccess: 'มุ่งสู่ความสำเร็จในอนาคต',
@@ -183,9 +183,8 @@ const translations = {
     
     // Home page sections
     mySchoolName: 'โรงเรียนสวนกุหลาบวิทยาลัย',
-    smartFarmAward: '🥇 รางวัลชนะเลิศ โครงงานวิทยาศาสตร์ Smart Farm',
-    mathOlympicAward: '🥉 เหรียญทองแดง โอลิมปิกคณิตศาสตร์',
-    techStudentAward: '⭐ รางวัลนักเรียนดีเด่น ด้านเทคโนโลยี',
+    acrpAwardHome: '🥇 เหรียญทองแดง การแข่งขันโครงงาน ACRP ครั้งที่ 4',
+    engineeringCompHome: '� รางวัลรองชนะเลิศ การแข่งขันตอบปัญหาทางวิศวกรรม KMUTT',
     variousWorks: 'ผลงานต่างๆ',
     competitionsSection: 'การแข่งขัน',
     competitionsDesc: 'รางวัลและความสำเร็จจากการแข่งขันต่างๆ',
@@ -193,6 +192,10 @@ const translations = {
     activitiesDesc: 'กิจกรรมที่เข้าร่วมและผลงานที่โดดเด่น',
     workpiecesSection: 'ผลงาน',
     workpiecesDesc: 'โปรเจคและผลงานทางเทคโนโลยี',
+    
+    // Inspiration quote
+    inspirationQuote: 'การเปลี่ยนแปลงโลกเริ่มต้นจากการเขียนโค้ดบรรทัดแรก',
+    quoteAuthor: 'Bill Gates',
     
     // About page education details
     juniorHighDetail: 'โรงเรียนสวนกุหลาบวิทยาลัย - เกรดเฉลี่ย 3.78',
@@ -228,8 +231,8 @@ const translations = {
     aboutTitle: 'About Me',
     personalInfo: 'Personal Information',
     greeting: 'Hello! I am Sethsarut Katakhunpaisarn',
-    introduction: 'I am a Grade 12 student in the Math Gifted Program at Suankularb Wittayalai School\n\nwho dreams of studying Computer Engineering at King Mongkut\'s University of Technology Thonburi (KMUTT)\n\nwith a passion for programming and technology development.',
-    goals: 'My goal is to become a computer engineer capable of developing AI, IoT and automation systems\n\nto solve social problems, and I believe KMUTT will be the best starting point for this dream.',
+    introduction: 'I am a Grade 12 student in the Math Gifted Program at Suankularb Wittayalai School who dreams of studying Computer Engineering at King Mongkut\'s University of Technology Thonburi (KMUTT).\n\nI have a passion for programming and technology development, constantly exploring new ways to solve problems through innovative solutions.',
+    goals: 'My goal is to become a computer engineer capable of developing AI, IoT and automation systems to solve social problems.\n\nI believe KMUTT will be the best starting point for turning this dream into reality.',
     
     // Personal info
     fullName: 'Full Name',
@@ -247,6 +250,10 @@ const translations = {
     myAddress: '284 Phayamai Road, Somdet Chao Phraya Subdistrict, Khlong San District, 10600 Bangkok, Thailand',
     mySchool: 'Suankularb Wittayalai School',
     myHobbies: 'Programming practice, Technology news',
+    
+    // Computer Skills section
+    computerSkills: 'Computer Skills',
+    programmingSkills: '💾 Programming: C, Python, HTML5, CSS3, JavaScript, React, Node.js, Figma, SQL, Postman, git',
     
     // Education section
     educationHistory: 'Education History',
@@ -315,24 +322,20 @@ const translations = {
     
     // Competition items
     posnComputer: 'POSN Computer',
-    posnComputerAward: '🥇 Participate in Camp 1',
+    posnComputerAward: 'Participate in Camp 1',
     posnComputerDesc: 'Selected to participate in a computer workshop camp',
     
-    aiHackathonAward: '🥈 Finalist Top 15',
+    aiHackathonAward: '🏆 Finalist Top 15',
     aiHackathonDesc: 'Compete to present ideas for solving social problems through analysis and using AI to help solve problems.',
     
     acrpTitle: '4th ACRP Project Competition',
     acrpAward: '🥇 Gold Medal',
     acrpDesc: 'Mathematics Project Competition, Stage Presentation Category',
     
-    scienceCompTitle: 'Science Competition',
-    scienceCompAward: '⭐ Honorable Mention',
-    scienceCompDesc: 'Presented innovative science project',
-    
-    outstandingAwardTitle: 'Outstanding Student Award',
-    outstandingAward: '🏆 Outstanding in Technology',
-    outstandingAwardDesc: 'Recognized for excellence in technology and innovation',
-    
+    engineeringCompTitle: 'KMUTT Engineering Problem Solving Competition',
+    engineeringCompAward: '🏆 Enter the semi-finals of the final 50 teams',
+    engineeringCompDesc: 'Engineering and technology problem solving competition',
+
     // Future success section
     futureSuccess: 'Striving for Future Success',
     futureSuccessDesc: 'These experiences are important foundations in preparing for higher education',
@@ -349,9 +352,8 @@ const translations = {
     
     // Home page sections
     mySchoolName: 'Suankularb Wittayalai School',
-    smartFarmAward: '🥇 Winner of Smart Farm Science Project',
-    mathOlympicAward: '🥉 Bronze Medal in Mathematics Olympiad',
-    techStudentAward: '⭐ Outstanding Student in Technology',
+    acrpAwardHome: '🥇 Bronze Medal 4th ACRP Project Competition',
+    engineeringCompHome: '� Runner-up KMUTT Engineering Problem Solving Competition',
     variousWorks: 'Various Works',
     competitionsSection: 'Competitions',
     competitionsDesc: 'Awards and achievements from various competitions',
@@ -359,6 +361,10 @@ const translations = {
     activitiesDesc: 'Activities participated and outstanding works',
     workpiecesSection: 'Workpieces',
     workpiecesDesc: 'Projects and technology works',
+    
+    // Inspiration quote
+    inspirationQuote: 'Your most unhappy customers are your greatest source of learning',
+    quoteAuthor: 'Bill Gates',
     
     // About page education details
     juniorHighDetail: 'Suankularb Wittayalai School - GPA 3.85',

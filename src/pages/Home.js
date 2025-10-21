@@ -31,7 +31,7 @@ function Home() {
             </p>
             <div className="hero-buttons">
               <button 
-                onClick={() => document.querySelector('.highlights').scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                onClick={() => document.querySelector('.portfolio-showcase').scrollIntoView({ behavior: 'smooth', block: 'center' })}
                 className="btn btn-primary"
               >
                 {t('visitWebsite')}
@@ -61,35 +61,6 @@ function Home() {
         </div>
       </section>
 
-      <section className="highlights">
-        <div className="container">
-          <h2>{t('highlights')}</h2>
-          <div className="highlights-grid">
-            <div className="highlight-card card">
-              <div className="highlight-icon">🎓</div>
-              <h3>{t('education')}</h3>
-              <p>GPA: 3.78 / 4.00</p>
-              <p>Math Gifted Program</p>
-              <p>{t('mySchoolName')}</p>
-            </div>
-            <div className="highlight-card card">
-              <div className="highlight-icon">🏆</div>
-              <h3>{t('awards')}</h3>
-              <p>{t('smartFarmAward')}</p>
-              <p>{t('mathOlympicAward')}</p>
-              <p>{t('techStudentAward')}</p>
-            </div>
-            <div className="highlight-card card">
-              <div className="highlight-icon">💻</div>
-              <h3>{t('skills')}</h3>
-              <p>💾 Programming: C, Python, HTML5, </p>
-              <p> CSS3, JavaScript, React, Node.js, </p>
-              <p> Figma, SQL, Postman, git </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="portfolio-showcase">
         <div className="container">
           <h2 className="section-title">{t('variousWorks')}</h2>
@@ -109,6 +80,22 @@ function Home() {
               <h3>{t('workpiecesSection')}</h3>
               <p>{t('workpiecesDesc')}</p>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="inspiration-quote">
+        <div className="container">
+          <div className="quote-content">
+            <div className="quote-text">
+              <blockquote>
+                "{t('inspirationQuote')}"
+              </blockquote>
+              <cite>— {t('quoteAuthor')}</cite>
+            </div>
+            <div className="quote-decoration">
+              <div className="quote-mark">"</div>
+            </div>
           </div>
         </div>
       </section>

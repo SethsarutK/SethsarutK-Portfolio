@@ -71,37 +71,37 @@ function Activities() {
     ],
     volunteer: [
       {
-        title: currentLanguage === 'th' ? 'อาสาสมัครสอนคอมพิวเตอร์' : 'Computer Teaching Volunteer',
+        title: currentLanguage === 'th' ? 'ค่ายคุณธรรมจิตอาสารักษ์โลก' : 'Environmental Conservation Volunteer Camp',
         period: currentLanguage === 'th' ? '2024' : '2024',
         description: currentLanguage === 'th' ? 
-          'สอนคอมพิวเตอร์พื้นฐานให้กับผู้สูงอายุในชุมชน ช่วยลดช่องว่างทางเทคโนโลยี' : 
-          'Taught basic computer skills to elderly community members to bridge the digital divide',
-        skills: [currentLanguage === 'th' ? 'การสอน' : 'Teaching', 
-                currentLanguage === 'th' ? 'ความอดทน' : 'Patience', 
-                currentLanguage === 'th' ? 'การบริการ' : 'Service'],
+          'เข้าร่วมค่ายคุณธรรมจิตอาสารักษ์โลก ไปวิเคราะห์ปัญหาธรรมชาติตามป่าเขาและหาแนวทางแก้ไข' : 
+          'Participated in Environmental Conservation Volunteer Camp, analyzed natural problems in forests and mountains to find solutions',
+        skills: [currentLanguage === 'th' ? 'การวิเคราะห์' : 'Analysis', 
+                currentLanguage === 'th' ? 'สิ่งแวดล้อม' : 'Environment', 
+                currentLanguage === 'th' ? 'การแก้ปัญหา' : 'Problem Solving'],
         image: process.env.PUBLIC_URL + '/Certificate/Volunteer.jpg'
       },
       {
-        title: currentLanguage === 'th' ? 'กิจกรรมจิตอาสา โรงเรียน' : 'School Volunteer Activities',
+        title: currentLanguage === 'th' ? 'ค่ายอาสาพัฒนาโรงเรียน' : 'School Development Volunteer Camp',
         period: currentLanguage === 'th' ? '2023-2024' : '2023-2024',
         description: currentLanguage === 'th' ? 
-          'เข้าร่วมกิจกรรมจิตอาสาของโรงเรียน ช่วยเหลือชุมชน ทำความสะอาดสิ่งแวดล้อม' : 
-          'Participated in school volunteer activities, helped community and environmental cleaning',
-        skills: [currentLanguage === 'th' ? 'จิตอาสา' : 'Volunteerism', 
+          'เข้าร่วมค่ายอาสาพัฒนาโรงเรียน ไปช่วยซ่อมบำรุงโรงเรียนวอนนภาศัพท์' : 
+          'Participated in School Development Volunteer Camp, helped repair and maintain Wannaphasap School',
+        skills: [currentLanguage === 'th' ? 'การซ่อมบำรุง' : 'Maintenance', 
                 currentLanguage === 'th' ? 'การทำงานร่วมกัน' : 'Teamwork', 
                 currentLanguage === 'th' ? 'ความรับผิดชอบ' : 'Responsibility'],
         image: process.env.PUBLIC_URL + '/Certificate/Volunteercamp1_67.jpg'
       },
       {
-        title: currentLanguage === 'th' ? 'อาสาช่วยเหลือผู้ด้อยโอกาส' : 'Helping Underprivileged Volunteer',
+        title: currentLanguage === 'th' ? 'ค่ายคณิตศาสตร์บูรณาการ' : 'Integrated Mathematics Camp',
         period: currentLanguage === 'th' ? '2023' : '2023',
         description: currentLanguage === 'th' ? 
-          'ร่วมกิจกรรมช่วยเหลือเด็กด้อยโอกาส มอบของใช้ จัดกิจกรรมสร้างความสุข' : 
-          'Participated in helping underprivileged children, donated supplies and organized fun activities',
-        skills: [currentLanguage === 'th' ? 'ความเข้าใจ' : 'Empathy', 
-                currentLanguage === 'th' ? 'การช่วยเหลือ' : 'Helping', 
-                currentLanguage === 'th' ? 'การจัดการ' : 'Organization'],
-        image: process.env.PUBLIC_URL + '/Certificate/MathDay.jpg'
+          'เป็นวิทยากรในการจัดกิจกรรมคณิตศาสตร์ให้กับนักเรียน ม.1 โรงเรียนนาวิกโยธินบูรณะ' : 
+          'Served as instructor organizing mathematics activities for Grade 7 students at Navikayothin Burana School',
+        skills: [currentLanguage === 'th' ? 'การสอน' : 'Teaching', 
+                currentLanguage === 'th' ? 'คณิตศาสตร์' : 'Mathematics', 
+                currentLanguage === 'th' ? 'ภาวะผู้นำ' : 'Leadership'],
+        image: process.env.PUBLIC_URL + '/Certificate/Volunteercamp2_67.jpg'
       }
     ],
     selflearning: [

@@ -2,28 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/AppContext';
 import SEO from '../components/SEO';
 import PageTransition from '../components/PageTransition';
-import ImageModal from '../components/ImageModal';
 import '../styles/Competitions.css';
 
 function Competitions() {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedCompetition, setSelectedCompetition] = useState(null);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  const openModal = (competition) => {
-    setSelectedCompetition(competition);
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-    setSelectedCompetition(null);
-  };
 
   const competitions = {
     computer: [
@@ -37,7 +24,7 @@ function Competitions() {
       {
         title: 'League of Code AI Hackathon',
         award: t('aiHackathonAward'),
-        year: '2024',
+        year: '2025',
         description: t('aiHackathonDesc'),
         image: process.env.PUBLIC_URL + '/images/ai-hackathon-award.jpg'
       }
@@ -46,15 +33,15 @@ function Competitions() {
       {
         title: t('acrpTitle'),
         award: t('acrpAward'),
-        year: '2023',
+        year: '2025',
         description: t('acrpDesc'),
         image: process.env.PUBLIC_URL + '/images/acrp-award.jpg'
       },
       {
-        title: t('scienceCompTitle'),
-        award: t('scienceCompAward'),
-        year: '2023',
-        description: t('scienceCompDesc'),
+        title: t('engineeringCompTitle'),
+        award: t('engineeringCompAward'),
+        year: '2025',
+        description: t('engineeringCompDesc'),
         image: process.env.PUBLIC_URL + '/images/profile.jpg'
       }
     ]
@@ -87,21 +74,32 @@ function Competitions() {
               {competitions.computer.map((comp, index) => (
                 <div 
                   key={index} 
-                  className="competition-card card clickable"
-                  onClick={() => openModal(comp)}
+                  className="competition-card card"
                 >
-                  <div className="competition-header">
-                    <h3>{comp.title}</h3>
-                    <span className="competition-year">{comp.year}</span>
+                  <div className="competition-content">
+                    <div className="competition-header">
+                      <h3>{comp.title}</h3>
+                      <span className="competition-year">{comp.year}</span>
+                    </div>
+                    <div className="award-badge">
+                      {comp.award}
+                    </div>
+                    <p className="competition-description">
+                      {comp.description}
+                    </p>
                   </div>
-                  <div className="award-badge">
-                    {comp.award}
-                  </div>
-                  <p className="competition-description">
-                    {comp.description}
-                  </p>
-                  <div className="click-hint">
-                    📸 {t('clickToViewImage') || 'คลิกเพื่อดูรูปภาพ'}
+                  <div className="competition-image">
+                    <img 
+                      src={comp.image} 
+                      alt={comp.title}
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="image-fallback" style={{display: 'none'}}>
+                      <span className="fallback-icon">🏆</span>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -117,21 +115,32 @@ function Competitions() {
               {competitions.academic.map((comp, index) => (
                 <div 
                   key={index} 
-                  className="competition-card card clickable"
-                  onClick={() => openModal(comp)}
+                  className="competition-card card"
                 >
-                  <div className="competition-header">
-                    <h3>{comp.title}</h3>
-                    <span className="competition-year">{comp.year}</span>
+                  <div className="competition-content">
+                    <div className="competition-header">
+                      <h3>{comp.title}</h3>
+                      <span className="competition-year">{comp.year}</span>
+                    </div>
+                    <div className="award-badge">
+                      {comp.award}
+                    </div>
+                    <p className="competition-description">
+                      {comp.description}
+                    </p>
                   </div>
-                  <div className="award-badge">
-                    {comp.award}
-                  </div>
-                  <p className="competition-description">
-                    {comp.description}
-                  </p>
-                  <div className="click-hint">
-                    📸 {t('clickToViewImage') || 'คลิกเพื่อดูรูปภาพ'}
+                  <div className="competition-image">
+                    <img 
+                      src={comp.image} 
+                      alt={comp.title}
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="image-fallback" style={{display: 'none'}}>
+                      <span className="fallback-icon">🏆</span>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -141,14 +150,6 @@ function Competitions() {
 
         </div>
       </div>
-
-      {/* Image Modal */}
-      <ImageModal
-        isOpen={modalOpen}
-        onClose={closeModal}
-        imageSrc={selectedCompetition?.image}
-        title={selectedCompetition?.title}
-      />
     </PageTransition>
   );
 }
