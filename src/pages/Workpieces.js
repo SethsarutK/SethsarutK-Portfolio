@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/AppContext';
 import SEO from '../components/SEO';
 import PageTransition from '../components/PageTransition';
 import '../styles/Workpieces.css';
 
 function Workpieces() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState('all');
 
@@ -17,74 +18,86 @@ function Workpieces() {
     websites: [
       {
         id: 1,
-        title: 'Portfolio Website',
-        description: t('portfolioDesc'),
-        tech: ['React', 'CSS3', 'JavaScript', 'GitHub Pages'],
-        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe1.jpg',
+        title: language === 'th' ? 'เว็บไซต์พอร์ตโฟลิโอ' : 'Portfolio Website',
+        description: language === 'th' ? 
+          'เว็บไซต์แสดงผลงานส่วนตัว สร้างด้วย React และ GitHub Pages' : 
+          'Personal portfolio website built with React and deployed on GitHub Pages',
+        tech: ['HTML5', 'CSS3', 'JavaScript'],
+        image: process.env.PUBLIC_URL + '/images/profile.jpg',
         link: '#',
         category: 'website'
       },
       {
         id: 2,
-        title: t('schoolWebsiteTitle'),
-        description: t('schoolWebsiteDesc'),
-        tech: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
-        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe2.jpg',
-        link: '#',
+        title: language === 'th' ? 'กำลังดำเนินการ' : 'Loading',
+        description: language === 'th' ? 
+          'กำลังสร้าง มองข้ามไปก่อน' : 
+          'Please overlook, still in progress',
+        tech: ['HTML5', 'CSS3'],
+        image: '.',
+        link: '/coming-soon',
         category: 'website'
       }
     ],
     games: [
       {
         id: 3,
-        title: t('adventureGameTitle'),
-        description: t('adventureGameDesc'),
+        title: language === 'th' ? 'กำลังดำเนินการ' : 'Loading',
+        description: language === 'th' ? 
+          'กำลังสร้าง มองข้ามไปก่อน' : 
+          'Please overlook, still in progress',
         tech: ['Python', 'Pygame', 'Game Design'],
-        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe3.jpg',
-        link: '#',
-        category: 'game'
-      },
-      {
-        id: 4,
-        title: t('puzzleGameTitle'),
-        description: t('puzzleGameDesc'),
-        tech: ['JavaScript', 'HTML5 Canvas', 'CSS3'],
-        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe4.jpg',
-        link: '#',
+        image: '.',
+        link: '/coming-soon',
         category: 'game'
       }
     ],
-    hardware: [
+    projects: [
+      {
+        id: 4,
+        title: language === 'th' ? 'โครงงานคณิต ม.4' : 'Project for M.4 Math',
+        description: language === 'th' ? 
+          'โครงงานคณิตศาสตร์ของตอนมัธยมศึกษาปีที่ 4' : 
+          'Math Project from my M.4 year',
+        tech: ['Mathematics', 'Research', 'Analysis'],
+        image: '.',
+        link: '/coming-soon',
+        category: 'project'
+      },
       {
         id: 5,
-        title: 'Smart Farm IoT',
-        description: t('smartFarmDesc'),
-        tech: ['Arduino', 'IoT', 'Sensors', 'C++'],
-        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe5.jpg',
-        link: '#',
-        category: 'hardware'
+        title: language === 'th' ? 'โครงงานคณิต ม.5' : 'Project for M.5 Math',
+        description: language === 'th' ? 
+          'โครงงานคณิตศาสตร์ของตอนมัธยมศึกษาปีที่ 5' : 
+          'Math Project from my M.5 year',
+        tech: ['Mathematics', 'Statistics', 'Data Analysis'],
+        image: '.',
+        link: '/coming-soon',
+        category: 'project'
       },
       {
         id: 6,
-        title: t('securitySystemTitle'),
-        description: t('securitySystemDesc'),
-        tech: ['Raspberry Pi', 'Python', 'OpenCV', 'IoT'],
-        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe6.jpg',
-        link: '#',
-        category: 'hardware'
+        title: language === 'th' ? 'การแข่งขันโครงงาน ACRP ครั้งที่ 4' : '4th ACRP Project Competition',
+        description: language === 'th' ? 
+          'การแข่งขันประกวดโครงงานคณิตศาสตร์ประเภทนำเสนอบนเวที ได้รับเหรียญทอง' : 
+          'Mathematics Project Competition, Stage Presentation Category - Gold Medal Winner',
+        tech: ['Mathematics', 'Research', 'Presentation'],
+        image: process.env.PUBLIC_URL + '/images/acrpPIC.jpg',
+        link: '/coming-soon',
+        category: 'project'
       }
     ]
   };
 
   const categories = [
-    { id: 'all', label: t('allCategory') },
-    { id: 'website', label: t('websitesCategory') },
-    { id: 'game', label: t('gamesCategory') },
-    { id: 'hardware', label: t('hardwareCategory') }
+    { id: 'all', label: language === 'th' ? 'ทั้งหมด' : 'All' },
+    { id: 'website', label: language === 'th' ? 'เว็บไซต์' : 'Websites' },
+    { id: 'game', label: language === 'th' ? 'เกม' : 'Games' },
+    { id: 'project', label: language === 'th' ? 'โครงงาน' : 'Projects' }
   ];
 
   const getAllWorkpieces = () => {
-    return [...workpieces.websites, ...workpieces.games, ...workpieces.hardware];
+    return [...workpieces.websites, ...workpieces.games, ...workpieces.projects];
   };
 
   const getFilteredWorkpieces = () => {
@@ -142,9 +155,15 @@ function Workpieces() {
                     <span>📁</span>
                   </div>
                   <div className="workpiece-overlay">
-                    <a href={work.link} className="view-btn">
-                      {t('viewDetails')}
-                    </a>
+                    {work.link === '#' ? (
+                      <span className="view-btn disabled">
+                        {t('viewDetails')}
+                      </span>
+                    ) : (
+                      <Link to={work.link} className="view-btn">
+                        {t('viewDetails')}
+                      </Link>
+                    )}
                   </div>
                 </div>
                 <div className="workpiece-content">
@@ -167,17 +186,6 @@ function Workpieces() {
               <p>{t('noWorkpieces')}</p>
             </div>
           )}
-
-          <section className="workpiece-cta">
-            <div className="cta-content card glass">
-              <h2>
-                {t('readyToCreate')}
-              </h2>
-              <p>
-                {t('futureWorks')}
-              </p>
-            </div>
-          </section>
         </div>
       </div>
     </PageTransition>

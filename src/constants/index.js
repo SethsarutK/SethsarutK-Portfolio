@@ -9,7 +9,7 @@ export const NAVIGATION = [
 export const SOCIAL_LINKS = [
   {
     name: 'LINE',
-    url: 'https://line.me/ti/p/bhuumjai555',
+    url: 'https://line.me/ti/p/aLXAQJY_Dm',
     icon: 'line',
     description: 'ติดต่อผ่าน LINE'
   },
@@ -18,6 +18,12 @@ export const SOCIAL_LINKS = [
     url: 'https://www.facebook.com/sethsarut.katakhunpaisarn',
     icon: 'facebook',
     description: 'ติดตาม facebook ของฉัน'
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/_.sxtsrtt/',
+    icon: 'instagram',
+    description: 'ติดตาม Instagram ของฉัน'
   }
 ];
 

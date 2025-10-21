@@ -47,8 +47,8 @@ const translations = {
     about: 'เกี่ยวกับฉัน',
     
     // Home page
-    heroTitle: 'สวัสดีครับ ผมคือ นายเศรษฐ์ศรุต กตคุณไพศาล',
-    heroSubtitle: 'มีความฝันอยากจะเข้าเรียนที่ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี สาขาวิศวกรรมคอมพิวเตอร์',
+    heroTitle: 'สวัสดีครับ ผมคือ นาย เศรษฐ์ศรุต\nกตคุณไพศาล',
+    heroSubtitle: 'ผมมีความฝันที่อยากจะเข้าเรียนที่ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี สาขาวิศวกรรมคอมพิวเตอร์',
     heroDescription: 'เว็บนี้จัดทำขึ้นเพื่อแสดงข้อมูล การแข่งขัน กิจกรรม และผลงานของผม',
     aboutMe: 'เกี่ยวกับฉัน',
     
@@ -61,10 +61,9 @@ const translations = {
     // About page keys  
     aboutTitle: 'เกี่ยวกับฉัน',
     personalInfo: 'ข้อมูลส่วนตัว',
-    interests: 'ความสนใจ',
     greeting: 'สวัสดีครับ! ผมชื่อ เศรษฐ์ศรุต กตคุณไพศาล',
-    introduction: 'ผมเป็นนักเรียนชั้น มัธยมศึกษาปีที่ 6 แผนการเรียน Math Gifted Program โรงเรียนสวนกุหลาบวิทยาลัย ที่มีความฝันอยากเข้าศึกษาในสาขาวิศวกรรมคอมพิวเตอร์ที่ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (KMUTT) ด้วยความหลงใหลในการเขียนโปรแกรมและพัฒนาเทคโนโลยี',
-    goals: 'เป้าหมายของผมคือการเป็นวิศวกรคอมพิวเตอร์ที่สามารถพัฒนา AI, IoT และระบบอัตโนมัติ เพื่อนำมาแก้ปัญหาในสังคม และผมเชื่อว่า KMUTT จะเป็นจุดเริ่มต้นที่ดีที่สุดสำหรับความฝันนี้',
+    introduction: 'ผมเป็นนักเรียนชั้นมัธยมศึกษาปีที่ 6 แผนการเรียน Math Gifted Program\nโรงเรียนสวนกุหลาบวิทยาลัย มีความฝันอยากเข้าศึกษาในสาขาวิศวกรรมคอมพิวเตอร์ที่ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (KMUTT)ด้วยความหลงใหล\nในการเขียนโปรแกรมและพัฒนาเทคโนโลยี',
+    goals: 'เป้าหมายของผมคือการเป็นวิศวกรคอมพิวเตอร์ที่สามารถพัฒนา AI, IoT\nและระบบอัตโนมัติเพื่อนำมาแก้ปัญหาในสังคม และผมเชื่อว่า KMUTT จะเป็นจุดเริ่มต้นที่ดีที่สุดสำหรับความฝันนี้',
     
     // Personal info
     fullName: 'ชื่อ-นามสกุล',
@@ -77,10 +76,15 @@ const translations = {
     
     myName: 'นาย เศรษฐ์ศรุต กตคุณไพศาล',
     myNickname: 'ภูมิใจ',
-    myAge: '17 ปี ( 16 ม.ค. 2551 )',
+    myBirthDay: '( 16 ม.ค. 2551 )',
+    years: 'ปี',
     myAddress: '284 ถนนพญาไม้ แขวงสมเด็จเจ้าพระยา เขตคลองสาน 10600 กรุงเทพมหานคร',
     mySchool: 'โรงเรียนสวนกุหลาบวิทยาลัย',
     myHobbies: 'ฝึกเขียนโปรแกรม, ดูข่าวสารเทคโนโลยี',
+    
+    // Computer Skills section
+    computerSkills: 'ทักษะด้านคอมพิวเตอร์',
+    programmingSkills: '💾 Programming: C, Python, HTML5, CSS3, JavaScript, React, Node.js, Figma, SQL, Postman, git',
     
     // Education section
     educationHistory: 'ประวัติการศึกษา',
@@ -91,15 +95,6 @@ const translations = {
     seniorHighFocus: 'เน้นการเรียนวิชาคณิตศาสตร์, วิทยาศาสตร์',
     programmingStart: 'เริ่มหลงใหลในการเขียนโปรแกรมและพัฒนาโครงงานต่าง ๆ',
     futureGoal: 'มุ่งสู่การเป็นวิศวกรที่ใช้เทคโนโลยีแก้ปัญหาของโลก',
-    
-    // Interests
-    reading: 'การอ่าน',
-    readingDesc: 'ชอบอ่านหนังสือประเภทเทคโนโลยี วิทยาศาสตร์ และนิยายไซไฟ เพื่อเพิ่มพูนความรู้และจินตนาการ',
-    technology: 'เทคโนโลยี',
-    technologyDesc: 'หลงใหลในการเขียนโปรแกรม AI, Machine Learning และการพัฒนาเว็บแอปพลิเคชั่น',
-    techBooks: 'หนังสือเทคโนโลยี',
-    sciFiBooks: 'นิยายไซไฟ',
-    scienceBooks: 'หนังสือวิทยาศาสตร์',
     
     // Navigation keys
     competitions: 'การแข่งขัน',
@@ -116,35 +111,6 @@ const translations = {
     // Home page buttons and content
     visitWebsite: 'เยี่ยมชมเว็บไซต์',
     learnMore: 'เรียนรู้เพิ่มเติม',
-    
-    // About page additional sections
-    digitalArt: 'ศิลปะดิจิทัล',
-    digitalArtDesc: 'สนใจการออกแบบ UI/UX และการสร้าง Digital Art ด้วยเครื่องมือต่างๆ',
-    sustainableTech: 'เทคโนโลยีเพื่อความยั่งยืน',
-    sustainableTechDesc: 'ใส่ใจในการใช้เทคโนโลยีเพื่อสิ่งแวดล้อมและพลังงานหมุนเวียน',
-    gamesMedia: 'เกมและสื่อ',
-    gamesMediaDesc: 'เล่นเกมเพื่อการผ่อนคลายและศึกษาการออกแบบเกม รวมถึงติดตามข่าวสารเทคโนโลยี',
-    activities: 'กิจกรรมเสริม',
-    activitiesDesc: 'ออกกำลังกายและกิจกรรมที่ช่วยให้สมองสดใส พร้อมเรียนรู้สิ่งใหม่ ๆ',
-    
-    // Skills section
-    technicalSkills: 'เทคนิค',
-    languageSkills: 'ภาษา',
-    creativeSkills: 'สร้างสรรค์',
-    thai: 'ไทย',
-    english: 'อังกฤษ',
-    uiuxDesign: 'การออกแบบ UI/UX',
-    presentation: 'การนำเสนอ',
-    
-    // Activity details
-    strategyGames: 'เกมที่ต้องใช้ความคิด',
-    jogging: 'วิ่งจ๊อกกิ้ง',
-    timesPerWeek: 'ครั้งต่อสัปดาห์',
-    music: 'เล่นดนตรี',
-    guitar: 'กีตาร์',
-    beginnerLevel: 'ระดับเริ่มต้น',
-    photography: 'การถ่ายภาพ',
-    asHobby: 'เป็นงานอดิเรก',
     
     // Workpieces page
     workpiecesTitle: 'ผลงานและโปรเจ็กต์',
@@ -187,27 +153,25 @@ const translations = {
     
     // Competition items
     posnComputer: 'สอวน.คอมพิวเตอร์',
-    posnComputerAward: '🥇 ผ่านการเข้าร่วมค่าย 1',
+    posnComputerAward: 'ผ่านการเข้าร่วมค่าย 1',
     posnComputerDesc: 'ได้รับคัดเลือกให้เข้าร่วมค่ายอบรมเชิงปฏิบัติการด้านคอมพิวเตอร์',
     
-    aiHackathonAward: '🥇 Finalist รอบ 15 คนสุดท้าย',
+    aiHackathonAward: '🏆 Finalist รอบ 15 คนสุดท้าย',
     aiHackathonDesc: 'แข่งขันนำเสนอไอเดียการแก้ปัญหาในสังคมผ่านการวิเคราะห์และนำ AI มาช่วยเพื่อแก้ปัญหา',
     
     acrpTitle: 'การแข่งขันโครงงาน ACRP ครั้งที่ 4',
-    acrpAward: '🥇 เหรียญทองแดง',
+    acrpAward: '🥇 เหรียญทอง',
     acrpDesc: 'การแข่งขันประกวดโครงงานคณิตศาสตร์ประเภทนำเสนอบนเวที',
     
-    scienceCompTitle: 'การแข่งขันวิทยาศาสตร์',
-    scienceCompAward: '⭐ รางวัลชมเชย',
-    scienceCompDesc: 'นำเสนอโครงงานวิทยาศาสตร์นวัตกรรม',
-    
-    outstandingAwardTitle: 'รางวัลนักเรียนดีเด่น',
-    outstandingAward: '🏆 นักเรียนดีเด่นด้านเทคโนโลยี',
-    outstandingAwardDesc: 'ได้รับการยกย่องในด้านเทคโนโลยีและนวัตกรรม',
+    engineeringCompTitle: 'การแข่งขันตอบปัญหาทางวิศวกรรม KMUTT',
+    engineeringCompAward: '🏆 เข้ารอบรองชนะเลิศ 50 ทีมสุดท้าย',
+    engineeringCompDesc: 'การแข่งขันตอบปัญหาทางวิศวกรรมและเทคโนโลยี',
     
     // Future success section
     futureSuccess: 'มุ่งสู่ความสำเร็จในอนาคต',
     futureSuccessDesc: 'ประสบการณ์เหล่านี้เป็นรากฐานสำคัญในการเตรียมพร้อมสู่การศึกษาต่อในระดับอุดมศึกษา',
+    
+    clickToViewImage: 'คลิกเพื่อดูรูปภาพ',
     
     // NotFound page
     pageNotFound: 'หน้าที่ค้นหาไม่พบ',
@@ -218,10 +182,9 @@ const translations = {
     aboutMeLink: '👨‍💻 เกี่ยวกับฉัน',
     
     // Home page sections
-    mySchoolName: 'โรงเรียนสวนกุหลาบวิทයาลัย',
-    smartFarmAward: '🥇 รางวัลชนะเลิศ โครงงานวิทยาศาสตร์ Smart Farm',
-    mathOlympicAward: '🥉 เหรียญทองแดง โอลิมปิกคณิตศาสตร์',
-    techStudentAward: '⭐ รางวัลนักเรียนดีเด่น ด้านเทคโนโลยี',
+    mySchoolName: 'โรงเรียนสวนกุหลาบวิทยาลัย',
+    acrpAwardHome: '🥇 เหรียญทองแดง การแข่งขันโครงงาน ACRP ครั้งที่ 4',
+    engineeringCompHome: '� รางวัลรองชนะเลิศ การแข่งขันตอบปัญหาทางวิศวกรรม KMUTT',
     variousWorks: 'ผลงานต่างๆ',
     competitionsSection: 'การแข่งขัน',
     competitionsDesc: 'รางวัลและความสำเร็จจากการแข่งขันต่างๆ',
@@ -230,14 +193,19 @@ const translations = {
     workpiecesSection: 'ผลงาน',
     workpiecesDesc: 'โปรเจคและผลงานทางเทคโนโลยี',
     
+    // Inspiration quote
+    inspirationQuote: 'การเปลี่ยนแปลงโลกเริ่มต้นจากการเขียนโค้ดบรรทัดแรก',
+    quoteAuthor: 'Bill Gates',
+    
     // About page education details
-    juniorHighDetail: 'โรงเรียนสวนกุหลาบวิทยาลัย - เกรดเฉลี่ย 3.85',
+    juniorHighDetail: 'โรงเรียนสวนกุหลาบวิทยาลัย - เกรดเฉลี่ย 3.78',
     mathGiftedDetail: 'เข้าร่วมแผน Math Gifted และได้รับการพัฒนาทักษะทางคณิตศาสตร์เป็นพิเศษ',
     
     // Loading component
     loading: 'กำลังโหลด...',
     
     // Footer component
+    phoneLabel: 'เบอร์โทร',
     schoolLabel: 'โรงเรียน',
     goalLabel: 'เป้าหมาย',
     goalValue: 'KMUTT วิศวกรรมคอมพิวเตอร์'
@@ -262,10 +230,9 @@ const translations = {
     // About page keys  
     aboutTitle: 'About Me',
     personalInfo: 'Personal Information',
-    interests: 'Interests',
     greeting: 'Hello! I am Sethsarut Katakhunpaisarn',
-    introduction: 'I am a Grade 12 student in the Math Gifted Program at Suankularb Wittayalai School who dreams of studying Computer Engineering at King Mongkut\'s University of Technology Thonburi (KMUTT) with a passion for programming and technology development.',
-    goals: 'My goal is to become a computer engineer capable of developing AI, IoT and automation systems to solve social problems, and I believe KMUTT will be the best starting point for this dream.',
+    introduction: 'I am a Grade 12 student in the Math Gifted Program at Suankularb Wittayalai School who dreams of studying Computer Engineering at King Mongkut\'s University of Technology Thonburi (KMUTT).\n\nI have a passion for programming and technology development, constantly exploring new ways to solve problems through innovative solutions.',
+    goals: 'My goal is to become a computer engineer capable of developing AI, IoT and automation systems to solve social problems.\n\nI believe KMUTT will be the best starting point for turning this dream into reality.',
     
     // Personal info
     fullName: 'Full Name',
@@ -278,10 +245,15 @@ const translations = {
     
     myName: 'Mr. Sethsarut Katakhunpaisarn',
     myNickname: 'Bhumjai',
-    myAge: '17 years old (Jan 16, 2008)',
+    myBirthDay: '(Jan 16, 2008)',
+    years: 'years old',
     myAddress: '284 Phayamai Road, Somdet Chao Phraya Subdistrict, Khlong San District, 10600 Bangkok, Thailand',
     mySchool: 'Suankularb Wittayalai School',
     myHobbies: 'Programming practice, Technology news',
+    
+    // Computer Skills section
+    computerSkills: 'Computer Skills',
+    programmingSkills: '💾 Programming: C, Python, HTML5, CSS3, JavaScript, React, Node.js, Figma, SQL, Postman, git',
     
     // Education section
     educationHistory: 'Education History',
@@ -292,15 +264,6 @@ const translations = {
     seniorHighFocus: 'Focus on Mathematics, Science',
     programmingStart: 'Started to become passionate about programming and developing various projects',
     futureGoal: 'Aiming to be an engineer who uses technology to solve world problems',
-    
-    // Interests
-    reading: 'Reading',
-    readingDesc: 'Love reading technology, science and sci-fi books to enhance knowledge and imagination',
-    technology: 'Technology',
-    technologyDesc: 'Passionate about programming AI, Machine Learning and web application development',
-    techBooks: 'Technology Books',
-    sciFiBooks: 'Sci-Fi Novels',
-    scienceBooks: 'Science Books',
     
     // Navigation keys
     competitions: 'Competitions',
@@ -317,35 +280,6 @@ const translations = {
     // Home page buttons and content
     visitWebsite: 'Visit Website',
     learnMore: 'Learn More',
-    
-    // About page additional sections
-    digitalArt: 'Digital Art',
-    digitalArtDesc: 'Interested in UI/UX design and creating Digital Art with various tools',
-    sustainableTech: 'Sustainable Technology',
-    sustainableTechDesc: 'Care about using technology for environment and renewable energy',
-    gamesMedia: 'Games & Media',
-    gamesMediaDesc: 'Play games for relaxation and study game design, including following technology news',
-    activities: 'Extra Activities',
-    activitiesDesc: 'Exercise and activities that help keep the mind fresh and learn new things',
-    
-    // Skills section
-    technicalSkills: 'Technical',
-    languageSkills: 'Languages',
-    creativeSkills: 'Creative',
-    thai: 'Thai',
-    english: 'English',
-    uiuxDesign: 'UI/UX Design',
-    presentation: 'Presentation',
-    
-    // Activity details
-    strategyGames: 'Games that require thinking',
-    jogging: 'Jogging',
-    timesPerWeek: 'times per week',
-    music: 'Playing music',
-    guitar: 'Guitar',
-    beginnerLevel: 'Beginner level',
-    photography: 'Photography',
-    asHobby: 'as a hobby',
     
     // Workpieces page
     workpiecesTitle: 'Workpieces & Projects',
@@ -388,27 +322,25 @@ const translations = {
     
     // Competition items
     posnComputer: 'POSN Computer',
-    posnComputerAward: '🥇 Participate in Camp 1',
+    posnComputerAward: 'Participate in Camp 1',
     posnComputerDesc: 'Selected to participate in a computer workshop camp',
     
-    aiHackathonAward: '🥈 Finalist Top 15',
+    aiHackathonAward: '🏆 Finalist Top 15',
     aiHackathonDesc: 'Compete to present ideas for solving social problems through analysis and using AI to help solve problems.',
     
     acrpTitle: '4th ACRP Project Competition',
     acrpAward: '🥇 Gold Medal',
     acrpDesc: 'Mathematics Project Competition, Stage Presentation Category',
     
-    scienceCompTitle: 'Science Competition',
-    scienceCompAward: '⭐ Honorable Mention',
-    scienceCompDesc: 'Presented innovative science project',
-    
-    outstandingAwardTitle: 'Outstanding Student Award',
-    outstandingAward: '🏆 Outstanding in Technology',
-    outstandingAwardDesc: 'Recognized for excellence in technology and innovation',
-    
+    engineeringCompTitle: 'KMUTT Engineering Problem Solving Competition',
+    engineeringCompAward: '🏆 Enter the semi-finals of the final 50 teams',
+    engineeringCompDesc: 'Engineering and technology problem solving competition',
+
     // Future success section
     futureSuccess: 'Striving for Future Success',
     futureSuccessDesc: 'These experiences are important foundations in preparing for higher education',
+    
+    clickToViewImage: 'Click to view image',
     
     // NotFound page
     pageNotFound: 'Page Not Found',
@@ -420,9 +352,8 @@ const translations = {
     
     // Home page sections
     mySchoolName: 'Suankularb Wittayalai School',
-    smartFarmAward: '🥇 Winner of Smart Farm Science Project',
-    mathOlympicAward: '🥉 Bronze Medal in Mathematics Olympiad',
-    techStudentAward: '⭐ Outstanding Student in Technology',
+    acrpAwardHome: '🥇 Bronze Medal 4th ACRP Project Competition',
+    engineeringCompHome: '� Runner-up KMUTT Engineering Problem Solving Competition',
     variousWorks: 'Various Works',
     competitionsSection: 'Competitions',
     competitionsDesc: 'Awards and achievements from various competitions',
@@ -430,6 +361,10 @@ const translations = {
     activitiesDesc: 'Activities participated and outstanding works',
     workpiecesSection: 'Workpieces',
     workpiecesDesc: 'Projects and technology works',
+    
+    // Inspiration quote
+    inspirationQuote: 'Your most unhappy customers are your greatest source of learning',
+    quoteAuthor: 'Bill Gates',
     
     // About page education details
     juniorHighDetail: 'Suankularb Wittayalai School - GPA 3.85',
@@ -439,6 +374,7 @@ const translations = {
     loading: 'Loading...',
     
     // Footer component
+    phoneLabel: 'Tel.',
     schoolLabel: 'School',
     goalLabel: 'Goal',
     goalValue: 'KMUTT Computer Engineering'

@@ -24,7 +24,7 @@ function Footer() {
               <div className="contact-item">
                 <span className="contact-icon">📱</span>
                 <div>
-                  <strong>{t('Tel.')}</strong>
+                  <strong>{t('phoneLabel')}</strong>
                   <p>064-692-2542</p>
                 </div>
               </div>
@@ -74,12 +74,6 @@ function Footer() {
                   </a>
                 );
               })}
-              <a href="https://www.instagram.com/_.sxtsrtt/" target="_blank" rel="noopener noreferrer" className="social-link">
-                <div className="social-icon">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
-                </div>
-                <span>Instagram</span>
-              </a>
             </div>
           </div>
         </div>

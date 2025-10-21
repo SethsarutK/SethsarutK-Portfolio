@@ -65,10 +65,15 @@
 }
 
 .workpieces-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 2rem;
   margin-bottom: 3rem;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .workpiece-card {
@@ -78,6 +83,8 @@
   border: 1px solid var(--border-color);
   transition: all 0.3s ease;
   position: relative;
+  width: 340px;
+  flex-shrink: 0;
 }
 
 .workpiece-card:hover {
@@ -148,6 +155,16 @@
   color: white;
 }
 
+.view-btn.disabled {
+  background: var(--text-secondary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.view-btn.disabled:hover {
+  transform: none;
+}
+
 .workpiece-content {
   padding: 2rem;
 }
@@ -188,33 +205,7 @@
   font-size: 1.1rem;
 }
 
-.workpiece-cta {
-  margin-top: 5rem;
-  text-align: center;
-}
-
-.workpiece-cta .cta-content {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 3rem;
-}
-
-.workpiece-cta h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.workpiece-cta p {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin: 0;
-}
+/* Responsive Design */
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -242,9 +233,10 @@
   }
   
   .workpieces-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 320px));
     gap: 1.5rem;
-    padding: 0 1rem;
+    padding: 0 2rem;
+    justify-content: center;
   }
   
   .workpiece-image {
@@ -253,14 +245,6 @@
   
   .workpiece-content {
     padding: 1.5rem;
-  }
-  
-  .workpiece-cta .cta-content {
-    padding: 2rem 1.5rem;
-  }
-  
-  .workpiece-cta h2 {
-    font-size: 1.8rem;
   }
 }
 
@@ -272,6 +256,13 @@
   .filter-btn {
     padding: 0.5rem 0.8rem;
     font-size: 0.8rem;
+  }
+  
+  .workpieces-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+    gap: 1rem;
+    justify-content: center;
+    padding: 0 1.5rem;
   }
   
   .workpiece-content {

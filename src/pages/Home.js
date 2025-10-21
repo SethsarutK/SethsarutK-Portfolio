@@ -31,7 +31,7 @@ function Home() {
             </p>
             <div className="hero-buttons">
               <button 
-                onClick={() => document.querySelector('.highlights').scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                onClick={() => document.querySelector('.portfolio-showcase').scrollIntoView({ behavior: 'smooth', block: 'center' })}
                 className="btn btn-primary"
               >
                 {t('visitWebsite')}
@@ -40,49 +40,22 @@ function Home() {
           </div>
           <div className="hero-image">
             <div className="profile-container">
-              <div className="profile-frame">
-                <img 
-                  src="https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe1.jpg"
-                  alt="เศรษฐ์ศรุต กตคุณไพศาล" 
-                  className="profile-image"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
-                <div className="profile-fallback" style={{display: 'none', background: 'transparent'}}>
-                  <span className="profile-initial">ศร</span>
+              <Link to="/about" className="profile-frame-link">
+                <div className="profile-frame">
+                  <img 
+                    src={process.env.PUBLIC_URL + "/images/profile.jpg"}
+                    alt="เศรษฐ์ศรุต กตคุณไพศาล" 
+                    className="profile-image"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="profile-fallback" style={{display: 'none', background: 'transparent'}}>
+                    <span className="profile-initial">SK</span>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="highlights">
-        <div className="container">
-          <h2>{t('highlights')}</h2>
-          <div className="highlights-grid">
-            <div className="highlight-card card">
-              <div className="highlight-icon">🎓</div>
-              <h3>{t('education')}</h3>
-              <p>GPA: 3.78 / 4.00</p>
-              <p>Math Gifted Program</p>
-              <p>{t('mySchoolName')}</p>
-            </div>
-            <div className="highlight-card card">
-              <div className="highlight-icon">🏆</div>
-              <h3>{t('awards')}</h3>
-              <p>{t('smartFarmAward')}</p>
-              <p>{t('mathOlympicAward')}</p>
-              <p>{t('techStudentAward')}</p>
-            </div>
-            <div className="highlight-card card">
-              <div className="highlight-icon">💻</div>
-              <h3>{t('skills')}</h3>
-              <p>💾 Programming: C, Python, HTML5, </p>
-              <p> CSS3, JavaScript, React, Node.js, </p>
-              <p> Figma, SQL, Postman, git </p>
+              </Link>
             </div>
           </div>
         </div>
@@ -107,6 +80,22 @@ function Home() {
               <h3>{t('workpiecesSection')}</h3>
               <p>{t('workpiecesDesc')}</p>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="inspiration-quote">
+        <div className="container">
+          <div className="quote-content">
+            <div className="quote-text">
+              <blockquote>
+                "{t('inspirationQuote')}"
+              </blockquote>
+              <cite>— {t('quoteAuthor')}</cite>
+            </div>
+            <div className="quote-decoration">
+              <div className="quote-mark">"</div>
+            </div>
           </div>
         </div>
       </section>

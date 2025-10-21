@@ -17,16 +17,21 @@ const globalWheelHandler = (e) => {
                     path === '/SethsarutK-Portfolio/' ||
                     path === '/SethsarutK-Portfolio/home';
   
+  const isAboutPage = path === '/about' || 
+                     path === '/SethsarutK-Portfolio/about';
+  
   // Debug log
   console.log('Snap scroll check:', {
     path,
     isHomePage,
+    isAboutPage,
     snapScrollActive,
     globalIsScrolling,
     sectionsLength: globalSections.length
   });
   
-  if (!snapScrollActive || !isHomePage || globalIsScrolling || globalSections.length === 0) {
+  if (!snapScrollActive || (!isHomePage && !isAboutPage) || globalIsScrolling || globalSections.length === 0) {
+    console.log('Snap scroll blocked:', { snapScrollActive, isHomePage, isAboutPage, globalIsScrolling, sectionsLength: globalSections.length });
     return;
   }
 
@@ -40,7 +45,12 @@ const globalWheelHandler = (e) => {
       globalCurrentSection++;
       scrollToGlobalSection(globalCurrentSection);
     } else {
+      // Reached last snap section, allow normal scrolling
+      snapScrollActive = false;
+      window.removeEventListener('wheel', globalWheelHandler);
       globalIsScrolling = false;
+      // Allow this scroll event to proceed normally
+      return;
     }
   } else {
     // Scrolling up  
@@ -71,35 +81,51 @@ const useSnapScroll = () => {
   const location = useLocation();
   const isScrolling = useRef(false);
   const currentSection = useRef(0);
+  const scrollHandlerRef = useRef(null);
 
   useEffect(() => {
-    // Only initialize on home page
+    // Initialize on home page and about page
     const isHomePage = location.pathname === '/' || 
                       location.pathname === '/home' || 
                       location.pathname === '/SethsarutK-Portfolio' || 
                       location.pathname === '/SethsarutK-Portfolio/' ||
                       location.pathname === '/SethsarutK-Portfolio/home';
     
-    // Set global flag
-    snapScrollActive = isHomePage;
+    const isAboutPage = location.pathname === '/about' || 
+                       location.pathname === '/SethsarutK-Portfolio/about';
     
-    if (!isHomePage) {
-      // Clean up any existing listeners when leaving home page
+    // Set global flag
+    snapScrollActive = isHomePage || isAboutPage;
+    
+    if (!isHomePage && !isAboutPage) {
+      // Clean up any existing listeners when leaving supported pages
       window.removeEventListener('wheel', globalWheelHandler);
+      globalSections = [];
       return;
     }
     
     // Wait for DOM to be ready
     const initSnapScroll = () => {
-      // Find sections
-      globalSections = [
-        document.querySelector('.hero'),
-        document.querySelector('.highlights'),
-        document.querySelector('.portfolio-showcase'),
-        document.querySelector('.footer')
-      ].filter(Boolean);
+      // Find sections based on page type
+      if (isHomePage) {
+        globalSections = [
+          document.querySelector('.hero'),
+          document.querySelector('.portfolio-showcase'),
+          document.querySelector('.inspiration-quote'),
+          document.querySelector('.footer')
+        ].filter(Boolean);
+      } else if (isAboutPage) {
+        globalSections = [
+          document.querySelector('.about-intro.snap-section'),
+          document.querySelector('.personal-info.snap-section'),
+          document.querySelector('.computer-skills.snap-section')
+        ].filter(Boolean);
+      }
+
+      console.log('Snap scroll sections found:', globalSections.length, globalSections.map(s => s.className));
 
       if (globalSections.length === 0) {
+        console.log('No sections found for snap scroll');
         return;
       }
 
@@ -111,6 +137,25 @@ const useSnapScroll = () => {
       window.removeEventListener('wheel', globalWheelHandler);
       // Add new listener
       window.addEventListener('wheel', globalWheelHandler, { passive: false });
+      
+      // For About page, add scroll listener to re-enable snap scroll
+      if (isAboutPage) {
+        const handleScroll = () => {
+          const computerSkillsSection = document.querySelector('.computer-skills.snap-section');
+          if (!snapScrollActive && computerSkillsSection) {
+            const rect = computerSkillsSection.getBoundingClientRect();
+            // If computer skills section is visible and user scrolled back up
+            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+              snapScrollActive = true;
+              globalCurrentSection = 2; // Computer skills is index 2
+              console.log('Re-enabled snap scroll');
+            }
+          }
+        };
+        
+        scrollHandlerRef.current = handleScroll;
+        window.addEventListener('scroll', handleScroll, { passive: true });
+      }
     };
 
     // Initialize after a short delay to ensure DOM is ready
@@ -120,10 +165,11 @@ const useSnapScroll = () => {
       clearTimeout(timer);
       // Disable snap scroll when component unmounts or location changes
       snapScrollActive = false;
-      if (!isHomePage) {
-        window.removeEventListener('wheel', globalWheelHandler);
-        globalSections = [];
+      window.removeEventListener('wheel', globalWheelHandler);
+      if (scrollHandlerRef.current) {
+        window.removeEventListener('scroll', scrollHandlerRef.current);
       }
+      globalSections = [];
     };
   }, [location.pathname]); // Re-run when location changes
 

@@ -438,3 +438,15 @@ p {
     font-size: 1.8rem;
   }
 }
+
+/* Global rule for line breaks in translated text */
+.page-title,
+.page-subtitle,
+.competition-description,
+.workpiece-description,
+.section-description,
+.cta-content p,
+.info-text,
+.translated-text {
+  white-space: pre-line;
+}

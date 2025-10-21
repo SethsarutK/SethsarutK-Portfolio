@@ -60,7 +60,6 @@
 .competition-card {
   background: var(--surface-color);
   border-radius: 15px;
-  padding: 2rem;
   border: 1px solid var(--border-color);
   transition: all 0.3s ease;
   position: relative;
@@ -68,6 +67,54 @@
   opacity: 0;
   transform: translateY(20px) scale(0.95);
   animation: cardSlideIn 0.6s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+}
+
+.competition-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 0 0 15px 15px;
+  margin: 0 -1px -1px -1px;
+  position: relative;
+  border-top: 1px solid var(--border-color);
+}
+
+.competition-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--surface-color);
+  transition: transform 0.3s ease;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.competition-image:hover img {
+  transform: scale(1.05);
+}
+
+.image-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fallback-icon {
+  font-size: 3rem;
+  opacity: 0.8;
+}
+
+.competition-content {
+  padding: 2rem;
+  flex: 1;
 }
 
 .competition-card:nth-child(1) { animation-delay: 0.1s; }
@@ -143,34 +190,6 @@
   margin: 0;
 }
 
-.competition-cta {
-  margin-top: 5rem;
-  text-align: center;
-}
-
-.competition-cta .cta-content {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 3rem;
-}
-
-.competition-cta h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.competition-cta p {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin: 0;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .competitions-page {
@@ -199,6 +218,14 @@
     padding: 1.5rem;
   }
   
+  .competition-content {
+    padding: 1.5rem;
+  }
+  
+  .competition-image {
+    height: 220px;
+  }
+  
   .competition-header {
     flex-direction: column;
     gap: 0.5rem;
@@ -206,14 +233,6 @@
   
   .competition-year {
     align-self: flex-start;
-  }
-  
-  .competition-cta .cta-content {
-    padding: 2rem 1.5rem;
-  }
-  
-  .competition-cta h2 {
-    font-size: 1.8rem;
   }
 }
 
@@ -228,6 +247,15 @@
   
   .competition-card {
     padding: 1.2rem;
+  }
+  
+  .competition-content {
+    padding: 1.2rem;
+  }
+  
+  .competition-image {
+    height: 160px;
+    border-radius: 10px 10px 0 0;
   }
   
   .competition-header h3 {

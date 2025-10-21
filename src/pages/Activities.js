@@ -2,81 +2,140 @@ import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/AppContext';
 import SEO from '../components/SEO';
 import PageTransition from '../components/PageTransition';
+import ImageModal from '../components/ImageModal';
+import ImageCarousel from '../components/ImageCarousel';
 import '../styles/Activities.css';
 
 function Activities() {
   const { t, currentLanguage } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [carouselOpen, setCarouselOpen] = useState(false);
+  const [selectedActivity, setSelectedActivity] = useState(null);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
+  const openModal = (activity) => {
+    if (activity.images && activity.images.length > 1) {
+      setSelectedActivity(activity);
+      setCarouselOpen(true);
+    } else {
+      setSelectedActivity(activity);
+      setModalOpen(true);
+    }
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setCarouselOpen(false);
+    setSelectedActivity(null);
+  };
+
   const activities = {
-    leadership: [
+    camps: [
       {
-        title: currentLanguage === 'th' ? 'หัวหน้าห้อง' : 'Class Representative',
-        period: currentLanguage === 'th' ? '2023-2024' : '2023-2024',
-        description: currentLanguage === 'th' ? 
-          'รับผิดชอบการประสานงานระหว่างนักเรียนและครูอาจารย์ จัดกิจกรรมต่าง ๆ ในห้องเรียน' : 
-          'Responsible for coordinating between students and teachers, organizing classroom activities',
-        skills: [currentLanguage === 'th' ? 'ภาวะผู้นำ' : 'Leadership', 
-                currentLanguage === 'th' ? 'การสื่อสาร' : 'Communication', 
-                currentLanguage === 'th' ? 'การจัดการ' : 'Management']
-      },
-      {
-        title: currentLanguage === 'th' ? 'ประธานชมรมคอมพิวเตอร์' : 'Computer Club President',
+        title: currentLanguage === 'th' ? 'ค่าย LAODINSOR' : 'LAODINSOR Engineering Camp',
         period: currentLanguage === 'th' ? '2024' : '2024',
         description: currentLanguage === 'th' ? 
-          'นำชมรมคอมพิวเตอร์จัดกิจกรรมการเรียนรู้ด้านเทคโนโลジี แลกเปลี่ยนความรู้ระหว่างสมาชิก' : 
-          'Led computer club activities for technology learning and knowledge sharing among members',
+          'ค่ายวิศวกรรมของมหาวิทยาลัยธรรมศาสตร์ เรียนรู้หลักการวิศวกรรมและเทคโนโลยี' : 
+          'Engineering camp at Thammasat University, learned engineering principles and technology',
+        skills: [currentLanguage === 'th' ? 'วิศวกรรม' : 'Engineering', 
+                currentLanguage === 'th' ? 'เทคโนโลยี' : 'Technology', 
+                currentLanguage === 'th' ? 'การแก้ปัญหา' : 'Problem Solving'],
+        image: process.env.PUBLIC_URL + '/Certificate/Laodinsor.jpg'
+      },
+      {
+        title: currentLanguage === 'th' ? 'ค่ายวิทยาศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย' : 'Science Camp - Chulalongkorn University',
+        period: currentLanguage === 'th' ? '2024' : '2024',
+        description: currentLanguage === 'th' ? 
+          'ค่ายวิทยาศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย เรียนรู้หลักการทางวิทยาศาสตร์และการทดลอง' : 
+          'Science camp at Chulalongkorn University, learned scientific principles and experiments',
+        skills: [currentLanguage === 'th' ? 'วิทยาศาสตร์' : 'Science', 
+                currentLanguage === 'th' ? 'การทดลอง' : 'Experiments', 
+                currentLanguage === 'th' ? 'การวิเคราะห์' : 'Analysis'],
+        image: process.env.PUBLIC_URL + '/Certificate/CU_camp.jpg'
+      },
+      {
+        title: currentLanguage === 'th' ? 'ค่ายปฐมนิเทศโรงเรียน (หัวหน้าพี่เลี้ยง)' : 'School Orientation Camp (Mentor Leader)',
+        period: currentLanguage === 'th' ? '2024' : '2024',
+        description: currentLanguage === 'th' ? 
+          'ค่ายปฐมนิเทศของโรงเรียน ได้รับหน้าที่เป็นหัวหน้าพี่เลี้ยง ดูแลน้องใหม่' : 
+          'School orientation camp, served as mentor leader taking care of new students',
         skills: [currentLanguage === 'th' ? 'ภาวะผู้นำ' : 'Leadership', 
-                currentLanguage === 'th' ? 'การสอน' : 'Teaching', 
-                currentLanguage === 'th' ? 'เทคโนโลยี' : 'Technology']
+                currentLanguage === 'th' ? 'การดูแล' : 'Mentoring', 
+                currentLanguage === 'th' ? 'ความรับผิดชอบ' : 'Responsibility'],
+        image: process.env.PUBLIC_URL + '/Certificate/FirstCamp.jpg'
       }
     ],
     volunteer: [
       {
-        title: currentLanguage === 'th' ? 'อาสาสมัครสอนคอมพิวเตอร์' : 'Computer Teaching Volunteer',
+        title: currentLanguage === 'th' ? 'ค่ายคุณธรรมจิตอาสารักษ์โลก' : 'Environmental Conservation Volunteer Camp',
         period: currentLanguage === 'th' ? '2024' : '2024',
         description: currentLanguage === 'th' ? 
-          'สอนคอมพิวเตอร์พื้นฐานให้กับผู้สูงอายุในชุมชน ช่วยลดช่องว่างทางเทคโนโลยี' : 
-          'Taught basic computer skills to elderly community members to bridge the digital divide',
-        skills: [currentLanguage === 'th' ? 'การสอน' : 'Teaching', 
-                currentLanguage === 'th' ? 'ความอดทน' : 'Patience', 
-                currentLanguage === 'th' ? 'การบริการ' : 'Service']
+          'เข้าร่วมค่ายคุณธรรมจิตอาสารักษ์โลก ไปวิเคราะห์ปัญหาธรรมชาติตามป่าเขาและหาแนวทางแก้ไข' : 
+          'Participated in Environmental Conservation Volunteer Camp, analyzed natural problems in forests and mountains to find solutions',
+        skills: [currentLanguage === 'th' ? 'การวิเคราะห์' : 'Analysis', 
+                currentLanguage === 'th' ? 'สิ่งแวดล้อม' : 'Environment', 
+                currentLanguage === 'th' ? 'การแก้ปัญหา' : 'Problem Solving'],
+        image: process.env.PUBLIC_URL + '/Certificate/Volunteer.jpg'
       },
       {
-        title: currentLanguage === 'th' ? 'กิจกรรมบำเพ็ญประโยชน์' : 'Community Service',
+        title: currentLanguage === 'th' ? 'ค่ายอาสาพัฒนาโรงเรียน' : 'School Development Volunteer Camp',
         period: currentLanguage === 'th' ? '2023-2024' : '2023-2024',
         description: currentLanguage === 'th' ? 
-          'เข้าร่วมกิจกรรมบำเพ็ญประโยชน์ต่าง ๆ เช่น ทำความสะอาดสวนสาธารณะ ช่วยเหลือผู้ด้อยโอกาส' : 
-          'Participated in various community service activities such as park cleaning and helping the underprivileged',
-        skills: [currentLanguage === 'th' ? 'จิตอาสา' : 'Volunteerism', 
+          'เข้าร่วมค่ายอาสาพัฒนาโรงเรียน ไปช่วยซ่อมบำรุงโรงเรียนวอนนภาศัพท์' : 
+          'Participated in School Development Volunteer Camp, helped repair and maintain Wannaphasap School',
+        skills: [currentLanguage === 'th' ? 'การซ่อมบำรุง' : 'Maintenance', 
                 currentLanguage === 'th' ? 'การทำงานร่วมกัน' : 'Teamwork', 
-                currentLanguage === 'th' ? 'ความรับผิดชอบ' : 'Responsibility']
-      }
-    ],
-    projects: [
-      {
-        title: currentLanguage === 'th' ? 'โครงการ Smart Farm' : 'Smart Farm Project',
-        period: currentLanguage === 'th' ? '2024' : '2024',
-        description: currentLanguage === 'th' ? 
-          'พัฒนาระบบฟาร์มอัจฉริยะด้วย IoT เซ็นเซอร์วัดความชื้น อุณหภูมิ และระบบรดน้ำอัตโนมัติ' : 
-          'Developed smart farm system with IoT sensors for humidity, temperature monitoring and automatic irrigation',
-        skills: [currentLanguage === 'th' ? 'IoT' : 'IoT', 
-                currentLanguage === 'th' ? 'โปรแกรมมิ่ง' : 'Programming', 
-                currentLanguage === 'th' ? 'ฮาร์ดแวร์' : 'Hardware']
+                currentLanguage === 'th' ? 'ความรับผิดชอบ' : 'Responsibility'],
+        image: process.env.PUBLIC_URL + '/Certificate/Volunteercamp1_67.jpg'
       },
       {
-        title: currentLanguage === 'th' ? 'เว็บไซต์แนะนำโรงเรียน' : 'School Introduction Website',
+        title: currentLanguage === 'th' ? 'ค่ายคณิตศาสตร์บูรณาการ' : 'Integrated Mathematics Camp',
         period: currentLanguage === 'th' ? '2023' : '2023',
         description: currentLanguage === 'th' ? 
-          'สร้างเว็บไซต์แนะนำโรงเรียนด้วย HTML, CSS, JavaScript เพื่อประชาสัมพันธ์โรงเรียน' : 
-          'Created school introduction website using HTML, CSS, JavaScript for school promotion',
-        skills: [currentLanguage === 'th' ? 'Web Development' : 'Web Development', 
-                currentLanguage === 'th' ? 'UI/UX' : 'UI/UX', 
-                currentLanguage === 'th' ? 'การออกแบบ' : 'Design']
+          'เป็นวิทยากรในการจัดกิจกรรมคณิตศาสตร์ให้กับนักเรียน ม.1 โรงเรียนนาวิกโยธินบูรณะ' : 
+          'Served as instructor organizing mathematics activities for Grade 7 students at Navikayothin Burana School',
+        skills: [currentLanguage === 'th' ? 'การสอน' : 'Teaching', 
+                currentLanguage === 'th' ? 'คณิตศาสตร์' : 'Mathematics', 
+                currentLanguage === 'th' ? 'ภาวะผู้นำ' : 'Leadership'],
+        image: process.env.PUBLIC_URL + '/Certificate/Volunteercamp2_67.jpg'
+      }
+    ],
+    selflearning: [
+      {
+        title: currentLanguage === 'th' ? 'เรียนรู้การเขียนโค้ด GROK' : 'GROK Coding Learning',
+        period: currentLanguage === 'th' ? '2023-2024' : '2023-2024',
+        description: currentLanguage === 'th' ? 
+          'เรียนรู้การเขียนโปรแกรมผ่านแพลตฟอร์ม GROK ฝึกฝนทักษะการแก้ปัญหา' : 
+          'Learned programming through GROK platform, practiced problem-solving skills',
+        skills: [currentLanguage === 'th' ? 'โปรแกรมมิ่ง' : 'Programming', 
+                currentLanguage === 'th' ? 'การแก้ปัญหา' : 'Problem Solving', 
+                currentLanguage === 'th' ? 'ตรรกศาสตร์' : 'Logic'],
+        image: process.env.PUBLIC_URL + '/Certificate/grok1.jpg',
+        images: [
+          process.env.PUBLIC_URL + '/Certificate/grok1.jpg',
+          process.env.PUBLIC_URL + '/Certificate/grok2.jpg'
+        ]
+      },
+      {
+        title: currentLanguage === 'th' ? 'เรียนรู้การเขียนโค้ด Samsung' : 'Samsung Coding Learning',
+        period: currentLanguage === 'th' ? '2024' : '2024',
+        description: currentLanguage === 'th' ? 
+          'เรียนรู้การเขียนโค้ดและพัฒนาแอปพลิเคชันผ่านหลักสูตร Samsung' : 
+          'Learned coding and app development through Samsung curriculum',
+        skills: [currentLanguage === 'th' ? 'การพัฒนาแอป' : 'App Development', 
+                currentLanguage === 'th' ? 'โปรแกรมมิ่ง' : 'Programming', 
+                currentLanguage === 'th' ? 'นวัตกรรม' : 'Innovation'],
+        image: process.env.PUBLIC_URL + '/Certificate/Sumsung01.png',
+        images: [
+          process.env.PUBLIC_URL + '/Certificate/Sumsung01.png',
+          process.env.PUBLIC_URL + '/Certificate/Sumsung02.png',
+          process.env.PUBLIC_URL + '/Certificate/Sumsung03.png',
+          process.env.PUBLIC_URL + '/Certificate/Sumsung04.png'
+        ]
       }
     ]
   };
@@ -103,14 +162,18 @@ function Activities() {
             </p>
           </header>
 
-          {/* ภาวะผู้นำ */}
+          {/* กิจกรรมค่าย */}
           <section className="activity-section">
             <h2 className="section-title">
-              👑 {currentLanguage === 'th' ? 'ภาวะผู้นำ' : 'Leadership'}
+              🏕️ {currentLanguage === 'th' ? 'กิจกรรมค่าย' : 'Camp Activities'}
             </h2>
             <div className="activity-timeline">
-              {activities.leadership.map((activity, index) => (
-                <div key={index} className="activity-card card">
+              {activities.camps.map((activity, index) => (
+                <div 
+                  key={index} 
+                  className="activity-card card clickable"
+                  onClick={() => openModal(activity)}
+                >
                   <div className="activity-header">
                     <h3>{activity.title}</h3>
                     <span className="activity-period">{activity.period}</span>
@@ -124,6 +187,9 @@ function Activities() {
                         {skill}
                       </span>
                     ))}
+                  </div>
+                  <div className="click-hint">
+                    📸 {currentLanguage === 'th' ? 'คลิกเพื่อดูรูปภาพ' : 'Click to view image'}
                   </div>
                 </div>
               ))}
@@ -133,11 +199,15 @@ function Activities() {
           {/* งานอาสา */}
           <section className="activity-section">
             <h2 className="section-title">
-              🤝 {currentLanguage === 'th' ? 'งานอาสาและการบริการ' : 'Volunteer & Service'}
+              🤝 {currentLanguage === 'th' ? 'จิตอาสา' : 'Volunteer Work'}
             </h2>
             <div className="activity-timeline">
               {activities.volunteer.map((activity, index) => (
-                <div key={index} className="activity-card card">
+                <div 
+                  key={index} 
+                  className="activity-card card clickable"
+                  onClick={() => openModal(activity)}
+                >
                   <div className="activity-header">
                     <h3>{activity.title}</h3>
                     <span className="activity-period">{activity.period}</span>
@@ -152,19 +222,26 @@ function Activities() {
                       </span>
                     ))}
                   </div>
+                  <div className="click-hint">
+                    📸 {currentLanguage === 'th' ? 'คลิกเพื่อดูรูปภาพ' : 'Click to view image'}
+                  </div>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* โครงการพิเศษ */}
+          {/* เรียนรู้ด้วยตนเอง */}
           <section className="activity-section">
             <h2 className="section-title">
-              🚀 {currentLanguage === 'th' ? 'โครงการพิเศษ' : 'Special Projects'}
+              📚 {currentLanguage === 'th' ? 'เรียนรู้ด้วยตนเอง' : 'Self Learning'}
             </h2>
             <div className="activity-timeline">
-              {activities.projects.map((activity, index) => (
-                <div key={index} className="activity-card card">
+              {activities.selflearning.map((activity, index) => (
+                <div 
+                  key={index} 
+                  className="activity-card card clickable"
+                  onClick={() => openModal(activity)}
+                >
                   <div className="activity-header">
                     <h3>{activity.title}</h3>
                     <span className="activity-period">{activity.period}</span>
@@ -179,25 +256,30 @@ function Activities() {
                       </span>
                     ))}
                   </div>
+                  <div className="click-hint">
+                    📸 {currentLanguage === 'th' ? 'คลิกเพื่อดูรูปภาพ' : 'Click to view image'}
+                  </div>
                 </div>
               ))}
-            </div>
-          </section>
-
-          <section className="activity-cta">
-            <div className="cta-content card glass">
-              <h2>
-                {currentLanguage === 'th' ? 'เรียนรู้และพัฒนาอย่างต่อเนื่อง' : 'Continuous Learning & Development'}
-              </h2>
-              <p>
-                {currentLanguage === 'th' ? 
-                  'กิจกรรมเหล่านี้ช่วยพัฒนาทักษะในหลายด้าน ทั้งด้านเทคนิคและบุคลิกภาพ เตรียมความพร้อมสู่อนาคต' :
-                  'These activities help develop various skills, both technical and personal, preparing for the future'}
-              </p>
             </div>
           </section>
         </div>
       </div>
+
+      {/* Image Modal for single images */}
+      <ImageModal
+        isOpen={modalOpen}
+        onClose={closeModal}
+        imageSrc={selectedActivity?.image}
+        title={selectedActivity?.title}
+      />
+
+      {/* Image Carousel for multiple images */}
+      <ImageCarousel
+        isOpen={carouselOpen}
+        onClose={closeModal}
+        images={selectedActivity?.images}
+      />
     </PageTransition>
   );
 }
