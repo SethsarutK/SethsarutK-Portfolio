@@ -42,7 +42,7 @@ function ComingSoon() {
             </div>
             
             <div className="action-buttons">
-              <Link to="/workpieces" className="btn btn-primary">
+              <Link to="/workpieces" className="btn btn-secondary">
                 {language === 'th' ? 'กลับไปดูผลงานอื่น' : 'View Other Works'}
               </Link>
               <Link to="/" className="btn btn-secondary">

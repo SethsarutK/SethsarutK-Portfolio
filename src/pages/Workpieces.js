@@ -15,19 +15,6 @@ function Workpieces() {
   }, []);
 
   const workpieces = {
-    projects: [
-      {
-        id: 0,
-        title: language === 'th' ? 'โครงงาน ACRP ครั้งที่ 4' : '4th ACRP Project Competition',
-        description: language === 'th' ? 
-          'โครงงานคณิตศาสตร์ประเภทนำเสนอบนเวที ได้รับเหรียญทองแดง' : 
-          'Mathematics Project Competition, Stage Presentation Category - Gold Medal Winner',
-        tech: ['Research', 'Mathematics', 'Presentation'],
-        image: process.env.PUBLIC_URL + '/images/acrp-award.jpg',
-        link: '/coming-soon',
-        category: 'project'
-      }
-    ],
     websites: [
       {
         id: 1,
@@ -90,12 +77,12 @@ function Workpieces() {
       },
       {
         id: 6,
-        title: language === 'th' ? 'โครงงานคณิตเหรียญทอง' : 'Gold Medal Math Project',
+        title: language === 'th' ? 'การแข่งขันโครงงาน ACRP ครั้งที่ 4' : '4th ACRP Project Competition',
         description: language === 'th' ? 
-          'โครงงานคณิตศาสตร์ที่ได้เหรียญทอง' : 
-          'Math Project that won a gold medal',
+          'การแข่งขันประกวดโครงงานคณิตศาสตร์ประเภทนำเสนอบนเวที ได้รับเหรียญทอง' : 
+          'Mathematics Project Competition, Stage Presentation Category - Gold Medal Winner',
         tech: ['Mathematics', 'Research', 'Presentation'],
-        image: '.',
+        image: process.env.PUBLIC_URL + '/images/acrpPIC.jpg',
         link: '/coming-soon',
         category: 'project'
       }
@@ -110,7 +97,7 @@ function Workpieces() {
   ];
 
   const getAllWorkpieces = () => {
-    return [...workpieces.projects, ...workpieces.websites, ...workpieces.games];
+    return [...workpieces.websites, ...workpieces.games, ...workpieces.projects];
   };
 
   const getFilteredWorkpieces = () => {
