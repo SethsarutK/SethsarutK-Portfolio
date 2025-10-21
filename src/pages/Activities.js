@@ -3,12 +3,14 @@ import { useLanguage } from '../contexts/AppContext';
 import SEO from '../components/SEO';
 import PageTransition from '../components/PageTransition';
 import ImageModal from '../components/ImageModal';
+import ImageCarousel from '../components/ImageCarousel';
 import '../styles/Activities.css';
 
 function Activities() {
   const { t, currentLanguage } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const [carouselOpen, setCarouselOpen] = useState(false);
   const [selectedActivity, setSelectedActivity] = useState(null);
 
   useEffect(() => {
@@ -16,49 +18,55 @@ function Activities() {
   }, []);
 
   const openModal = (activity) => {
-    setSelectedActivity(activity);
-    setModalOpen(true);
+    if (activity.images && activity.images.length > 1) {
+      setSelectedActivity(activity);
+      setCarouselOpen(true);
+    } else {
+      setSelectedActivity(activity);
+      setModalOpen(true);
+    }
   };
 
   const closeModal = () => {
     setModalOpen(false);
+    setCarouselOpen(false);
     setSelectedActivity(null);
   };
 
   const activities = {
     camps: [
       {
-        title: currentLanguage === 'th' ? 'ค่าย POSN คอมพิวเตอร์' : 'POSN Computer Camp',
+        title: currentLanguage === 'th' ? 'ค่าย LAODINSOR' : 'LAODINSOR Engineering Camp',
         period: currentLanguage === 'th' ? '2024' : '2024',
         description: currentLanguage === 'th' ? 
-          'เข้าร่วมค่ายฝึกอบรมด้านคอมพิวเตอร์ขั้นสูง เรียนรู้เทคนิคการเขียนโปรแกรมและอัลกอริทึม' : 
-          'Participated in advanced computer training camp, learned programming techniques and algorithms',
-        skills: [currentLanguage === 'th' ? 'โปรแกรมมิ่ง' : 'Programming', 
-                currentLanguage === 'th' ? 'อัลกอริทึม' : 'Algorithms', 
-                currentLanguage === 'th' ? 'ปัญหาแก้ไข' : 'Problem Solving'],
+          'ค่ายวิศวกรรมของมหาวิทยาลัยธรรมศาสตร์ เรียนรู้หลักการวิศวกรรมและเทคโนโลยี' : 
+          'Engineering camp at Thammasat University, learned engineering principles and technology',
+        skills: [currentLanguage === 'th' ? 'วิศวกรรม' : 'Engineering', 
+                currentLanguage === 'th' ? 'เทคโนโลยี' : 'Technology', 
+                currentLanguage === 'th' ? 'การแก้ปัญหา' : 'Problem Solving'],
         image: process.env.PUBLIC_URL + '/Certificate/Laodinsor.jpg'
       },
       {
-        title: currentLanguage === 'th' ? 'ค่าย CU Young Webmaster' : 'CU Young Webmaster Camp',
+        title: currentLanguage === 'th' ? 'ค่ายวิทยาศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย' : 'Science Camp - Chulalongkorn University',
         period: currentLanguage === 'th' ? '2024' : '2024',
         description: currentLanguage === 'th' ? 
-          'เข้าร่วมค่ายพัฒนาเว็บไซต์ จุฬาลงกรณ์มหาวิทยาลัย เรียนรู้การสร้างเว็บไซต์สมัยใหม่' : 
-          'Participated in web development camp at Chulalongkorn University, learned modern website creation',
-        skills: [currentLanguage === 'th' ? 'Web Development' : 'Web Development', 
-                currentLanguage === 'th' ? 'UI/UX Design' : 'UI/UX Design', 
-                currentLanguage === 'th' ? 'การนำเสนอ' : 'Presentation'],
+          'ค่ายวิทยาศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย เรียนรู้หลักการทางวิทยาศาสตร์และการทดลอง' : 
+          'Science camp at Chulalongkorn University, learned scientific principles and experiments',
+        skills: [currentLanguage === 'th' ? 'วิทยาศาสตร์' : 'Science', 
+                currentLanguage === 'th' ? 'การทดลอง' : 'Experiments', 
+                currentLanguage === 'th' ? 'การวิเคราะห์' : 'Analysis'],
         image: process.env.PUBLIC_URL + '/Certificate/CU_camp.jpg'
       },
       {
-        title: currentLanguage === 'th' ? 'ค่าย Samsung Innovation' : 'Samsung Innovation Camp',
+        title: currentLanguage === 'th' ? 'ค่ายปฐมนิเทศโรงเรียน (หัวหน้าพี่เลี้ยง)' : 'School Orientation Camp (Mentor Leader)',
         period: currentLanguage === 'th' ? '2024' : '2024',
         description: currentLanguage === 'th' ? 
-          'เข้าร่วมค่ายนวัตกรรม Samsung เรียนรู้เทคโนโลยี IoT และการพัฒนาโปรเจ็กต์สร้างสรรค์' : 
-          'Participated in Samsung Innovation Camp, learned IoT technology and creative project development',
-        skills: [currentLanguage === 'th' ? 'IoT' : 'IoT', 
-                currentLanguage === 'th' ? 'นวัตกรรม' : 'Innovation', 
-                currentLanguage === 'th' ? 'การทำงานเป็นทีม' : 'Teamwork'],
-        image: process.env.PUBLIC_URL + '/Certificate/Sumsung01.png'
+          'ค่ายปฐมนิเทศของโรงเรียน ได้รับหน้าที่เป็นหัวหน้าพี่เลี้ยง ดูแลน้องใหม่' : 
+          'School orientation camp, served as mentor leader taking care of new students',
+        skills: [currentLanguage === 'th' ? 'ภาวะผู้นำ' : 'Leadership', 
+                currentLanguage === 'th' ? 'การดูแล' : 'Mentoring', 
+                currentLanguage === 'th' ? 'ความรับผิดชอบ' : 'Responsibility'],
+        image: process.env.PUBLIC_URL + '/Certificate/FirstCamp.jpg'
       }
     ],
     volunteer: [
@@ -98,26 +106,36 @@ function Activities() {
     ],
     selflearning: [
       {
-        title: currentLanguage === 'th' ? 'เรียนรู้ Python พื้นฐาน' : 'Basic Python Learning',
+        title: currentLanguage === 'th' ? 'เรียนรู้การเขียนโค้ด GROK' : 'GROK Coding Learning',
         period: currentLanguage === 'th' ? '2023-2024' : '2023-2024',
         description: currentLanguage === 'th' ? 
-          'ศึกษา Python จากหนังสือ คอร์สออนไลน์ และฝึกฝนด้วยโปรเจ็กต์เล็ก ๆ' : 
-          'Learned Python through books, online courses, and practiced with small projects',
+          'เรียนรู้การเขียนโปรแกรมผ่านแพลตฟอร์ม GROK ฝึกฝนทักษะการแก้ปัญหา' : 
+          'Learned programming through GROK platform, practiced problem-solving skills',
         skills: [currentLanguage === 'th' ? 'โปรแกรมมิ่ง' : 'Programming', 
-                currentLanguage === 'th' ? 'การเรียนรู้ด้วยตนเอง' : 'Self Learning', 
-                currentLanguage === 'th' ? 'ความอดทน' : 'Patience'],
-        image: process.env.PUBLIC_URL + '/Certificate/FirstCamp.jpg'
+                currentLanguage === 'th' ? 'การแก้ปัญหา' : 'Problem Solving', 
+                currentLanguage === 'th' ? 'ตรรกศาสตร์' : 'Logic'],
+        image: process.env.PUBLIC_URL + '/Certificate/grok1.jpg',
+        images: [
+          process.env.PUBLIC_URL + '/Certificate/grok1.jpg',
+          process.env.PUBLIC_URL + '/Certificate/grok2.jpg'
+        ]
       },
       {
-        title: currentLanguage === 'th' ? 'เรียนรู้ Web Development' : 'Web Development Learning',
+        title: currentLanguage === 'th' ? 'เรียนรู้การเขียนโค้ด Samsung' : 'Samsung Coding Learning',
         period: currentLanguage === 'th' ? '2024' : '2024',
         description: currentLanguage === 'th' ? 
-          'ศึกษา HTML, CSS, JavaScript และ React จาก YouTube และเอกสารออนไลน์' : 
-          'Learned HTML, CSS, JavaScript, and React from YouTube and online documentation',
-        skills: [currentLanguage === 'th' ? 'Web Development' : 'Web Development', 
-                currentLanguage === 'th' ? 'การวิจัย' : 'Research', 
-                currentLanguage === 'th' ? 'การแก้ปัญหา' : 'Problem Solving'],
-        image: process.env.PUBLIC_URL + '/Certificate/GiftedMathCamp.jpg'
+          'เรียนรู้การเขียนโค้ดและพัฒนาแอปพลิเคชันผ่านหลักสูตร Samsung' : 
+          'Learned coding and app development through Samsung curriculum',
+        skills: [currentLanguage === 'th' ? 'การพัฒนาแอป' : 'App Development', 
+                currentLanguage === 'th' ? 'โปรแกรมมิ่ง' : 'Programming', 
+                currentLanguage === 'th' ? 'นวัตกรรม' : 'Innovation'],
+        image: process.env.PUBLIC_URL + '/Certificate/Sumsung01.png',
+        images: [
+          process.env.PUBLIC_URL + '/Certificate/Sumsung01.png',
+          process.env.PUBLIC_URL + '/Certificate/Sumsung02.png',
+          process.env.PUBLIC_URL + '/Certificate/Sumsung03.png',
+          process.env.PUBLIC_URL + '/Certificate/Sumsung04.png'
+        ]
       }
     ]
   };
@@ -261,12 +279,19 @@ function Activities() {
         </div>
       </div>
 
-      {/* Image Modal */}
+      {/* Image Modal for single images */}
       <ImageModal
         isOpen={modalOpen}
         onClose={closeModal}
         imageSrc={selectedActivity?.image}
         title={selectedActivity?.title}
+      />
+
+      {/* Image Carousel for multiple images */}
+      <ImageCarousel
+        isOpen={carouselOpen}
+        onClose={closeModal}
+        images={selectedActivity?.images}
       />
     </PageTransition>
   );
