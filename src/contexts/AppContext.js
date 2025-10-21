@@ -76,7 +76,8 @@ const translations = {
     
     myName: 'นาย เศรษฐ์ศรุต กตคุณไพศาล',
     myNickname: 'ภูมิใจ',
-    myAge: '17 ปี ( 16 ม.ค. 2551 )',
+    myBirthDay: '( 16 ม.ค. 2551 )',
+    years: 'ปี',
     myAddress: '284 ถนนพญาไม้ แขวงสมเด็จเจ้าพระยา เขตคลองสาน 10600 กรุงเทพมหานคร',
     mySchool: 'โรงเรียนสวนกุหลาบวิทยาลัย',
     myHobbies: 'ฝึกเขียนโปรแกรม, ดูข่าวสารเทคโนโลยี',
@@ -241,7 +242,8 @@ const translations = {
     
     myName: 'Mr. Sethsarut Katakhunpaisarn',
     myNickname: 'Bhumjai',
-    myAge: '17 years old (Jan 16, 2008)',
+    myBirthDay: '(Jan 16, 2008)',
+    years: 'years old',
     myAddress: '284 Phayamai Road, Somdet Chao Phraya Subdistrict, Khlong San District, 10600 Bangkok, Thailand',
     mySchool: 'Suankularb Wittayalai School',
     myHobbies: 'Programming practice, Technology news',

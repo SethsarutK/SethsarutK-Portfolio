@@ -29,6 +29,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* เพิ่ม touch support */
+  touch-action: pan-y pinch-zoom;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .carousel-image {
@@ -80,6 +86,9 @@
   z-index: 1501;
   top: 50%;
   transform: translateY(-50%);
+  /* เพิ่ม touch support */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .carousel-nav:hover {
@@ -175,26 +184,41 @@
 
 @media (max-width: 480px) {
   .carousel-close {
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    z-index: 1002;
   }
 
   .carousel-nav {
-    width: 35px;
-    height: 35px;
-    font-size: 18px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    z-index: 1002;
   }
 
   .carousel-prev {
-    left: 10px;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
   }
 
   .carousel-next {
-    right: 10px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .carousel-image {
+    max-width: 85vw;
+    max-height: 60vh;
+    margin: 0 auto;
+  }
+
+  .carousel-image-container {
+    padding: 0 60px;
   }
 
   .carousel-indicators {

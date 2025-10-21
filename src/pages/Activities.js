@@ -263,19 +263,6 @@ function Activities() {
               ))}
             </div>
           </section>
-
-          <section className="activity-cta">
-            <div className="cta-content card glass">
-              <h2>
-                {currentLanguage === 'th' ? 'เรียนรู้และพัฒนาอย่างต่อเนื่อง' : 'Continuous Learning & Development'}
-              </h2>
-              <p>
-                {currentLanguage === 'th' ? 
-                  'กิจกรรมเหล่านี้ช่วยพัฒนาทักษะในหลายด้าน ทั้งด้านเทคนิคและบุคลิกภาพ เตรียมความพร้อมสู่อนาคต' :
-                  'These activities help develop various skills, both technical and personal, preparing for the future'}
-              </p>
-            </div>
-          </section>
         </div>
       </div>
 

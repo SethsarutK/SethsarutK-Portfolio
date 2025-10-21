@@ -7,6 +7,21 @@ function About() {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
+  // คำนวณอายุอัตโนมัติจากวันเกิด
+  const calculateAge = () => {
+    const birthDate = new Date('2008-01-016'); // วันเกิดจริง
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    // ถ้ายังไม่ถึงวันเกิดในปีนี้ ให้ลบ 1
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    
+    return age;
+  };
+
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -59,7 +74,8 @@ function About() {
             </div>
             <div className="info-item">
               <strong>{t('age')}:</strong>
-              <span>{t('myAge')}</span>
+              <span>{calculateAge()} {t('years')}</span>
+              <span>{t('myBirthDay')}</span>
             </div>
             <div className="info-item full-width">
               <strong>{t('address')}:</strong>
@@ -74,8 +90,8 @@ function About() {
               <span>Math Gifted Program</span>
             </div>
             <div className="info-item">
-              <strong>GPA:</strong>
-              <span>3.78 / 4.00</span>
+              <strong>GPAX:</strong>
+              <span>3.78</span>
             </div>
             <div className="info-item">
               <strong>{t('hobbies')}:</strong>

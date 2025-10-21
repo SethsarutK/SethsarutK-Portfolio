@@ -57,15 +57,6 @@ function Competitions() {
         description: t('scienceCompDesc'),
         image: process.env.PUBLIC_URL + '/images/profile.jpg'
       }
-    ],
-    other: [
-      {
-        title: t('outstandingAwardTitle'),
-        award: t('outstandingAward'),
-        year: '2024',
-        description: t('outstandingAwardDesc'),
-        image: process.env.PUBLIC_URL + '/images/profile.jpg'
-      }
     ]
   };
 
@@ -147,46 +138,7 @@ function Competitions() {
             </div>
           </section>
 
-          {/* อื่น ๆ */}
-          <section className="competition-section">
-            <h2 className="section-title">
-              🌟 {t('others')}
-            </h2>
-            <div className="competition-grid">
-              {competitions.other.map((comp, index) => (
-                <div 
-                  key={index} 
-                  className="competition-card card clickable"
-                  onClick={() => openModal(comp)}
-                >
-                  <div className="competition-header">
-                    <h3>{comp.title}</h3>
-                    <span className="competition-year">{comp.year}</span>
-                  </div>
-                  <div className="award-badge">
-                    {comp.award}
-                  </div>
-                  <p className="competition-description">
-                    {comp.description}
-                  </p>
-                  <div className="click-hint">
-                    📸 {t('clickToViewImage') || 'คลิกเพื่อดูรูปภาพ'}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
 
-          <section className="competition-cta">
-            <div className="cta-content card glass">
-              <h2>
-                {t('futureSuccess')}
-              </h2>
-              <p>
-                {t('futureSuccessDesc')}
-              </p>
-            </div>
-          </section>
         </div>
       </div>
 

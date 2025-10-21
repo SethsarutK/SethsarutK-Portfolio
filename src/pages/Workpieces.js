@@ -186,17 +186,6 @@ function Workpieces() {
               <p>{t('noWorkpieces')}</p>
             </div>
           )}
-
-          <section className="workpiece-cta">
-            <div className="cta-content card glass">
-              <h2>
-                {t('readyToCreate')}
-              </h2>
-              <p>
-                {t('futureWorks')}
-              </p>
-            </div>
-          </section>
         </div>
       </div>
     </PageTransition>

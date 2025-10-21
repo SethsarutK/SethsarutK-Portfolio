@@ -7,6 +7,8 @@ function ImageCarousel({ images, isOpen, onClose, initialIndex = 0 }) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [imageLoading, setImageLoading] = useState(true);
   const [imageError, setImageError] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   useEffect(() => {
     if (isOpen) {
@@ -66,6 +68,30 @@ function ImageCarousel({ images, isOpen, onClose, initialIndex = 0 }) {
     );
   };
 
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e) => {
+    setTouchEnd(0); // otherwise the swipe is fired even with usual touch events
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextImage();
+    } else if (isRightSwipe) {
+      prevImage();
+    }
+  };
+
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -90,7 +116,12 @@ function ImageCarousel({ images, isOpen, onClose, initialIndex = 0 }) {
           </>
         )}
 
-        <div className="carousel-image-container">
+        <div 
+          className="carousel-image-container"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {/* Loading Spinner */}
           {imageLoading && (
             <div className="carousel-loading">
