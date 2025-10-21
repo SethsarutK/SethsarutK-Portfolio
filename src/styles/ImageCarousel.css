@@ -207,3 +207,46 @@
     padding: 6px 12px;
   }
 }
+
+/* Loading and Error States */
+.carousel-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: white;
+  min-height: 200px;
+}
+
+.carousel-loading .loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.carousel-loading p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.carousel-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: #ff6b6b;
+  min-height: 200px;
+}
+
+.carousel-error p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}

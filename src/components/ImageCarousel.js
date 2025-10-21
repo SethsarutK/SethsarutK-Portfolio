@@ -5,6 +5,8 @@ import '../styles/ImageCarousel.css';
 function ImageCarousel({ images, isOpen, onClose, initialIndex = 0 }) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [imageLoading, setImageLoading] = useState(true);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -33,7 +35,24 @@ function ImageCarousel({ images, isOpen, onClose, initialIndex = 0 }) {
     };
   }, [isOpen, scrollPosition]);
 
+  // Reset loading state เมื่อเปลี่ยนรูป
+  useEffect(() => {
+    if (images && images[currentIndex]) {
+      setImageLoading(true);
+      setImageError(false);
+    }
+  }, [currentIndex, images]);
+
   if (!isOpen || !images || images.length === 0) return null;
+
+  const handleImageLoad = () => {
+    setImageLoading(false);
+  };
+
+  const handleImageError = () => {
+    setImageLoading(false);
+    setImageError(true);
+  };
 
   const nextImage = () => {
     setCurrentIndex((prevIndex) => 
@@ -72,10 +91,28 @@ function ImageCarousel({ images, isOpen, onClose, initialIndex = 0 }) {
         )}
 
         <div className="carousel-image-container">
+          {/* Loading Spinner */}
+          {imageLoading && (
+            <div className="carousel-loading">
+              <div className="loading-spinner"></div>
+              <p>กำลังโหลด...</p>
+            </div>
+          )}
+          
+          {/* Error Message */}
+          {imageError && (
+            <div className="carousel-error">
+              <p>⚠️ ไม่สามารถโหลดรูปภาพได้</p>
+            </div>
+          )}
+          
           <img 
             src={images[currentIndex]} 
             alt={`Certificate ${currentIndex + 1}`}
             className="carousel-image"
+            onLoad={handleImageLoad}
+            onError={handleImageError}
+            style={{ display: imageLoading ? 'none' : 'block' }}
           />
         </div>
 

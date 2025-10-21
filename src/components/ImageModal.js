@@ -1,8 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import '../styles/ImageModal.css';
 
 function ImageModal({ isOpen, onClose, imageSrc, title }) {
+  const [imageLoading, setImageLoading] = useState(true);
+  const [imageError, setImageError] = useState(false);
+
+  // Reset loading state เมื่อเปิด modal ใหม่
+  useEffect(() => {
+    if (isOpen && imageSrc) {
+      setImageLoading(true);
+      setImageError(false);
+    }
+  }, [isOpen, imageSrc]);
+
+  const handleImageLoad = () => {
+    setImageLoading(false);
+  };
+
+  const handleImageError = () => {
+    setImageLoading(false);
+    setImageError(true);
+  };
   // ป้องกันการ scroll เมื่อ modal เปิด - แบบง่าย
   useEffect(() => {
     if (isOpen) {
@@ -109,10 +128,28 @@ function ImageModal({ isOpen, onClose, imageSrc, title }) {
           ✕
         </button>
         
+        {/* Loading Spinner */}
+        {imageLoading && (
+          <div className="image-loading">
+            <div className="loading-spinner"></div>
+            <p>กำลังโหลด...</p>
+          </div>
+        )}
+        
+        {/* Error Message */}
+        {imageError && (
+          <div className="image-error">
+            <p>⚠️ ไม่สามารถโหลดรูปภาพได้</p>
+          </div>
+        )}
+        
         <img 
           src={imageSrc} 
           alt={title} 
           className="popup-image"
+          onLoad={handleImageLoad}
+          onError={handleImageError}
+          style={{ display: imageLoading ? 'none' : 'block' }}
         />
       </div>
     </div>
