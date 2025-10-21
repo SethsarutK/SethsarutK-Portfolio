@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/SethsarutK-Portfolio/static/css/main.de142527.css",
-    "main.js": "/SethsarutK-Portfolio/static/js/main.1b6056d8.js",
+    "main.js": "/SethsarutK-Portfolio/static/js/main.8ac14df8.js",
     "static/css/481.09734660.chunk.css": "/SethsarutK-Portfolio/static/css/481.09734660.chunk.css",
     "static/js/481.e843aa9b.chunk.js": "/SethsarutK-Portfolio/static/js/481.e843aa9b.chunk.js",
     "static/css/938.ef561c64.chunk.css": "/SethsarutK-Portfolio/static/css/938.ef561c64.chunk.css",
     "static/js/938.71d7a732.chunk.js": "/SethsarutK-Portfolio/static/js/938.71d7a732.chunk.js",
-    "static/css/955.450bc40a.chunk.css": "/SethsarutK-Portfolio/static/css/955.450bc40a.chunk.css",
-    "static/js/955.9437e2a8.chunk.js": "/SethsarutK-Portfolio/static/js/955.9437e2a8.chunk.js",
+    "static/css/955.5f33fe0e.chunk.css": "/SethsarutK-Portfolio/static/css/955.5f33fe0e.chunk.css",
+    "static/js/955.e3073b6b.chunk.js": "/SethsarutK-Portfolio/static/js/955.e3073b6b.chunk.js",
     "static/css/587.f1d9fc94.chunk.css": "/SethsarutK-Portfolio/static/css/587.f1d9fc94.chunk.css",
     "static/js/587.ce0eaac7.chunk.js": "/SethsarutK-Portfolio/static/js/587.ce0eaac7.chunk.js",
     "static/css/107.3fecd2c7.chunk.css": "/SethsarutK-Portfolio/static/css/107.3fecd2c7.chunk.css",
@@ -21,6 +21,6 @@
   },
   "entrypoints": [
     "static/css/main.de142527.css",
-    "static/js/main.1b6056d8.js"
+    "static/js/main.8ac14df8.js"
   ]
 }
