@@ -130,6 +130,7 @@
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
+  white-space: pre-line;
 }
 
 /* Personal Info Section */

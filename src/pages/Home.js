@@ -51,7 +51,7 @@ function Home() {
                   }}
                 />
                 <div className="profile-fallback" style={{display: 'none', background: 'transparent'}}>
-                  <span className="profile-initial">ศร</span>
+                  <span className="profile-initial">SK</span>
                 </div>
               </div>
             </div>

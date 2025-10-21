@@ -30,7 +30,7 @@ function About() {
                   }}
                 />
                 <div className="about-fallback" style={{display: 'none'}}>
-                  <span className="profile-initial">ศร</span>
+                  <span className="profile-initial">SK</span>
                 </div>
               </div>
             </div>
@@ -41,9 +41,6 @@ function About() {
               </p>
               <p>
                 {t('goals')}
-              </p>
-              <p>
-                {t('interests')}
               </p>
             </div>
           </div>
@@ -114,66 +111,6 @@ function About() {
                 <h3>{t('future')}</h3>
                 <p>{t('futureGoal')}</p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="interests">
-          <h2>{t('interests')}</h2>
-          <div className="interests-grid">
-            <div className="interest-card">
-              <h3>📚 {t('reading')}</h3>
-              <p>{t('readingDesc')}</p>
-              <ul>
-                <li>{t('techBooks')}: "Clean Code", "Design Patterns"</li>
-                <li>{t('sciFiBooks')}: Isaac Asimov, Philip K. Dick</li>
-                <li>{t('scienceBooks')}: "A Brief History of Time"</li>
-              </ul>
-            </div>
-            <div className="interest-card">
-              <h3>💻 {t('technology')}</h3>
-              <p>{t('technologyDesc')}</p>
-              <ul>
-                <li>Web Development: React, JavaScript, Node.js</li>
-                <li>AI/ML: Python, TensorFlow, Data Science</li>
-                <li>Hardware: Arduino, Raspberry Pi, IoT</li>
-              </ul>
-            </div>
-            <div className="interest-card">
-              <h3>🎨 {t('digitalArt')}</h3>
-              <p>{t('digitalArtDesc')}</p>
-              <ul>
-                <li>UI/UX Design: Figma, Adobe XD</li>
-                <li>Graphic Design: Photoshop, Illustrator</li>
-                <li>Web Design: Responsive & Modern Interfaces</li>
-              </ul>
-            </div>
-            <div className="interest-card">
-              <h3>🌱 {t('sustainableTech')}</h3>
-              <p>{t('sustainableTechDesc')}</p>
-              <ul>
-                <li>Smart Farm Technology</li>
-                <li>Energy Management Systems</li>
-                <li>Green Computing Practices</li>
-              </ul>
-            </div>
-            <div className="interest-card">
-              <h3>🎮 {t('gamesMedia')}</h3>
-              <p>{t('gamesMediaDesc')}</p>
-              <ul>
-                <li>Strategy Games: {t('strategyGames')}</li>
-                <li>Programming Games: CodeCombat, HackerRank</li>
-                <li>Tech News: YouTube, Tech Blogs</li>
-              </ul>
-            </div>
-            <div className="interest-card">
-              <h3>🏃‍♂️ {t('activities')}</h3>
-              <p>{t('activitiesDesc')}</p>
-              <ul>
-                <li>{t('jogging')}: 3-4 {t('timesPerWeek')}</li>
-                <li>{t('music')}: {t('guitar')} ({t('beginnerLevel')})</li>
-                <li>{t('photography')}: Photography {t('asHobby')}</li>
-              </ul>
             </div>
           </div>
         </section>

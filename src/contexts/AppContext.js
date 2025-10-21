@@ -61,10 +61,9 @@ const translations = {
     // About page keys  
     aboutTitle: 'เกี่ยวกับฉัน',
     personalInfo: 'ข้อมูลส่วนตัว',
-    interests: 'ความสนใจ',
     greeting: 'สวัสดีครับ! ผมชื่อ เศรษฐ์ศรุต กตคุณไพศาล',
-    introduction: 'ผมเป็นนักเรียนชั้น มัธยมศึกษาปีที่ 6 แผนการเรียน Math Gifted Program โรงเรียนสวนกุหลาบวิทยาลัย ที่มีความฝันอยากเข้าศึกษาในสาขาวิศวกรรมคอมพิวเตอร์ที่ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (KMUTT) ด้วยความหลงใหลในการเขียนโปรแกรมและพัฒนาเทคโนโลยี',
-    goals: 'เป้าหมายของผมคือการเป็นวิศวกรคอมพิวเตอร์ที่สามารถพัฒนา AI, IoT และระบบอัตโนมัติ เพื่อนำมาแก้ปัญหาในสังคม และผมเชื่อว่า KMUTT จะเป็นจุดเริ่มต้นที่ดีที่สุดสำหรับความฝันนี้',
+    introduction: 'ผมเป็นนักเรียนชั้นมัธยมศึกษาปีที่ 6 แผนการเรียน Math Gifted Program\nโรงเรียนสวนกุหลาบวิทยาลัย มีความฝันอยากเข้าศึกษาในสาขาวิศวกรรมคอมพิวเตอร์ที่ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (KMUTT)ด้วยความหลงใหล\nในการเขียนโปรแกรมและพัฒนาเทคโนโลยี',
+    goals: 'เป้าหมายของผมคือการเป็นวิศวกรคอมพิวเตอร์ที่สามารถพัฒนา AI, IoT\nและระบบอัตโนมัติเพื่อนำมาแก้ปัญหาในสังคม และผมเชื่อว่า KMUTT จะเป็นจุดเริ่มต้นที่ดีที่สุดสำหรับความฝันนี้',
     
     // Personal info
     fullName: 'ชื่อ-นามสกุล',
@@ -124,7 +123,7 @@ const translations = {
     sustainableTechDesc: 'ใส่ใจในการใช้เทคโนโลยีเพื่อสิ่งแวดล้อมและพลังงานหมุนเวียน',
     gamesMedia: 'เกมและสื่อ',
     gamesMediaDesc: 'เล่นเกมเพื่อการผ่อนคลายและศึกษาการออกแบบเกม รวมถึงติดตามข่าวสารเทคโนโลยี',
-    activities: 'กิจกรรมเสริม',
+    activities: 'กิจกรรม',
     activitiesDesc: 'ออกกำลังกายและกิจกรรมที่ช่วยให้สมองสดใส พร้อมเรียนรู้สิ่งใหม่ ๆ',
     
     // Skills section
@@ -231,7 +230,7 @@ const translations = {
     workpiecesDesc: 'โปรเจคและผลงานทางเทคโนโลยี',
     
     // About page education details
-    juniorHighDetail: 'โรงเรียนสวนกุหลาบวิทยาลัย - เกรดเฉลี่ย 3.85',
+    juniorHighDetail: 'โรงเรียนสวนกุหลาบวิทยาลัย - เกรดเฉลี่ย 3.78',
     mathGiftedDetail: 'เข้าร่วมแผน Math Gifted และได้รับการพัฒนาทักษะทางคณิตศาสตร์เป็นพิเศษ',
     
     // Loading component
@@ -262,10 +261,9 @@ const translations = {
     // About page keys  
     aboutTitle: 'About Me',
     personalInfo: 'Personal Information',
-    interests: 'Interests',
     greeting: 'Hello! I am Sethsarut Katakhunpaisarn',
-    introduction: 'I am a Grade 12 student in the Math Gifted Program at Suankularb Wittayalai School who dreams of studying Computer Engineering at King Mongkut\'s University of Technology Thonburi (KMUTT) with a passion for programming and technology development.',
-    goals: 'My goal is to become a computer engineer capable of developing AI, IoT and automation systems to solve social problems, and I believe KMUTT will be the best starting point for this dream.',
+    introduction: 'I am a Grade 12 student in the Math Gifted Program at Suankularb Wittayalai School\n\nwho dreams of studying Computer Engineering at King Mongkut\'s University of Technology Thonburi (KMUTT)\n\nwith a passion for programming and technology development.',
+    goals: 'My goal is to become a computer engineer capable of developing AI, IoT and automation systems\n\nto solve social problems, and I believe KMUTT will be the best starting point for this dream.',
     
     // Personal info
     fullName: 'Full Name',
@@ -325,7 +323,7 @@ const translations = {
     sustainableTechDesc: 'Care about using technology for environment and renewable energy',
     gamesMedia: 'Games & Media',
     gamesMediaDesc: 'Play games for relaxation and study game design, including following technology news',
-    activities: 'Extra Activities',
+    activities: 'Activities',
     activitiesDesc: 'Exercise and activities that help keep the mind fresh and learn new things',
     
     // Skills section
