@@ -43,7 +43,7 @@ function Home() {
               <Link to="/about" className="profile-frame-link">
                 <div className="profile-frame">
                   <img 
-                    src="https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe1.jpg"
+                    src="https://SethsarutK.github.io/SethsarutK-Portfolio/images/profile.jpg"
                     alt="เศรษฐ์ศรุต กตคุณไพศาล" 
                     className="profile-image"
                     onError={(e) => {

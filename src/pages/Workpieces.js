@@ -17,23 +17,23 @@ function Workpieces() {
     websites: [
       {
         id: 1,
-        title: language === 'th' ? 'เว็บไซต์โรงเรียน' : 'School Website',
+        title: language === 'th' ? 'เว็บไซต์พอร์ตโฟลิโอ' : 'Portfolio Website',
         description: language === 'th' ? 
-          'เว็บไซต์แนะนำโรงเรียนและกิจกรรม พร้อมระบบจัดการเนื้อหา' : 
-          'School introduction website with content management system',
-        tech: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'],
-        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe1.jpg',
+          'เว็บไซต์แสดงผลงานส่วนตัว สร้างด้วย React และ GitHub Pages' : 
+          'Personal portfolio website built with React and deployed on GitHub Pages',
+        tech: ['HTML5', 'CSS3', 'JavaScript'],
+        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/profile.jpg',
         link: '#',
         category: 'website'
       },
       {
         id: 2,
-        title: language === 'th' ? 'เว็บไซต์ Portfolio' : 'Portfolio Website',
+        title: language === 'th' ? 'กำลังดำเนินการ' : 'Loading',
         description: language === 'th' ? 
-          'เว็บไซต์แสดงผลงานส่วนตัว สร้างด้วย React และ GitHub Pages' : 
-          'Personal portfolio website built with React and deployed on GitHub Pages',
-        tech: ['React', 'CSS3', 'JavaScript', 'GitHub Pages'],
-        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe2.jpg',
+          'กำลังสร้าง มองข้ามไปก่อน' : 
+          'Please overlook, still in progress',
+        tech: ['HTML5', 'CSS3'],
+        image: '.',
         link: '#',
         category: 'website'
       }
@@ -41,47 +41,47 @@ function Workpieces() {
     games: [
       {
         id: 3,
-        title: language === 'th' ? 'เกมผจญภัย' : 'Adventure Game',
+        title: language === 'th' ? 'กำลังดำเนินการ' : 'Loading',
         description: language === 'th' ? 
-          'เกมผจญภัยแนว RPG สร้างด้วย Python และ Pygame' : 
-          'RPG-style adventure game created with Python and Pygame',
+          'กำลังสร้าง มองข้ามไปก่อน' : 
+          'Please overlook, still in progress',
         tech: ['Python', 'Pygame', 'Game Design'],
-        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe3.jpg',
-        link: '#',
-        category: 'game'
-      },
-      {
-        id: 4,
-        title: language === 'th' ? 'เกมปริศนา' : 'Puzzle Game',
-        description: language === 'th' ? 
-          'เกมปริศนาเว็บที่สร้างด้วย JavaScript และ HTML5 Canvas' : 
-          'Web-based puzzle game created with JavaScript and HTML5 Canvas',
-        tech: ['JavaScript', 'HTML5 Canvas', 'CSS3'],
-        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe4.jpg',
+        image: '.',
         link: '#',
         category: 'game'
       }
     ],
     projects: [
       {
-        id: 5,
-        title: language === 'th' ? 'ระบบฟาร์มอัจฉริยะ' : 'Smart Farm System',
+        id: 4,
+        title: language === 'th' ? 'โครงงานคณิต ม.4' : 'Project for M.4 Math',
         description: language === 'th' ? 
-          'โครงงานพัฒนาระบบ IoT สำหรับตรวจวัดสภาพแวดล้อมในฟาร์ม' : 
-          'Project developing IoT system for farm environment monitoring',
-        tech: ['Arduino', 'IoT', 'Sensors', 'C++'],
-        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe5.jpg',
+          'โครงงานคณิตศาสตร์ของตอนมัธยมศึกษาปีที่ 4' : 
+          'Math Project from my M.4 year',
+        tech: ['Mathematics', 'Research', 'Analysis'],
+        image: '.',
+        link: '#',
+        category: 'project'
+      },
+      {
+        id: 5,
+        title: language === 'th' ? 'โครงงานคณิต ม.5' : 'Project for M.5 Math',
+        description: language === 'th' ? 
+          'โครงงานคณิตศาสตร์ของตอนมัธยมศึกษาปีที่ 5' : 
+          'Math Project from my M.5 year',
+        tech: ['Mathematics', 'Statistics', 'Data Analysis'],
+        image: '.',
         link: '#',
         category: 'project'
       },
       {
         id: 6,
-        title: language === 'th' ? 'ระบบรักษาความปลอดภัย' : 'Security System',
+        title: language === 'th' ? 'โครงงานคณิตเหรียญทอง' : 'Gold Medal Math Project',
         description: language === 'th' ? 
-          'โครงงานระบบแจ้งเตือนและตรวจจับการเคลื่อนไหวด้วย AI' : 
-          'Project for AI-powered motion detection and alert system',
-        tech: ['Raspberry Pi', 'Python', 'OpenCV', 'AI'],
-        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe6.jpg',
+          'โครงงานคณิตศาสตร์ที่ได้เหรียญทอง' : 
+          'Math Project that won a gold medal',
+        tech: ['Mathematics', 'Research', 'Presentation'],
+        image: '.',
         link: '#',
         category: 'project'
       }

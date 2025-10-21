@@ -21,7 +21,7 @@ function About() {
             <div className="about-image">
               <div className="about-photo-frame">
                 <img 
-                  src="https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe1.jpg"
+                  src="https://SethsarutK.github.io/SethsarutK-Portfolio/images/profile.jpg"
                   alt="เศรษฐ์ศรุต กตคุณไพศาล" 
                   className="about-profile-image"
                   onError={(e) => {
