@@ -170,6 +170,8 @@ const translations = {
     futureSuccess: 'มุ่งสู่ความสำเร็จในอนาคต',
     futureSuccessDesc: 'ประสบการณ์เหล่านี้เป็นรากฐานสำคัญในการเตรียมพร้อมสู่การศึกษาต่อในระดับอุดมศึกษา',
     
+    clickToViewImage: 'คลิกเพื่อดูรูปภาพ',
+    
     // NotFound page
     pageNotFound: 'หน้าที่ค้นหาไม่พบ',
     notFoundDesc: 'ขออภัย หน้าที่คุณกำลังค้นหาอาจถูกย้าย ลบ หรือไม่เคยมีอยู่จริง',
@@ -332,6 +334,8 @@ const translations = {
     // Future success section
     futureSuccess: 'Striving for Future Success',
     futureSuccessDesc: 'These experiences are important foundations in preparing for higher education',
+    
+    clickToViewImage: 'Click to view image',
     
     // NotFound page
     pageNotFound: 'Page Not Found',

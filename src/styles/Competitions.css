@@ -99,6 +99,32 @@
   opacity: 1;
 }
 
+.competition-card.clickable {
+  cursor: pointer;
+}
+
+.competition-card.clickable:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-color);
+}
+
+.click-hint {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 0.5rem;
+  background: rgba(var(--primary-color-rgb), 0.1);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.competition-card.clickable:hover .click-hint {
+  opacity: 1;
+}
+
 .competition-header {
   display: flex;
   justify-content: space-between;
