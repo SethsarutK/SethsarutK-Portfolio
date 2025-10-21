@@ -24,7 +24,7 @@ function Footer() {
               <div className="contact-item">
                 <span className="contact-icon">📱</span>
                 <div>
-                  <strong>{t('Tel.')}</strong>
+                  <strong>{t('phoneLabel')}</strong>
                   <p>064-692-2542</p>
                 </div>
               </div>

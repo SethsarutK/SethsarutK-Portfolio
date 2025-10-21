@@ -47,8 +47,8 @@ const translations = {
     about: 'เกี่ยวกับฉัน',
     
     // Home page
-    heroTitle: 'สวัสดีครับ ผมคือ นายเศรษฐ์ศรุต กตคุณไพศาล',
-    heroSubtitle: 'มีความฝันอยากจะเข้าเรียนที่ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี สาขาวิศวกรรมคอมพิวเตอร์',
+    heroTitle: 'สวัสดีครับ ผมคือ นาย เศรษฐ์ศรุต\nกตคุณไพศาล',
+    heroSubtitle: 'ผมมีความฝันที่อยากจะเข้าเรียนที่ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี สาขาวิศวกรรมคอมพิวเตอร์',
     heroDescription: 'เว็บนี้จัดทำขึ้นเพื่อแสดงข้อมูล การแข่งขัน กิจกรรม และผลงานของผม',
     aboutMe: 'เกี่ยวกับฉัน',
     
@@ -91,15 +91,6 @@ const translations = {
     programmingStart: 'เริ่มหลงใหลในการเขียนโปรแกรมและพัฒนาโครงงานต่าง ๆ',
     futureGoal: 'มุ่งสู่การเป็นวิศวกรที่ใช้เทคโนโลยีแก้ปัญหาของโลก',
     
-    // Interests
-    reading: 'การอ่าน',
-    readingDesc: 'ชอบอ่านหนังสือประเภทเทคโนโลยี วิทยาศาสตร์ และนิยายไซไฟ เพื่อเพิ่มพูนความรู้และจินตนาการ',
-    technology: 'เทคโนโลยี',
-    technologyDesc: 'หลงใหลในการเขียนโปรแกรม AI, Machine Learning และการพัฒนาเว็บแอปพลิเคชั่น',
-    techBooks: 'หนังสือเทคโนโลยี',
-    sciFiBooks: 'นิยายไซไฟ',
-    scienceBooks: 'หนังสือวิทยาศาสตร์',
-    
     // Navigation keys
     competitions: 'การแข่งขัน',
     activities: 'กิจกรรม',
@@ -115,35 +106,6 @@ const translations = {
     // Home page buttons and content
     visitWebsite: 'เยี่ยมชมเว็บไซต์',
     learnMore: 'เรียนรู้เพิ่มเติม',
-    
-    // About page additional sections
-    digitalArt: 'ศิลปะดิจิทัล',
-    digitalArtDesc: 'สนใจการออกแบบ UI/UX และการสร้าง Digital Art ด้วยเครื่องมือต่างๆ',
-    sustainableTech: 'เทคโนโลยีเพื่อความยั่งยืน',
-    sustainableTechDesc: 'ใส่ใจในการใช้เทคโนโลยีเพื่อสิ่งแวดล้อมและพลังงานหมุนเวียน',
-    gamesMedia: 'เกมและสื่อ',
-    gamesMediaDesc: 'เล่นเกมเพื่อการผ่อนคลายและศึกษาการออกแบบเกม รวมถึงติดตามข่าวสารเทคโนโลยี',
-    activities: 'กิจกรรม',
-    activitiesDesc: 'ออกกำลังกายและกิจกรรมที่ช่วยให้สมองสดใส พร้อมเรียนรู้สิ่งใหม่ ๆ',
-    
-    // Skills section
-    technicalSkills: 'เทคนิค',
-    languageSkills: 'ภาษา',
-    creativeSkills: 'สร้างสรรค์',
-    thai: 'ไทย',
-    english: 'อังกฤษ',
-    uiuxDesign: 'การออกแบบ UI/UX',
-    presentation: 'การนำเสนอ',
-    
-    // Activity details
-    strategyGames: 'เกมที่ต้องใช้ความคิด',
-    jogging: 'วิ่งจ๊อกกิ้ง',
-    timesPerWeek: 'ครั้งต่อสัปดาห์',
-    music: 'เล่นดนตรี',
-    guitar: 'กีตาร์',
-    beginnerLevel: 'ระดับเริ่มต้น',
-    photography: 'การถ่ายภาพ',
-    asHobby: 'เป็นงานอดิเรก',
     
     // Workpieces page
     workpiecesTitle: 'ผลงานและโปรเจ็กต์',
@@ -237,6 +199,7 @@ const translations = {
     loading: 'กำลังโหลด...',
     
     // Footer component
+    phoneLabel: 'เบอร์โทร',
     schoolLabel: 'โรงเรียน',
     goalLabel: 'เป้าหมาย',
     goalValue: 'KMUTT วิศวกรรมคอมพิวเตอร์'
@@ -291,15 +254,6 @@ const translations = {
     programmingStart: 'Started to become passionate about programming and developing various projects',
     futureGoal: 'Aiming to be an engineer who uses technology to solve world problems',
     
-    // Interests
-    reading: 'Reading',
-    readingDesc: 'Love reading technology, science and sci-fi books to enhance knowledge and imagination',
-    technology: 'Technology',
-    technologyDesc: 'Passionate about programming AI, Machine Learning and web application development',
-    techBooks: 'Technology Books',
-    sciFiBooks: 'Sci-Fi Novels',
-    scienceBooks: 'Science Books',
-    
     // Navigation keys
     competitions: 'Competitions',
     activities: 'Activities',
@@ -315,35 +269,6 @@ const translations = {
     // Home page buttons and content
     visitWebsite: 'Visit Website',
     learnMore: 'Learn More',
-    
-    // About page additional sections
-    digitalArt: 'Digital Art',
-    digitalArtDesc: 'Interested in UI/UX design and creating Digital Art with various tools',
-    sustainableTech: 'Sustainable Technology',
-    sustainableTechDesc: 'Care about using technology for environment and renewable energy',
-    gamesMedia: 'Games & Media',
-    gamesMediaDesc: 'Play games for relaxation and study game design, including following technology news',
-    activities: 'Activities',
-    activitiesDesc: 'Exercise and activities that help keep the mind fresh and learn new things',
-    
-    // Skills section
-    technicalSkills: 'Technical',
-    languageSkills: 'Languages',
-    creativeSkills: 'Creative',
-    thai: 'Thai',
-    english: 'English',
-    uiuxDesign: 'UI/UX Design',
-    presentation: 'Presentation',
-    
-    // Activity details
-    strategyGames: 'Games that require thinking',
-    jogging: 'Jogging',
-    timesPerWeek: 'times per week',
-    music: 'Playing music',
-    guitar: 'Guitar',
-    beginnerLevel: 'Beginner level',
-    photography: 'Photography',
-    asHobby: 'as a hobby',
     
     // Workpieces page
     workpiecesTitle: 'Workpieces & Projects',
@@ -437,6 +362,7 @@ const translations = {
     loading: 'Loading...',
     
     // Footer component
+    phoneLabel: 'Tel.',
     schoolLabel: 'School',
     goalLabel: 'Goal',
     goalValue: 'KMUTT Computer Engineering'

@@ -86,6 +86,7 @@
   opacity: 0;
   transform: translateX(-30px);
   animation: slideInLeft 1s ease-out 0.3s forwards;
+  white-space: pre-line;
 }
 
 .hero-subtitle {
@@ -96,6 +97,7 @@
   line-height: 1.4;
   transform: translateX(-30px);
   animation: slideInLeft 1s ease-out 0.5s forwards;
+  white-space: pre-line;
 }
 
 .hero-description {
@@ -107,6 +109,7 @@
   opacity: 0;
   line-height: 1.6;
   transform: translateX(-30px);
+  white-space: pre-line;
 }
 
 .hero-buttons {
