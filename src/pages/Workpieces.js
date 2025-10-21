@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/AppContext';
 import SEO from '../components/SEO';
 import PageTransition from '../components/PageTransition';
@@ -22,7 +23,7 @@ function Workpieces() {
           'เว็บไซต์แสดงผลงานส่วนตัว สร้างด้วย React และ GitHub Pages' : 
           'Personal portfolio website built with React and deployed on GitHub Pages',
         tech: ['HTML5', 'CSS3', 'JavaScript'],
-        image: 'https://SethsarutK.github.io/SethsarutK-Portfolio/images/profile.jpg',
+        image: process.env.PUBLIC_URL + '/images/profile.jpg',
         link: '#',
         category: 'website'
       },
@@ -34,7 +35,7 @@ function Workpieces() {
           'Please overlook, still in progress',
         tech: ['HTML5', 'CSS3'],
         image: '.',
-        link: '#',
+        link: '/coming-soon',
         category: 'website'
       }
     ],
@@ -47,7 +48,7 @@ function Workpieces() {
           'Please overlook, still in progress',
         tech: ['Python', 'Pygame', 'Game Design'],
         image: '.',
-        link: '#',
+        link: '/coming-soon',
         category: 'game'
       }
     ],
@@ -60,7 +61,7 @@ function Workpieces() {
           'Math Project from my M.4 year',
         tech: ['Mathematics', 'Research', 'Analysis'],
         image: '.',
-        link: '#',
+        link: '/coming-soon',
         category: 'project'
       },
       {
@@ -71,7 +72,7 @@ function Workpieces() {
           'Math Project from my M.5 year',
         tech: ['Mathematics', 'Statistics', 'Data Analysis'],
         image: '.',
-        link: '#',
+        link: '/coming-soon',
         category: 'project'
       },
       {
@@ -82,7 +83,7 @@ function Workpieces() {
           'Math Project that won a gold medal',
         tech: ['Mathematics', 'Research', 'Presentation'],
         image: '.',
-        link: '#',
+        link: '/coming-soon',
         category: 'project'
       }
     ]
@@ -154,9 +155,15 @@ function Workpieces() {
                     <span>📁</span>
                   </div>
                   <div className="workpiece-overlay">
-                    <a href={work.link} className="view-btn">
-                      {t('viewDetails')}
-                    </a>
+                    {work.link === '#' ? (
+                      <span className="view-btn disabled">
+                        {t('viewDetails')}
+                      </span>
+                    ) : (
+                      <Link to={work.link} className="view-btn">
+                        {t('viewDetails')}
+                      </Link>
+                    )}
                   </div>
                 </div>
                 <div className="workpiece-content">

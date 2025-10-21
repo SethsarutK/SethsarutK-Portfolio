@@ -8,7 +8,7 @@ const PageTransition = ({ children }) => {
     // Trigger animation after component mounts
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 100);
+    }, 50);
 
     return () => clearTimeout(timer);
   }, []);

@@ -36,7 +36,7 @@ function Activities() {
         skills: [currentLanguage === 'th' ? 'โปรแกรมมิ่ง' : 'Programming', 
                 currentLanguage === 'th' ? 'อัลกอริทึม' : 'Algorithms', 
                 currentLanguage === 'th' ? 'ปัญหาแก้ไข' : 'Problem Solving'],
-        image: 'http://localhost:5806/SethsarutK-Portfolio/Certificate/FirstCamp.jpg'
+        image: process.env.PUBLIC_URL + '/Certificate/Laodinsor.jpg'
       },
       {
         title: currentLanguage === 'th' ? 'ค่าย CU Young Webmaster' : 'CU Young Webmaster Camp',
@@ -47,7 +47,7 @@ function Activities() {
         skills: [currentLanguage === 'th' ? 'Web Development' : 'Web Development', 
                 currentLanguage === 'th' ? 'UI/UX Design' : 'UI/UX Design', 
                 currentLanguage === 'th' ? 'การนำเสนอ' : 'Presentation'],
-        image: 'http://localhost:5806/SethsarutK-Portfolio/Certificate/CU_camp.jpg'
+        image: process.env.PUBLIC_URL + '/Certificate/CU_camp.jpg'
       },
       {
         title: currentLanguage === 'th' ? 'ค่าย Samsung Innovation' : 'Samsung Innovation Camp',
@@ -58,7 +58,7 @@ function Activities() {
         skills: [currentLanguage === 'th' ? 'IoT' : 'IoT', 
                 currentLanguage === 'th' ? 'นวัตกรรม' : 'Innovation', 
                 currentLanguage === 'th' ? 'การทำงานเป็นทีม' : 'Teamwork'],
-        image: 'http://localhost:5806/SethsarutK-Portfolio/Certificate/Sumsung01.png'
+        image: process.env.PUBLIC_URL + '/Certificate/Sumsung01.png'
       }
     ],
     volunteer: [
@@ -71,7 +71,7 @@ function Activities() {
         skills: [currentLanguage === 'th' ? 'การสอน' : 'Teaching', 
                 currentLanguage === 'th' ? 'ความอดทน' : 'Patience', 
                 currentLanguage === 'th' ? 'การบริการ' : 'Service'],
-        image: 'http://localhost:5806/SethsarutK-Portfolio/Certificate/Volunteer.jpg'
+        image: process.env.PUBLIC_URL + '/Certificate/Volunteer.jpg'
       },
       {
         title: currentLanguage === 'th' ? 'กิจกรรมจิตอาสา โรงเรียน' : 'School Volunteer Activities',
@@ -82,7 +82,7 @@ function Activities() {
         skills: [currentLanguage === 'th' ? 'จิตอาสา' : 'Volunteerism', 
                 currentLanguage === 'th' ? 'การทำงานร่วมกัน' : 'Teamwork', 
                 currentLanguage === 'th' ? 'ความรับผิดชอบ' : 'Responsibility'],
-        image: 'http://localhost:5806/SethsarutK-Portfolio/Certificate/Volunteercamp1_67.jpg'
+        image: process.env.PUBLIC_URL + '/Certificate/Volunteercamp1_67.jpg'
       },
       {
         title: currentLanguage === 'th' ? 'อาสาช่วยเหลือผู้ด้อยโอกาส' : 'Helping Underprivileged Volunteer',
@@ -93,7 +93,7 @@ function Activities() {
         skills: [currentLanguage === 'th' ? 'ความเข้าใจ' : 'Empathy', 
                 currentLanguage === 'th' ? 'การช่วยเหลือ' : 'Helping', 
                 currentLanguage === 'th' ? 'การจัดการ' : 'Organization'],
-        image: 'http://localhost:5806/SethsarutK-Portfolio/Certificate/MathDay.jpg'
+        image: process.env.PUBLIC_URL + '/Certificate/MathDay.jpg'
       }
     ],
     selflearning: [
@@ -106,7 +106,7 @@ function Activities() {
         skills: [currentLanguage === 'th' ? 'โปรแกรมมิ่ง' : 'Programming', 
                 currentLanguage === 'th' ? 'การเรียนรู้ด้วยตนเอง' : 'Self Learning', 
                 currentLanguage === 'th' ? 'ความอดทน' : 'Patience'],
-        image: 'http://localhost:5806/SethsarutK-Portfolio/Certificate/FirstCamp.jpg'
+        image: process.env.PUBLIC_URL + '/Certificate/FirstCamp.jpg'
       },
       {
         title: currentLanguage === 'th' ? 'เรียนรู้ Web Development' : 'Web Development Learning',
@@ -117,7 +117,7 @@ function Activities() {
         skills: [currentLanguage === 'th' ? 'Web Development' : 'Web Development', 
                 currentLanguage === 'th' ? 'การวิจัย' : 'Research', 
                 currentLanguage === 'th' ? 'การแก้ปัญหา' : 'Problem Solving'],
-        image: 'http://localhost:5806/SethsarutK-Portfolio/Certificate/CU_camp.jpg'
+        image: process.env.PUBLIC_URL + '/Certificate/GiftedMathCamp.jpg'
       }
     ]
   };

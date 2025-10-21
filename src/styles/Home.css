@@ -643,7 +643,7 @@
 }
 
 [data-theme="dark"] .portfolio-card:hover:nth-child(3) {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://SethsarutK.github.io/SethsarutK-Portfolio/images/workpieces-bg.jpg');
+  background: var(--gradient);
 }
 
 

@@ -32,14 +32,14 @@ function Competitions() {
         award: t('posnComputerAward'),
         year: '2024',
         description: t('posnComputerDesc'),
-        image: 'http://localhost:5806/SethsarutK-Portfolio/images/posn-computer-award.jpg'
+        image: process.env.PUBLIC_URL + '/images/posn-computer-award.jpg'
       },
       {
         title: 'League of Code AI Hackathon',
         award: t('aiHackathonAward'),
         year: '2024',
         description: t('aiHackathonDesc'),
-        image: 'http://localhost:5806/SethsarutK-Portfolio/images/ai-hackathon-award.jpg'
+        image: process.env.PUBLIC_URL + '/images/ai-hackathon-award.jpg'
       }
     ],
     academic: [
@@ -48,14 +48,14 @@ function Competitions() {
         award: t('acrpAward'),
         year: '2023',
         description: t('acrpDesc'),
-        image: 'http://localhost:5806/SethsarutK-Portfolio/images/acrp-award.jpg'
+        image: process.env.PUBLIC_URL + '/images/acrp-award.jpg'
       },
       {
         title: t('scienceCompTitle'),
         award: t('scienceCompAward'),
         year: '2023',
         description: t('scienceCompDesc'),
-        image: 'http://localhost:5806/SethsarutK-Portfolio/images/science-comp-award.jpg'
+        image: process.env.PUBLIC_URL + '/images/profile.jpg'
       }
     ],
     other: [
@@ -64,7 +64,7 @@ function Competitions() {
         award: t('outstandingAward'),
         year: '2024',
         description: t('outstandingAwardDesc'),
-        image: 'http://localhost:5806/SethsarutK-Portfolio/images/outstanding-award.jpg'
+        image: process.env.PUBLIC_URL + '/images/profile.jpg'
       }
     ]
   };
