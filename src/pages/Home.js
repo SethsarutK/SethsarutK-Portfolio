@@ -40,20 +40,22 @@ function Home() {
           </div>
           <div className="hero-image">
             <div className="profile-container">
-              <div className="profile-frame">
-                <img 
-                  src="https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe1.jpg"
-                  alt="เศรษฐ์ศรุต กตคุณไพศาล" 
-                  className="profile-image"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'flex';
-                  }}
-                />
-                <div className="profile-fallback" style={{display: 'none', background: 'transparent'}}>
-                  <span className="profile-initial">SK</span>
+              <Link to="/about" className="profile-frame-link">
+                <div className="profile-frame">
+                  <img 
+                    src="https://SethsarutK.github.io/SethsarutK-Portfolio/images/cafe1.jpg"
+                    alt="เศรษฐ์ศรุต กตคุณไพศาล" 
+                    className="profile-image"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="profile-fallback" style={{display: 'none', background: 'transparent'}}>
+                    <span className="profile-initial">SK</span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

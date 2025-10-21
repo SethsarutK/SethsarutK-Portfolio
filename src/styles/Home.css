@@ -137,6 +137,17 @@
   background: none !important;
 }
 
+.profile-frame-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.profile-frame-link:hover {
+  transform: scale(1.02);
+}
+
 .profile-frame {
   width: 350px;
   height: 350px;
@@ -368,6 +379,10 @@
     width: 250px;
   }
 
+  .profile-frame-link:hover {
+    transform: scale(1.01);
+  }
+
   .profile-frame {
     width: 320px;
     height: 320px;
@@ -427,6 +442,10 @@
 
   .hero-subtitle {
     font-size: 1.1rem;
+  }
+
+  .profile-frame-link:hover {
+    transform: none;
   }
 
   .profile-frame {
