@@ -12,10 +12,24 @@ function Activities() {
   const [modalOpen, setModalOpen] = useState(false);
   const [carouselOpen, setCarouselOpen] = useState(false);
   const [selectedActivity, setSelectedActivity] = useState(null);
+  const [expandedCards, setExpandedCards] = useState({});
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const toggleExpand = (category, index) => {
+    const key = `${category}-${index}`;
+    setExpandedCards(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
+
+  const getShortDescription = (description) => {
+    const paragraphs = description.split('\n\n');
+    return paragraphs[0];
+  };
 
   const openModal = (activity) => {
     if (activity.images && activity.images.length > 1) {
@@ -39,8 +53,8 @@ function Activities() {
         title: currentLanguage === 'th' ? 'ค่าย LAODINSOR' : 'LAODINSOR Engineering Camp',
         period: currentLanguage === 'th' ? '2024' : '2024',
         description: currentLanguage === 'th' ? 
-          'ค่ายวิศวกรรมของมหาวิทยาลัยธรรมศาสตร์ เรียนรู้หลักการวิศวกรรมและเทคโนโลยี' : 
-          'Engineering camp at Thammasat University, learned engineering principles and technology',
+          'ประสบการณ์จากค่ายวิศวกรรมนี้ถือเป็นโอกาสอันมีค่า ที่ทำให้ผมได้ขยายมุมมอง และเห็นถึงความหลากหลายและลักษณะเฉพาะของแต่ละสาขาวิศวกรรมอย่างชัดเจน ผ่านกิจกรรมที่สนุกสนานและให้ความรู้ ผมเรียนรู้จากการทดลองจริงและการพูดคุยกับรุ่นพี่ในหลายสาขา ซึ่งทำให้ผมค้นพบว่า ศักยภาพและความสนใจของตนเองตรงกับสาขาวิศวกรรมคอมพิวเตอร์มากที่สุด\n\nนอกจากนี้ ค่ายยังเปิดโอกาสให้ผมได้สัมผัสวิถีชีวิตและสังคมของวิศวกร โดยเฉพาะในด้านการทำงานร่วมกัน การแบ่งปันความคิด และการแก้ปัญหาอย่างเป็นระบบ ซึ่งเป็นประสบการณ์ที่มีค่ามากเกินกว่าที่จะหาได้จากห้องเรียนเพียงอย่างเดียว\n\nสำหรับผม ค่ายนี้ไม่เพียงแค่การเรียนรู้เกี่ยวกับวิศวกรรมเท่านั้น แต่ยังเป็นการสำรวจตัวตนของผมเอง เปิดรับประสบการณ์ใหม่ ๆ และจุดประกายแรงบันดาลใจในการศึกษาต่อของผมต่อไป' : 
+          'The experience from this engineering camp was a valuable opportunity that allowed me to expand my perspective and clearly see the diversity and unique characteristics of each engineering field. Through fun and educational activities, I learned from hands-on experiments and conversations with seniors from various fields, which helped me discover that my potential and interests align most with Computer Engineering.\n\nAdditionally, the camp gave me the chance to experience the lifestyle and society of engineers, especially in terms of teamwork, idea sharing, and systematic problem-solving. This was an invaluable experience that could not be found in the classroom alone.\n\nFor me, this camp was not just about learning engineering, but also about exploring myself, embracing new experiences, and igniting inspiration for my future studies.',
         skills: [currentLanguage === 'th' ? 'วิศวกรรม' : 'Engineering', 
                 currentLanguage === 'th' ? 'เทคโนโลยี' : 'Technology', 
                 currentLanguage === 'th' ? 'การแก้ปัญหา' : 'Problem Solving'],
@@ -50,7 +64,13 @@ function Activities() {
         title: currentLanguage === 'th' ? 'ค่ายวิทยาศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย' : 'Science Camp - Chulalongkorn University',
         period: currentLanguage === 'th' ? '2024' : '2024',
         description: currentLanguage === 'th' ? 
-          'ค่ายวิทยาศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย เรียนรู้หลักการทางวิทยาศาสตร์และการทดลอง' : 
+          `     ค่ายนี้ทำให้ผมได้รับความรู้และประสบการณ์ที่แตกต่างจากค่ายวิศวกรรม โดยสิ่งที่สำคัญที่สุดที่ค่ายนี้มอบให้คือการเรียนรู้และกระบวนการคิดอย่างเป็นระบบ ตั้งแต่การวิเคราะห์ปัญหา การวางแผนแก้ไข ไปจนถึงการกล้าทดลองและยอมรับความล้มเหลวเพื่อพัฒนาตนเองให้ดีขึ้น ผมได้ตระหนักว่าวิทยาศาสตร์ไม่ใช่เพียงการท่องจำทฤษฎีแต่เป็นการลงมือทำและเรียนรู้จากผลลัพธ์ที่เกิดขึ้นจริง
+
+     ประสบการณ์จากค่ายนี้ทำให้ผมเห็นคุณค่าของความพยายามและความอดทน รวมถึงการทำงานร่วมกับผู้อื่นในการหาทางออกอย่างสร้างสรรค์ สิ่งเหล่านี้ไม่เพียงแต่เสริมสร้างพื้นฐานทางวิชาการ แต่ยังหล่อหลอมแนวคิดและทัศนคติที่สามารถนำไปใช้ในทุกสาขาวิชาในอนาคต
+
+     นอกจากนี้ ค่ายยังเปิดโอกาสให้ผมได้สัมผัสกับการทำงานในรูปแบบของการทดลองจริงและการแก้ปัญหาเฉพาะหน้า ซึ่งจำเป็นต้องใช้ทั้งความคิดเชิงวิเคราะห์และความกล้าตัดสินใจ ผมได้เรียนรู้ว่าความผิดพลาดไม่ใช่สิ่งที่ต้องกลัวแต่เป็นบันไดที่นำไปสู่การค้นพบสิ่งใหม่ ๆ ที่มีคุณค่า และช่วยให้เราเติบโตทั้งในด้านความรู้และจิตใจ
+
+     ท้ายที่สุด ค่ายนี้ทำให้ผมตระหนักว่า การเรียนรู้ที่แท้จริงไม่ได้สิ้นสุดในห้องเรียน แต่เกิดจากการลงมือทำ การตั้งคำถามและการไม่ยอมแพ้ต่ออุปสรรค ผมจึงมองว่าค่ายนี้ไม่เพียงแค่ให้ความรู้ทางวิทยาศาสตร์ แต่ยังมอบแนวทางการใช้เหตุผลและการพัฒนาตนเอง ซึ่งจะเป็นพื้นฐานสำคัญในการก้าวต่อไปบนเส้นทางในอนาคตของผม` : 
           'Science camp at Chulalongkorn University, learned scientific principles and experiments',
         skills: [currentLanguage === 'th' ? 'วิทยาศาสตร์' : 'Science', 
                 currentLanguage === 'th' ? 'การทดลอง' : 'Experiments', 
@@ -168,31 +188,45 @@ function Activities() {
               🏕️ {currentLanguage === 'th' ? 'กิจกรรมค่าย' : 'Camp Activities'}
             </h2>
             <div className="activity-timeline">
-              {activities.camps.map((activity, index) => (
-                <div 
-                  key={index} 
-                  className="activity-card card clickable"
-                  onClick={() => openModal(activity)}
-                >
-                  <div className="activity-header">
-                    <h3>{activity.title}</h3>
-                    <span className="activity-period">{activity.period}</span>
+              {activities.camps.map((activity, index) => {
+                const isExpanded = expandedCards[`camps-${index}`];
+                const hasMultipleParagraphs = activity.description.includes('\n\n');
+                
+                return (
+                  <div 
+                    key={index} 
+                    className="activity-card card"
+                  >
+                    <div className="activity-header">
+                      <h3>{activity.title}</h3>
+                      <span className="activity-period">{activity.period}</span>
+                    </div>
+                    <div className="activity-description">
+                      {isExpanded ? activity.description : getShortDescription(activity.description)}
+                    </div>
+                    {hasMultipleParagraphs && (
+                      <button 
+                        className="read-more-btn"
+                        onClick={() => toggleExpand('camps', index)}
+                      >
+                        {isExpanded ? 
+                          (currentLanguage === 'th' ? '▲ ซ่อน' : '▲ Hide') : 
+                          (currentLanguage === 'th' ? '▼ คลิกเพื่ออ่านเพิ่มเติม' : '▼ Click to read more')}
+                      </button>
+                    )}
+                    <div className="activity-skills">
+                      {activity.skills.map((skill, skillIndex) => (
+                        <span key={skillIndex} className="skill-tag">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="click-hint" onClick={() => openModal(activity)}>
+                      📸 {currentLanguage === 'th' ? 'คลิกเพื่อดูรูปภาพ' : 'Click to view image'}
+                    </div>
                   </div>
-                  <p className="activity-description">
-                    {activity.description}
-                  </p>
-                  <div className="activity-skills">
-                    {activity.skills.map((skill, skillIndex) => (
-                      <span key={skillIndex} className="skill-tag">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="click-hint">
-                    📸 {currentLanguage === 'th' ? 'คลิกเพื่อดูรูปภาพ' : 'Click to view image'}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </section>
 
@@ -202,31 +236,45 @@ function Activities() {
               🤝 {currentLanguage === 'th' ? 'จิตอาสา' : 'Volunteer Work'}
             </h2>
             <div className="activity-timeline">
-              {activities.volunteer.map((activity, index) => (
-                <div 
-                  key={index} 
-                  className="activity-card card clickable"
-                  onClick={() => openModal(activity)}
-                >
-                  <div className="activity-header">
-                    <h3>{activity.title}</h3>
-                    <span className="activity-period">{activity.period}</span>
+              {activities.volunteer.map((activity, index) => {
+                const isExpanded = expandedCards[`volunteer-${index}`];
+                const hasMultipleParagraphs = activity.description.includes('\n\n');
+                
+                return (
+                  <div 
+                    key={index} 
+                    className="activity-card card"
+                  >
+                    <div className="activity-header">
+                      <h3>{activity.title}</h3>
+                      <span className="activity-period">{activity.period}</span>
+                    </div>
+                    <div className="activity-description">
+                      {isExpanded ? activity.description : getShortDescription(activity.description)}
+                    </div>
+                    {hasMultipleParagraphs && (
+                      <button 
+                        className="read-more-btn"
+                        onClick={() => toggleExpand('volunteer', index)}
+                      >
+                        {isExpanded ? 
+                          (currentLanguage === 'th' ? '▲ ซ่อน' : '▲ Hide') : 
+                          (currentLanguage === 'th' ? '▼ คลิกเพื่ออ่านเพิ่มเติม' : '▼ Click to read more')}
+                      </button>
+                    )}
+                    <div className="activity-skills">
+                      {activity.skills.map((skill, skillIndex) => (
+                        <span key={skillIndex} className="skill-tag">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="click-hint" onClick={() => openModal(activity)}>
+                      📸 {currentLanguage === 'th' ? 'คลิกเพื่อดูรูปภาพ' : 'Click to view image'}
+                    </div>
                   </div>
-                  <p className="activity-description">
-                    {activity.description}
-                  </p>
-                  <div className="activity-skills">
-                    {activity.skills.map((skill, skillIndex) => (
-                      <span key={skillIndex} className="skill-tag">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="click-hint">
-                    📸 {currentLanguage === 'th' ? 'คลิกเพื่อดูรูปภาพ' : 'Click to view image'}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </section>
 
@@ -236,31 +284,45 @@ function Activities() {
               📚 {currentLanguage === 'th' ? 'เรียนรู้ด้วยตนเอง' : 'Self Learning'}
             </h2>
             <div className="activity-timeline">
-              {activities.selflearning.map((activity, index) => (
-                <div 
-                  key={index} 
-                  className="activity-card card clickable"
-                  onClick={() => openModal(activity)}
-                >
-                  <div className="activity-header">
-                    <h3>{activity.title}</h3>
-                    <span className="activity-period">{activity.period}</span>
+              {activities.selflearning.map((activity, index) => {
+                const isExpanded = expandedCards[`selflearning-${index}`];
+                const hasMultipleParagraphs = activity.description.includes('\n\n');
+                
+                return (
+                  <div 
+                    key={index} 
+                    className="activity-card card"
+                  >
+                    <div className="activity-header">
+                      <h3>{activity.title}</h3>
+                      <span className="activity-period">{activity.period}</span>
+                    </div>
+                    <div className="activity-description">
+                      {isExpanded ? activity.description : getShortDescription(activity.description)}
+                    </div>
+                    {hasMultipleParagraphs && (
+                      <button 
+                        className="read-more-btn"
+                        onClick={() => toggleExpand('selflearning', index)}
+                      >
+                        {isExpanded ? 
+                          (currentLanguage === 'th' ? '▲ ซ่อน' : '▲ Hide') : 
+                          (currentLanguage === 'th' ? '▼ คลิกเพื่ออ่านเพิ่มเติม' : '▼ Click to read more')}
+                      </button>
+                    )}
+                    <div className="activity-skills">
+                      {activity.skills.map((skill, skillIndex) => (
+                        <span key={skillIndex} className="skill-tag">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="click-hint" onClick={() => openModal(activity)}>
+                      📸 {currentLanguage === 'th' ? 'คลิกเพื่อดูรูปภาพ' : 'Click to view image'}
+                    </div>
                   </div>
-                  <p className="activity-description">
-                    {activity.description}
-                  </p>
-                  <div className="activity-skills">
-                    {activity.skills.map((skill, skillIndex) => (
-                      <span key={skillIndex} className="skill-tag">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="click-hint">
-                    📸 {currentLanguage === 'th' ? 'คลิกเพื่อดูรูปภาพ' : 'Click to view image'}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </section>
         </div>

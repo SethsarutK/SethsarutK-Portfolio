@@ -7,10 +7,24 @@ import '../styles/Competitions.css';
 function Competitions() {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
+  const [expandedCards, setExpandedCards] = useState({});
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const toggleExpand = (category, index) => {
+    const key = `${category}-${index}`;
+    setExpandedCards(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
+
+  const getShortDescription = (description) => {
+    const paragraphs = description.split('\n\n');
+    return paragraphs[0];
+  };
 
   const competitions = {
     computer: [
@@ -71,38 +85,51 @@ function Competitions() {
               💻 {t('computerTech')}
             </h2>
             <div className="competition-grid">
-              {competitions.computer.map((comp, index) => (
-                <div 
-                  key={index} 
-                  className="competition-card card"
-                >
-                  <div className="competition-content">
-                    <div className="competition-header">
-                      <h3>{comp.title}</h3>
-                      <span className="competition-year">{comp.year}</span>
+              {competitions.computer.map((comp, index) => {
+                const isExpanded = expandedCards[`computer-${index}`];
+                const hasMultipleParagraphs = comp.description.includes('\n\n');
+                
+                return (
+                  <div 
+                    key={index} 
+                    className="competition-card card"
+                  >
+                    <div className="competition-content">
+                      <div className="competition-header">
+                        <h3>{comp.title}</h3>
+                        <span className="competition-year">{comp.year}</span>
+                      </div>
+                      <div className="award-badge">
+                        {comp.award}
+                      </div>
+                      <div className="competition-description">
+                        {isExpanded ? comp.description : getShortDescription(comp.description)}
+                      </div>
+                      {hasMultipleParagraphs && (
+                        <button 
+                          className="read-more-btn"
+                          onClick={() => toggleExpand('computer', index)}
+                        >
+                          {isExpanded ? '▲ ซ่อน' : '▼ คลิกเพื่ออ่านเพิ่มเติม'}
+                        </button>
+                      )}
                     </div>
-                    <div className="award-badge">
-                      {comp.award}
+                    <div className="competition-image">
+                      <img 
+                        src={comp.image} 
+                        alt={comp.title}
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                      <div className="image-fallback" style={{display: 'none'}}>
+                        <span className="fallback-icon">🏆</span>
+                      </div>
                     </div>
-                    <p className="competition-description">
-                      {comp.description}
-                    </p>
                   </div>
-                  <div className="competition-image">
-                    <img 
-                      src={comp.image} 
-                      alt={comp.title}
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
-                    />
-                    <div className="image-fallback" style={{display: 'none'}}>
-                      <span className="fallback-icon">🏆</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </section>
 
@@ -112,38 +139,51 @@ function Competitions() {
               📚 {t('academic')}
             </h2>
             <div className="competition-grid">
-              {competitions.academic.map((comp, index) => (
-                <div 
-                  key={index} 
-                  className="competition-card card"
-                >
-                  <div className="competition-content">
-                    <div className="competition-header">
-                      <h3>{comp.title}</h3>
-                      <span className="competition-year">{comp.year}</span>
+              {competitions.academic.map((comp, index) => {
+                const isExpanded = expandedCards[`academic-${index}`];
+                const hasMultipleParagraphs = comp.description.includes('\n\n');
+                
+                return (
+                  <div 
+                    key={index} 
+                    className="competition-card card"
+                  >
+                    <div className="competition-content">
+                      <div className="competition-header">
+                        <h3>{comp.title}</h3>
+                        <span className="competition-year">{comp.year}</span>
+                      </div>
+                      <div className="award-badge">
+                        {comp.award}
+                      </div>
+                      <div className="competition-description">
+                        {isExpanded ? comp.description : getShortDescription(comp.description)}
+                      </div>
+                      {hasMultipleParagraphs && (
+                        <button 
+                          className="read-more-btn"
+                          onClick={() => toggleExpand('academic', index)}
+                        >
+                          {isExpanded ? '▲ ซ่อน' : '▼ คลิกเพื่ออ่านเพิ่มเติม'}
+                        </button>
+                      )}
                     </div>
-                    <div className="award-badge">
-                      {comp.award}
+                    <div className="competition-image">
+                      <img 
+                        src={comp.image} 
+                        alt={comp.title}
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                      <div className="image-fallback" style={{display: 'none'}}>
+                        <span className="fallback-icon">🏆</span>
+                      </div>
                     </div>
-                    <p className="competition-description">
-                      {comp.description}
-                    </p>
                   </div>
-                  <div className="competition-image">
-                    <img 
-                      src={comp.image} 
-                      alt={comp.title}
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.nextSibling.style.display = 'flex';
-                      }}
-                    />
-                    <div className="image-fallback" style={{display: 'none'}}>
-                      <span className="fallback-icon">🏆</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </section>
 

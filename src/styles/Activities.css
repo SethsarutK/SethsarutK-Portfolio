@@ -98,15 +98,7 @@
   border-color: var(--accent-color);
 }
 
-.activity-card.clickable {
-  cursor: pointer;
-}
 
-.activity-card.clickable:hover {
-  transform: translateX(15px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border-color: var(--primary-color);
-}
 
 .click-hint {
   margin-top: 1rem;
@@ -117,7 +109,13 @@
   background: rgba(var(--primary-color-rgb), 0.1);
   border-radius: 8px;
   opacity: 1;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.click-hint:hover {
+  background: rgba(var(--primary-color-rgb), 0.2);
+  transform: translateY(-2px);
 }
 
 .activity-header {
@@ -148,8 +146,32 @@
 
 .activity-description {
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.8;
   margin-bottom: 1.5rem;
+  white-space: pre-line;
+}
+
+.read-more-btn {
+  background: var(--gradient);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(var(--primary-color-rgb), 0.2);
+}
+
+.read-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(var(--primary-color-rgb), 0.3);
+}
+
+.read-more-btn:active {
+  transform: translateY(0);
 }
 
 .activity-skills {
