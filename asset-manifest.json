@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/SethsarutK-Portfolio/static/css/main.de142527.css",
-    "main.js": "/SethsarutK-Portfolio/static/js/main.e7c7aa93.js",
+    "main.js": "/SethsarutK-Portfolio/static/js/main.ef43713d.js",
     "static/css/481.f70ff105.chunk.css": "/SethsarutK-Portfolio/static/css/481.f70ff105.chunk.css",
-    "static/js/481.25463c3f.chunk.js": "/SethsarutK-Portfolio/static/js/481.25463c3f.chunk.js",
+    "static/js/481.1dd81d52.chunk.js": "/SethsarutK-Portfolio/static/js/481.1dd81d52.chunk.js",
     "static/css/938.ef561c64.chunk.css": "/SethsarutK-Portfolio/static/css/938.ef561c64.chunk.css",
-    "static/js/938.46f3c389.chunk.js": "/SethsarutK-Portfolio/static/js/938.46f3c389.chunk.js",
+    "static/js/938.588ee140.chunk.js": "/SethsarutK-Portfolio/static/js/938.588ee140.chunk.js",
     "static/css/955.65ffc1b8.chunk.css": "/SethsarutK-Portfolio/static/css/955.65ffc1b8.chunk.css",
-    "static/js/955.fa7159ac.chunk.js": "/SethsarutK-Portfolio/static/js/955.fa7159ac.chunk.js",
+    "static/js/955.0b84d174.chunk.js": "/SethsarutK-Portfolio/static/js/955.0b84d174.chunk.js",
     "static/css/587.3fa0f231.chunk.css": "/SethsarutK-Portfolio/static/css/587.3fa0f231.chunk.css",
-    "static/js/587.0ccfe3ff.chunk.js": "/SethsarutK-Portfolio/static/js/587.0ccfe3ff.chunk.js",
+    "static/js/587.a119afd4.chunk.js": "/SethsarutK-Portfolio/static/js/587.a119afd4.chunk.js",
     "static/css/107.3fecd2c7.chunk.css": "/SethsarutK-Portfolio/static/css/107.3fecd2c7.chunk.css",
-    "static/js/107.7f7e7153.chunk.js": "/SethsarutK-Portfolio/static/js/107.7f7e7153.chunk.js",
+    "static/js/107.9d4857f7.chunk.js": "/SethsarutK-Portfolio/static/js/107.9d4857f7.chunk.js",
     "static/css/409.7c5ebae8.chunk.css": "/SethsarutK-Portfolio/static/css/409.7c5ebae8.chunk.css",
     "static/js/409.b82f9aaf.chunk.js": "/SethsarutK-Portfolio/static/js/409.b82f9aaf.chunk.js",
     "static/css/471.7b07f251.chunk.css": "/SethsarutK-Portfolio/static/css/471.7b07f251.chunk.css",
@@ -21,6 +21,6 @@
   },
   "entrypoints": [
     "static/css/main.de142527.css",
-    "static/js/main.e7c7aa93.js"
+    "static/js/main.ef43713d.js"
   ]
 }
