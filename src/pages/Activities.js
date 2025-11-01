@@ -14,10 +14,6 @@ function Activities() {
   const [selectedActivity, setSelectedActivity] = useState(null);
   const [expandedCards, setExpandedCards] = useState({});
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   const toggleExpand = (category, index) => {
     const key = `${category}-${index}`;
     setExpandedCards(prev => ({
@@ -46,6 +42,10 @@ function Activities() {
     setCarouselOpen(false);
     setSelectedActivity(null);
   };
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const activities = {
     camps: [

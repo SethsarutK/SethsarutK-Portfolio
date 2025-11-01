@@ -10,10 +10,6 @@ function Workpieces() {
   const [isVisible, setIsVisible] = useState(false);
   const [activeCategory, setActiveCategory] = useState('all');
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   const workpieces = {
     websites: [
       {
@@ -106,6 +102,10 @@ function Workpieces() {
     }
     return getAllWorkpieces().filter(work => work.category === activeCategory);
   };
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   return (
     <PageTransition>

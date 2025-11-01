@@ -9,10 +9,6 @@ function Competitions() {
   const [isVisible, setIsVisible] = useState(false);
   const [expandedCards, setExpandedCards] = useState({});
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   const toggleExpand = (category, index) => {
     const key = `${category}-${index}`;
     setExpandedCards(prev => ({
@@ -25,6 +21,10 @@ function Competitions() {
     const paragraphs = description.split('\n\n');
     return paragraphs[0];
   };
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const competitions = {
     computer: [
