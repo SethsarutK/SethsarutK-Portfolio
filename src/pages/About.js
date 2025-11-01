@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState, useMemo } from 'react';
 import { useLanguage } from '../contexts/AppContext';
 import PageTransition from '../components/PageTransition';
 import useSnapScroll from '../hooks/useSnapScroll';
@@ -8,19 +8,19 @@ function About() {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
-  // คำนวณอายุอัตโนมัติจากวันเกิด
-  const calculateAge = () => {
-    const birthDate = new Date('2008-01-016');
+  // คำนวณอายุอัตโนมัติจากวันเกิด (ใช้ useMemo เพื่อ cache ค่า)
+  const age = useMemo(() => {
+    const birthDate = new Date('2008-01-16');
     const today = new Date();
-    let age = today.getFullYear() - birthDate.getFullYear();
+    let calculatedAge = today.getFullYear() - birthDate.getFullYear();
     const monthDiff = today.getMonth() - birthDate.getMonth();
     
     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
+      calculatedAge--;
     }
     
-    return age;
-  };
+    return calculatedAge;
+  }, []); // Empty dependency array เพราะวันเกิดไม่เปลี่ยน
 
   useEffect(() => {
     setIsVisible(true);
@@ -42,6 +42,7 @@ function About() {
                     src={process.env.PUBLIC_URL + "/images/profile.jpg"}
                     alt="เศรษฐ์ศรุต กตคุณไพศาล" 
                     className="about-profile-image"
+                    loading="lazy"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';
@@ -73,7 +74,7 @@ function About() {
               </div>
               <div className="info-item">
                 <strong>{t('age')}:</strong>
-                <span>{calculateAge()} {t('years')}</span>
+                <span>{age} {t('years')}</span>
                 <span>{t('myBirthDay')}</span>
               </div>
               <div className="info-item full-width">
@@ -105,61 +106,61 @@ function About() {
               <div className="skills-grid">
                 <div className="skill-item">
                   <div className="skill-logo">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" loading="lazy" />
                   </div>
                   <span>C</span>
                 </div>
                 <div className="skill-item">
                   <div className="skill-logo">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" loading="lazy" />
                   </div>
                   <span>Python</span>
                 </div>
                 <div className="skill-item">
                   <div className="skill-logo">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" loading="lazy" />
                   </div>
                   <span>HTML5</span>
                 </div>
                 <div className="skill-item">
                   <div className="skill-logo">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" loading="lazy" />
                   </div>
                   <span>CSS3</span>
                 </div>
                 <div className="skill-item">
                   <div className="skill-logo">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy" />
                   </div>
                   <span>JavaScript</span>
                 </div>
                 <div className="skill-item">
                   <div className="skill-logo">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" loading="lazy" />
                   </div>
                   <span>React</span>
                 </div>
                 <div className="skill-item">
                   <div className="skill-logo">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" loading="lazy" />
                   </div>
                   <span>Node.js</span>
                 </div>
                 <div className="skill-item">
                   <div className="skill-logo">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" loading="lazy" />
                   </div>
                   <span>Figma</span>
                 </div>
                 <div className="skill-item">
                   <div className="skill-logo">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" loading="lazy" />
                   </div>
                   <span>SQL</span>
                 </div>
                 <div className="skill-item">
                   <div className="skill-logo">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" loading="lazy" />
                   </div>
                   <span>Git</span>
                 </div>

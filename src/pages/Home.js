@@ -42,6 +42,7 @@ function Home() {
                       src={process.env.PUBLIC_URL + "/images/profile.jpg"}
                       alt="เศรษฐ์ศรุต กตคุณไพศาล" 
                       className="profile-image"
+                      loading="eager"
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.nextSibling.style.display = 'flex';

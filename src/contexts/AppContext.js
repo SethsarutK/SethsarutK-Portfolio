@@ -208,7 +208,11 @@ const translations = {
     phoneLabel: 'เบอร์โทร',
     schoolLabel: 'โรงเรียน',
     goalLabel: 'เป้าหมาย',
-    goalValue: 'KMUTT วิศวกรรมคอมพิวเตอร์'
+    goalValue: 'KMUTT วิศวกรรมคอมพิวเตอร์',
+    
+    // ImageCarousel component
+    carouselLoading: 'กำลังโหลด...',
+    carouselError: '⚠️ ไม่สามารถโหลดรูปภาพได้'
   },
   en: {
     // Navigation
@@ -377,7 +381,11 @@ const translations = {
     phoneLabel: 'Tel.',
     schoolLabel: 'School',
     goalLabel: 'Goal',
-    goalValue: 'KMUTT Computer Engineering'
+    goalValue: 'KMUTT Computer Engineering',
+    
+    // ImageCarousel component
+    carouselLoading: 'Loading...',
+    carouselError: '⚠️ Unable to load image'
   }
 };
 

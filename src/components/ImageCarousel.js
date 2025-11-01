@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { useLanguage } from '../contexts/AppContext';
 import '../styles/ImageCarousel.css';
 
+// Constants
+const SWIPE_THRESHOLD = 50; // pixels
+
 function ImageCarousel({ images, isOpen, onClose, initialIndex = 0 }) {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [imageLoading, setImageLoading] = useState(true);
@@ -82,8 +87,8 @@ function ImageCarousel({ images, isOpen, onClose, initialIndex = 0 }) {
     if (!touchStart || !touchEnd) return;
     
     const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
+    const isLeftSwipe = distance > SWIPE_THRESHOLD;
+    const isRightSwipe = distance < -SWIPE_THRESHOLD;
 
     if (isLeftSwipe) {
       nextImage();
@@ -126,14 +131,14 @@ function ImageCarousel({ images, isOpen, onClose, initialIndex = 0 }) {
           {imageLoading && (
             <div className="carousel-loading">
               <div className="loading-spinner"></div>
-              <p>กำลังโหลด...</p>
+              <p>{t('carouselLoading')}</p>
             </div>
           )}
           
           {/* Error Message */}
           {imageError && (
             <div className="carousel-error">
-              <p>⚠️ ไม่สามารถโหลดรูปภาพได้</p>
+              <p>{t('carouselError')}</p>
             </div>
           )}
           
@@ -141,6 +146,7 @@ function ImageCarousel({ images, isOpen, onClose, initialIndex = 0 }) {
             src={images[currentIndex]} 
             alt={`Certificate ${currentIndex + 1}`}
             className="carousel-image"
+            loading="eager"
             onLoad={handleImageLoad}
             onError={handleImageError}
             style={{ display: imageLoading ? 'none' : 'block' }}

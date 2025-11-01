@@ -146,6 +146,7 @@ function Workpieces() {
                   <img 
                     src={work.image} 
                     alt={work.title}
+                    loading="lazy"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';

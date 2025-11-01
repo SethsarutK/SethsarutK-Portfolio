@@ -1,6 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
+// Constants
+const SCROLL_ANIMATION_DURATION = 1000; // ms
+const INIT_DELAY = 100; // ms
+
 // Global flag to track if snap scroll is active
 let snapScrollActive = false;
 let globalSections = [];
@@ -20,18 +24,7 @@ const globalWheelHandler = (e) => {
   const isAboutPage = path === '/about' || 
                      path === '/SethsarutK-Portfolio/about';
   
-  // Debug log
-  console.log('Snap scroll check:', {
-    path,
-    isHomePage,
-    isAboutPage,
-    snapScrollActive,
-    globalIsScrolling,
-    sectionsLength: globalSections.length
-  });
-  
   if (!snapScrollActive || (!isHomePage && !isAboutPage) || globalIsScrolling || globalSections.length === 0) {
-    console.log('Snap scroll blocked:', { snapScrollActive, isHomePage, isAboutPage, globalIsScrolling, sectionsLength: globalSections.length });
     return;
   }
 
@@ -73,15 +66,12 @@ const scrollToGlobalSection = (index) => {
     // Reset scrolling flag after animation
     setTimeout(() => {
       globalIsScrolling = false;
-    }, 1000);
+    }, SCROLL_ANIMATION_DURATION);
   }
 };
 
 const useSnapScroll = () => {
   const location = useLocation();
-  const isScrolling = useRef(false);
-  const currentSection = useRef(0);
-  const scrollHandlerRef = useRef(null);
 
   useEffect(() => {
     // Initialize on home page and about page
@@ -122,10 +112,7 @@ const useSnapScroll = () => {
         ].filter(Boolean);
       }
 
-      console.log('Snap scroll sections found:', globalSections.length, globalSections.map(s => s.className));
-
       if (globalSections.length === 0) {
-        console.log('No sections found for snap scroll');
         return;
       }
 
@@ -137,38 +124,16 @@ const useSnapScroll = () => {
       window.removeEventListener('wheel', globalWheelHandler);
       // Add new listener
       window.addEventListener('wheel', globalWheelHandler, { passive: false });
-      
-      // For About page, add scroll listener to re-enable snap scroll
-      if (isAboutPage) {
-        const handleScroll = () => {
-          const computerSkillsSection = document.querySelector('.computer-skills.snap-section');
-          if (!snapScrollActive && computerSkillsSection) {
-            const rect = computerSkillsSection.getBoundingClientRect();
-            // If computer skills section is visible and user scrolled back up
-            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-              snapScrollActive = true;
-              globalCurrentSection = 2; // Computer skills is index 2
-              console.log('Re-enabled snap scroll');
-            }
-          }
-        };
-        
-        scrollHandlerRef.current = handleScroll;
-        window.addEventListener('scroll', handleScroll, { passive: true });
-      }
     };
 
     // Initialize after a short delay to ensure DOM is ready
-    const timer = setTimeout(initSnapScroll, 100);
+    const timer = setTimeout(initSnapScroll, INIT_DELAY);
     
     return () => {
       clearTimeout(timer);
       // Disable snap scroll when component unmounts or location changes
       snapScrollActive = false;
       window.removeEventListener('wheel', globalWheelHandler);
-      if (scrollHandlerRef.current) {
-        window.removeEventListener('scroll', scrollHandlerRef.current);
-      }
       globalSections = [];
     };
   }, [location.pathname]); // Re-run when location changes

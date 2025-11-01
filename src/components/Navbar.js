@@ -6,7 +6,10 @@ import ThemeToggle from './ThemeToggle';
 import LanguageToggle from './LanguageToggle';
 import '../styles/Navbar.css';
 
-const NavLink = ({ to, children, isActive, onClick }) => (
+// Constants
+const SCROLL_THRESHOLD = 50; // pixels
+
+const NavLink = React.memo(({ to, children, isActive, onClick }) => (
   <Link
     to={to}
     className={`navbar-item ${isActive ? 'active' : ''}`}
@@ -14,7 +17,7 @@ const NavLink = ({ to, children, isActive, onClick }) => (
   >
     {children}
   </Link>
-);
+));
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +27,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > SCROLL_THRESHOLD);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -71,6 +74,8 @@ function Navbar() {
             <button
               className="menu-toggle"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMenuOpen}
             >
               <span className={`hamburger ${isMenuOpen ? 'active' : ''}`} />
             </button>

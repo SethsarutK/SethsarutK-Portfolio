@@ -118,6 +118,7 @@ function Competitions() {
                       <img 
                         src={comp.image} 
                         alt={comp.title}
+                        loading="lazy"
                         onError={(e) => {
                           e.target.style.display = 'none';
                           e.target.nextSibling.style.display = 'flex';
@@ -172,6 +173,7 @@ function Competitions() {
                       <img 
                         src={comp.image} 
                         alt={comp.title}
+                        loading="lazy"
                         onError={(e) => {
                           e.target.style.display = 'none';
                           e.target.nextSibling.style.display = 'flex';
