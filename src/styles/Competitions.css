@@ -142,6 +142,12 @@
   border-color: var(--accent-color);
 }
 
+.competition-card.clickable:hover {
+  cursor: pointer;
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
 .competition-card:hover::before {
   opacity: 1;
 }
@@ -212,6 +218,19 @@
 
 .read-more-btn:active {
   transform: translateY(0);
+}
+
+.pdf-indicator {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  display: inline-block;
+  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
 }
 
 /* Responsive Design */

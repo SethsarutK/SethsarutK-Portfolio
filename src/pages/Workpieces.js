@@ -51,24 +51,24 @@ function Workpieces() {
     projects: [
       {
         id: 4,
-        title: language === 'th' ? 'โครงงานคณิต ม.4' : 'Project for M.4 Math',
+        title: language === 'th' ? 'โครงงานพีทาโกรัสโฉมใหม่' : 'Pythagoras New Theory Project',
         description: language === 'th' ? 
-          'โครงงานคณิตศาสตร์ของตอนมัธยมศึกษาปีที่ 4' : 
-          'Math Project from my M.4 year',
+          'โครงงานคณิตศาสตร์เกี่ยวกับทฤษฎีบทพีทาโกรัสโฉมใหม่ ของตอนมัธยมศึกษาปีที่ 4' : 
+          'Mathematics Project about New Pythagoras Theorem from my M.4 year',
         tech: ['Mathematics', 'Research', 'Analysis'],
         image: '.',
-        link: '/coming-soon',
+        pdfUrl: 'https://raw.githubusercontent.com/SethsarutK/SethsarutK-Portfolio/main/public/Pythagoras-New-Project.pdf',
         category: 'project'
       },
       {
         id: 5,
-        title: language === 'th' ? 'โครงงานคณิต ม.5' : 'Project for M.5 Math',
+        title: language === 'th' ? 'โครงงานการหาจำนวนวิธีการเดินทางในรูปสามเหลี่ยมหัวกลับ' : 'Triangle Path Counting Project',
         description: language === 'th' ? 
-          'โครงงานคณิตศาสตร์ของตอนมัธยมศึกษาปีที่ 5' : 
-          'Math Project from my M.5 year',
+          'โครงงานคณิตศาสตร์เกี่ยวกับการหาจำนวนวิธีการเดินทางในรูปสามเหลี่ยมหัวกลับ ของตอนมัธยมศึกษาปีที่ 5' : 
+          'Mathematics Project about Counting Travel Methods in Inverted Triangle from my M.5 year',
         tech: ['Mathematics', 'Statistics', 'Data Analysis'],
         image: '.',
-        link: '/coming-soon',
+        pdfUrl: 'https://raw.githubusercontent.com/SethsarutK/SethsarutK-Portfolio/main/public/Triangle-Path-Counting-Project.pdf',
         category: 'project'
       },
       {
@@ -79,7 +79,7 @@ function Workpieces() {
           'Mathematics Project Competition, Stage Presentation Category - Gold Medal Winner',
         tech: ['Mathematics', 'Research', 'Presentation'],
         image: process.env.PUBLIC_URL + '/images/acrpPIC.jpg',
-        link: '/coming-soon',
+        pdfUrl: 'https://raw.githubusercontent.com/SethsarutK/SethsarutK-Portfolio/main/public/ACRP-Project.pdf',
         category: 'project'
       }
     ]
@@ -101,6 +101,13 @@ function Workpieces() {
       return getAllWorkpieces();
     }
     return getAllWorkpieces().filter(work => work.category === activeCategory);
+  };
+
+  const handleWorkpieceClick = (work) => {
+    // เปิด PDF ถ้ามี pdfUrl
+    if (work.pdfUrl) {
+      window.open(work.pdfUrl, '_blank');
+    }
   };
 
   useEffect(() => {
@@ -141,7 +148,12 @@ function Workpieces() {
           {/* Workpieces Grid */}
           <div className="workpieces-grid">
             {getFilteredWorkpieces().map((work) => (
-              <div key={work.id} className="workpiece-card card">
+              <div 
+                key={work.id} 
+                className={`workpiece-card card ${work.pdfUrl ? 'clickable' : ''}`}
+                onClick={() => handleWorkpieceClick(work)}
+                style={work.pdfUrl ? { cursor: 'pointer' } : {}}
+              >
                 <div className="workpiece-image">
                   <img 
                     src={work.image} 
@@ -155,17 +167,25 @@ function Workpieces() {
                   <div className="image-fallback" style={{display: 'none'}}>
                     <span>📁</span>
                   </div>
-                  <div className="workpiece-overlay">
-                    {work.link === '#' ? (
+                  {work.pdfUrl ? (
+                    <div className="workpiece-overlay">
+                      <span className="view-btn">
+                        📄 {language === 'th' ? 'คลิกเพื่อดูโครงงาน' : 'Click to view project'}
+                      </span>
+                    </div>
+                  ) : work.link === '#' ? (
+                    <div className="workpiece-overlay">
                       <span className="view-btn disabled">
                         {t('viewDetails')}
                       </span>
-                    ) : (
+                    </div>
+                  ) : (
+                    <div className="workpiece-overlay">
                       <Link to={work.link} className="view-btn">
                         {t('viewDetails')}
                       </Link>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
                 <div className="workpiece-content">
                   <h3>{work.title}</h3>

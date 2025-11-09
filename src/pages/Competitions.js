@@ -22,6 +22,13 @@ function Competitions() {
     return paragraphs[0];
   };
 
+  const handleCardClick = (comp) => {
+    // เปิด PDF สำหรับ ACRP project
+    if (comp.pdfUrl) {
+      window.open(comp.pdfUrl, '_blank');
+    }
+  };
+
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -49,7 +56,8 @@ function Competitions() {
         award: t('acrpAward'),
         year: '2025',
         description: t('acrpDesc'),
-        image: process.env.PUBLIC_URL + '/images/acrp-award.jpg'
+        image: process.env.PUBLIC_URL + '/images/acrp-award.jpg',
+        pdfUrl: 'https://raw.githubusercontent.com/SethsarutK/SethsarutK-Portfolio/main/public/ACRP-Project.pdf'
       },
       {
         title: t('engineeringCompTitle'),
@@ -147,7 +155,9 @@ function Competitions() {
                 return (
                   <div 
                     key={index} 
-                    className="competition-card card"
+                    className={`competition-card card ${comp.pdfUrl ? 'clickable' : ''}`}
+                    onClick={() => handleCardClick(comp)}
+                    style={comp.pdfUrl ? { cursor: 'pointer' } : {}}
                   >
                     <div className="competition-content">
                       <div className="competition-header">
@@ -163,10 +173,18 @@ function Competitions() {
                       {hasMultipleParagraphs && (
                         <button 
                           className="read-more-btn"
-                          onClick={() => toggleExpand('academic', index)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleExpand('academic', index);
+                          }}
                         >
-                          {isExpanded ? '▲ ซ่อน' : '▼ คลิกเพื่ออ่านเพิ่มเติม'}
+                          {isExpanded ? '▲ ซ่อน' : '▼ คลิกเพื่อ อ่านเพิ่มเติม'}
                         </button>
+                      )}
+                      {comp.pdfUrl && (
+                        <div className="pdf-indicator">
+                          📄 คลิกเพื่อดูโครงการ
+                        </div>
                       )}
                     </div>
                     <div className="competition-image">

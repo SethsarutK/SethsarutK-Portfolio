@@ -93,6 +93,16 @@
   border-color: var(--accent-color);
 }
 
+.workpiece-card.clickable {
+  cursor: pointer;
+}
+
+.workpiece-card.clickable:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  border-color: #667eea;
+}
+
 .workpiece-image {
   position: relative;
   width: 100%;
