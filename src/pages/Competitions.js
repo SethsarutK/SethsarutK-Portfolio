@@ -57,7 +57,7 @@ function Competitions() {
         year: '2025',
         description: t('acrpDesc'),
         image: process.env.PUBLIC_URL + '/images/acrp-award.jpg',
-        pdfUrl: 'https://raw.githubusercontent.com/SethsarutK/SethsarutK-Portfolio/main/public/ACRP-Project.pdf'
+        pdfUrl: process.env.PUBLIC_URL + '/ACRP-Project.pdf'
       },
       {
         title: t('engineeringCompTitle'),
