@@ -59,8 +59,8 @@ function Home() {
         </section>
 
         <section className="portfolio-showcase">
-          <div className="container">
-            <h2 className="section-title">{t('variousWorks')}</h2>
+          <div className="container" style={{ textAlign: 'center' }}>
+            <h2 className="section-title" style={{ textAlign: 'center' }}>{t('variousWorks')}</h2>
             <div className="portfolio-grid">
               <Link to="/competitions" className="portfolio-card card">
                 <div className="portfolio-icon">🏆</div>

@@ -349,6 +349,7 @@
   .portfolio-showcase {
     min-height: auto;
     padding: 4rem 0;
+    text-align: center;
   }
   .hero-content {
     grid-template-columns: 1fr;
@@ -398,9 +399,11 @@
     font-size: 2.5rem;
   }
 
-  .section-title {
-    font-size: 2.8rem;
+  .portfolio-showcase .section-title {
+    display: block !important;
+    font-size: 2.8rem !important;
     margin-bottom: 3rem;
+    text-align: center !important;
   }
 
   .portfolio-grid {
@@ -457,13 +460,16 @@
     font-size: 2rem;
   }
 
-  .section-title {
-    font-size: 2.2rem;
+  .portfolio-showcase .section-title {
+    display: block !important;
+    font-size: 2.2rem !important;
     margin-bottom: 2rem;
+    text-align: center !important;
   }
 
   .portfolio-showcase {
     padding: 4rem 0;
+    text-align: center;
   }
 
   .portfolio-card {
@@ -530,6 +536,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  text-align: center;
 }
 
 .portfolio-showcase .container {
@@ -537,11 +544,13 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  text-align: center;
 }
 
-.section-title {
-  text-align: center;
-  font-size: 3.5rem;
+.portfolio-showcase .section-title {
+  display: block !important;
+  text-align: center !important;
+  font-size: 3.5rem !important;
   font-weight: 800;
   margin-bottom: 4rem;
   color: var(--text-color);
