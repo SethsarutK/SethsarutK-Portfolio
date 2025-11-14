@@ -7,17 +7,21 @@
 ## 🌟 เว็บไซต์นี้มีอะไรบ้าง
 
 - 🎨 **แอนิเมชันโหลด** - หน้าจอโหลดแบบ spinner, จุดกระพริบ, shimmer effect
-- 🌙 **เปลี่ยนธีม** - สลับโหมดกลางวัน/กลางคืนได้ 
-- 🌍 **สองภาษา** - ไทย/อังกฤษ เปลี่ยนได้ตลอด
-- 📱 **ใช้มือถือได้** - เมนูแฮมเบอร์เกอร์ ปรับขนาดหน้าจออัตโนมัติ
-- ⚡ **โหลดเร็ว** - Deploy บน GitHub Pages แบบฟรี
+- 🌙 **เปลี่ยนธีม** - สลับโหมดกลางวัน/กลางคืนได้ (Dark/Light mode)
+- 🌍 **สองภาษา** - ไทย/อังกฤษ เปลี่ยนได้ตลอด (Context API)
+- 📱 **ใช้มือถือได้** - เมนูแฮมเบอร์เกอร์ ปรับขนาดหน้าจออัตโนมัติ (Responsive Design)
+- 🖼️ **แสดงรูปภาพ** - Image modal และ carousel สำหรับดูรูปกิจกรรม
+- 📄 **ดู PDF** - เปิดไฟล์ PDF ผลงานและโครงงาน
+- ⚡ **โหลดเร็ว** - ไม่มี external dependencies ที่ไม่จำเป็น
+- 🚀 **Deploy ง่าย** - GitHub Pages แบบฟรี
 
 ## 🛠️ เทคโนโลยีที่ใช้
 
 ### Frontend (หน้าบ้าน)
-- **React 18** - JavaScript library สำหรับสร้าง UI แบบ component
-- **CSS3** - ตกแต่งหน้าเว็บ ใช้ CSS Variables สำหรับเปลี่ยนสี
-- **React Router** - จัดการหน้าต่างๆ แบบ Single Page Application
+- **React 18.2.0** - JavaScript library สำหรับสร้าง UI แบบ component
+- **React Router DOM 6.8.1** - จัดการหน้าต่างๆ แบบ Single Page Application (HashRouter)
+- **React Helmet 6.1.0** - จัดการ SEO meta tags
+- **CSS3** - ตกแต่งหน้าเว็บ ใช้ CSS Variables สำหรับเปลี่ยนสีธีม
 
 ### Backend (หลังบ้าน) 
 - **ไม่มี Backend** - เป็น Static Website ไม่ต้องใช้เซิร์ฟเวอร์
@@ -25,7 +29,11 @@
 
 ### เครื่องมือพัฒนา
 - **Node.js + npm** - สำหรับติดตั้ง packages และ build เว็บไซต์
+- **React Scripts 5.0.1** - Build tools และ development server
+- **ESLint + Prettier** - Code formatting และ linting
+- **Jest + React Testing Library** - Unit testing
 - **Git + GitHub** - เก็บ source code และ version control
+- **gh-pages 6.3.0** - Deploy ไปยัง GitHub Pages อัตโนมัติ
 
 ## 🚀 วิธีเริ่มใช้งาน
 
@@ -47,19 +55,35 @@ src/
 ├── components/              # ส่วนประกอบที่ใช้ซ้ำได้
 │   ├── Navbar.js           # เมนูด้านบน + เมนูมือถือ
 │   ├── Loading.js          # หน้าจอโหลด (spinner, dots, shimmer)
-│   ├── ThemeToggle.js      # ปุ่มเปลี่ยนธีมสว่าง/มด
+│   ├── ThemeToggle.js      # ปุ่มเปลี่ยนธีมสว่าง/มืด
 │   ├── LanguageToggle.js   # ปุ่มเปลี่ยนภาษาไทย/อังกฤษ
-│   └── Footer.js           # ส่วนท้าย + ฟอร์มติดต่อ
+│   ├── Footer.js           # ส่วนท้าย + ลิงก์โซเชียล
+│   ├── SEO.js              # จัดการ meta tags (React Helmet)
+│   ├── PageTransition.js   # แอนิเมชันเปลี่ยนหน้า
+│   ├── ErrorBoundary.js    # จัดการ errors
+│   ├── ImageModal.js       # แสดงรูปภาพขยาย
+│   ├── ImageCarousel.js    # สไลด์รูปภาพ
+│   └── ScrollToTop.js      # เลื่อนขึ้นบนสุดเมื่อเปลี่ยนหน้า
 ├── pages/                  # หน้าหลักต่างๆ
-│   ├── Home.js             # หน้าแรก (แนะนำตัว)
-│   ├── About.js            # หน้าเกี่ยวกับฉัน (ประวัติ เป้าหมาย)
-│   ├── Competitions.js     # หน้าการแข่งขัน (รางวัลต่างๆ)
-│   ├── Activities.js       # หน้ากิจกรรม (กิจกรรมที่เข้าร่วม)
-│   └── Workpieces.js       # หน้าผลงาน (โปรเจค ทักษะ)
+│   ├── Home.js             # หน้าแรก (แนะนำตัว + คำคม)
+│   ├── About.js            # หน้าเกี่ยวกับฉัน (ประวัติ การศึกษา ทักษะ)
+│   ├── Competitions.js     # หน้าการแข่งขัน (รางวัล + เกียรติบัตร)
+│   ├── Activities.js       # หน้ากิจกรรม (กิจกรรมที่เข้าร่วม + รูปภาพ)
+│   ├── Workpieces.js       # หน้าผลงาน (โปรเจค + PDF)
+│   ├── NotFound.js         # หน้า 404
+│   └── ComingSoon.js       # หน้า Coming Soon
 ├── contexts/               # จัดการข้อมูลทั่วทั้งเว็บ
-│   └── AppContext.js       # เก็บ: ธีม + ภาษา + คำแปล
+│   └── AppContext.js       # ThemeContext + LanguageContext + คำแปล
+├── constants/              # ค่าคงที่
+│   └── index.js            # SOCIAL_LINKS (LINE, Facebook, Instagram)
 ├── styles/                 # ไฟล์ CSS (ชื่อเดียวกับ component)
-├── hooks/                  # Custom React hooks
+│   ├── index.css           # Global styles + CSS Variables
+│   ├── Navbar.css          # Navbar styles
+│   ├── Home.css            # Home page styles
+│   └── ...                 # CSS files for each component/page
+├── tests/                  # Unit tests
+│   ├── Navbar.test.js
+│   └── ErrorBoundary.test.js
 └── utils/                  # ฟังก์ชันช่วยเหลือ
 ```
 
@@ -137,4 +161,33 @@ git push && npm run deploy       # ส่งขึ้น GitHub
 **เศรษฐ์ศรุต กตคุณไพศาล** | ผู้สมัครสาขาวิศวกรรมคอมพิวเตอร์ KMUTT  
 🌐 [Portfolio](https://SethsarutK.github.io/SethsarutK-Portfolio) • 📧 [GitHub](https://github.com/SethsarutK)
 
-*อัพเดทล่าสุด: 17 ตุลาคม 2025*
+---
+
+## 📝 Recent Updates (November 2025)
+
+### ✨ Features Added
+- ✅ เพิ่ม Image Modal และ Carousel สำหรับดูรูปกิจกรรม
+- ✅ เพิ่ม SEO component ด้วย React Helmet
+- ✅ เพิ่ม Page Transition animations
+- ✅ เพิ่ม ErrorBoundary สำหรับจัดการ errors
+- ✅ อัพเดทคำคมเป็น Steve Jobs (สองภาษา)
+
+### 🗑️ Removed
+- ❌ ลบ framer-motion (ลดขนาด bundle ~100KB)
+- ❌ ลบ snap scroll feature (ปรับ UX ให้ดีขึ้น)
+- ❌ ลบ Google Analytics (ไม่จำเป็นสำหรับ portfolio ส่วนตัว)
+- ❌ ลบ source-map-explorer (ไม่ได้ใช้งาน)
+- ❌ ลบ GitHub และ Email จาก social links
+
+### 🎨 UI/UX Improvements
+- ✅ แก้ไขปัญหา title alignment ใน Home page
+- ✅ แก้ไขปัญหา button positioning ใน Competitions และ Workpieces
+- ✅ ดาวน์โหลดรูปภาพจาก Unsplash มาเก็บ local (4 images)
+- ✅ ลบ inline styles ที่ไม่จำเป็น แยก CSS ให้ชัดเจน
+
+### 🧹 Code Cleanup
+- ✅ ลบไฟล์ที่ไม่ได้ใช้งาน (SchoolPic.jpg, README.md ใน images/)
+- ✅ ลบ unused dependencies
+- ✅ ปรับปรุงโครงสร้าง CSS ให้เป็นระเบียบ
+
+*อัพเดทล่าสุด: 15 พฤศจิกายน 2025*
