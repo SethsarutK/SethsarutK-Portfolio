@@ -40,14 +40,14 @@ function Competitions() {
         award: t('posnComputerAward'),
         year: '2024',
         description: t('posnComputerDesc'),
-        image: process.env.PUBLIC_URL + '/images/posn-computer-award.jpg'
+        image: process.env.PUBLIC_URL + '/Certificate/posn-computer-award.jpg'
       },
       {
         title: 'League of Code AI Hackathon',
         award: t('aiHackathonAward'),
         year: '2025',
         description: t('aiHackathonDesc'),
-        image: process.env.PUBLIC_URL + '/images/ai-hackathon-award.jpg'
+        image: process.env.PUBLIC_URL + '/Certificate/ai-hackathon-award.jpg'
       }
     ],
     academic: [
@@ -56,7 +56,7 @@ function Competitions() {
         award: t('acrpAward'),
         year: '2025',
         description: t('acrpDesc'),
-        image: process.env.PUBLIC_URL + '/images/acrp-award.jpg',
+        image: process.env.PUBLIC_URL + '/Certificate/acrp-award.jpg',
         pdfUrl: process.env.PUBLIC_URL + '/ACRP-Project.pdf'
       },
       {
@@ -64,7 +64,7 @@ function Competitions() {
         award: t('engineeringCompAward'),
         year: '2025',
         description: t('engineeringCompDesc'),
-        image: process.env.PUBLIC_URL + '/images/profile.jpg'
+        image: process.env.PUBLIC_URL + '/Certificate/KMUTT_Engineer_Comp-1.png'
       }
     ]
   };
