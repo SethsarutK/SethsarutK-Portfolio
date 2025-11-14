@@ -719,6 +719,13 @@
   position: relative;
 }
 
+.quote-translation {
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
 .quote-text cite {
   font-size: 1.2rem;
   color: var(--text-secondary);

@@ -1,7 +1,6 @@
 ﻿import React, { useEffect, useState, useMemo } from 'react';
 import { useLanguage } from '../contexts/AppContext';
 import PageTransition from '../components/PageTransition';
-import useSnapScroll from '../hooks/useSnapScroll';
 import '../styles/About.css';
 
 function About() {
@@ -26,14 +25,11 @@ function About() {
     setIsVisible(true);
   }, []);
 
-  // ใช้ snap scroll hook
-  useSnapScroll();
-
   return (
     <PageTransition>
       <div className={`about ${isVisible ? 'fade-in' : ''}`}>
         <div className="container">
-          <section className="about-intro snap-section">
+          <section className="about-intro">
             <h1>{t('aboutTitle')}</h1>
             <div className="about-content">
               <div className="about-image">
@@ -61,7 +57,7 @@ function About() {
             </div>
           </section>
 
-          <section className="personal-info snap-section">
+          <section className="personal-info">
             <h2>{t('personalInfo')}</h2>
             <div className="info-grid">
               <div className="info-item">
@@ -100,7 +96,7 @@ function About() {
             </div>
           </section>
 
-          <section className="computer-skills snap-section">
+          <section className="computer-skills">
             <h2>{t('computerSkills')}</h2>
             <div className="skills-content">
               <div className="skills-grid">

@@ -30,7 +30,7 @@ function Workpieces() {
           'กำลังสร้าง มองข้ามไปก่อน' : 
           'Please overlook, still in progress',
         tech: ['HTML5', 'CSS3'],
-        image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&q=80',
+        image: process.env.PUBLIC_URL + '/images/cat-orange.jpg',
         link: '/coming-soon',
         category: 'website'
       }
@@ -43,7 +43,7 @@ function Workpieces() {
           'กำลังสร้าง มองข้ามไปก่อน' : 
           'Please overlook, still in progress',
         tech: ['Python', 'Pygame', 'Game Design'],
-        image: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?w=800&q=80',
+        image: process.env.PUBLIC_URL + '/images/cat-gray.jpg',
         link: '/coming-soon',
         category: 'game'
       }
@@ -56,7 +56,7 @@ function Workpieces() {
           'โครงงานคณิตศาสตร์เกี่ยวกับทฤษฎีบทพีทาโกรัสโฉมใหม่ ของตอนมัธยมศึกษาปีที่ 4' : 
           'Mathematics Project about New Pythagoras Theorem from my M.4 year',
         tech: ['Mathematics', 'Research', 'Analysis'],
-        image: 'https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=800&q=80',
+        image: process.env.PUBLIC_URL + '/images/dog-golden.jpg',
         pdfUrl: process.env.PUBLIC_URL + '/Pythagoras-New-Project.pdf',
         category: 'project'
       },
@@ -67,7 +67,7 @@ function Workpieces() {
           'โครงงานคณิตศาสตร์เกี่ยวกับการหาจำนวนวิธีการเดินทางในรูปสามเหลี่ยมหัวกลับ ของตอนมัธยมศึกษาปีที่ 5' : 
           'Mathematics Project about Counting Travel Methods in Inverted Triangle from my M.5 year',
         tech: ['Mathematics', 'Statistics', 'Data Analysis'],
-        image: 'https://images.unsplash.com/photo-1478098711619-5ab0b478d6e6?w=800&q=80',
+        image: process.env.PUBLIC_URL + '/images/cat-white.jpg',
         pdfUrl: process.env.PUBLIC_URL + '/Triangle-Path-Counting-Project.pdf',
         category: 'project'
       },

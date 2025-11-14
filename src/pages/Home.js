@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/AppContext';
 import PageTransition from '../components/PageTransition';
-import useSnapScroll from '../hooks/useSnapScroll';
 import '../styles/Home.css';
 
 function Home() {
@@ -12,9 +11,6 @@ function Home() {
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  // Enable snap scrolling for home page only
-  useSnapScroll();
 
   return (
     <PageTransition>
@@ -59,8 +55,8 @@ function Home() {
         </section>
 
         <section className="portfolio-showcase">
-          <div className="container" style={{ textAlign: 'center' }}>
-            <h2 className="section-title" style={{ textAlign: 'center' }}>{t('variousWorks')}</h2>
+          <div className="container">
+            <h2 className="section-title">{t('variousWorks')}</h2>
             <div className="portfolio-grid">
               <Link to="/competitions" className="portfolio-card card">
                 <div className="portfolio-icon">🏆</div>
@@ -86,7 +82,7 @@ function Home() {
             <div className="quote-content">
               <div className="quote-text">
                 <blockquote>"{t('inspirationQuote')}"</blockquote>
-                <p style={{ fontStyle: 'italic', color: 'var(--text-secondary)', marginBottom: '1rem', fontSize: '1.1rem' }}>
+                <p className="quote-translation">
                   ({t('inspirationQuoteThai')})
                 </p>
                 <cite>— {t('quoteAuthor')} —</cite>
