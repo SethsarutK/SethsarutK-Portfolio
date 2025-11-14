@@ -91,7 +91,7 @@ const translations = {
     juniorHigh: 'ระดับมัธยมศึกษาตอนต้น',
     seniorHigh: 'ระดับมัธยมศึกษาตอนปลาย',
     future: 'เป้าหมาย: เข้ารับการศึกษาในสาขาวิศวกรรมคอมพิวเตอร์ KMUTT',
-    seniorHighDesc: 'โรงเรียนสวนกุหลาบวิทยาลัย - แผน Math Gifted',
+    seniorHighDesc: 'โรงเรียนสวนกุหลาบวิทยาลัย - แผน Math Gifted - เกรดเฉลี่ย 3.80',
     seniorHighFocus: 'เน้นการเรียนวิชาคณิตศาสตร์, วิทยาศาสตร์',
     programmingStart: 'เริ่มหลงใหลในการเขียนโปรแกรมและพัฒนาโครงงานต่าง ๆ',
     futureGoal: 'มุ่งสู่การเป็นวิศวกรที่ใช้เทคโนโลยีแก้ปัญหาของโลก',
@@ -194,11 +194,12 @@ const translations = {
     workpiecesDesc: 'โปรเจคและผลงานทางเทคโนโลยี',
     
     // Inspiration quote
-    inspirationQuote: 'การเปลี่ยนแปลงโลกเริ่มต้นจากการเขียนโค้ดบรรทัดแรก',
-    quoteAuthor: 'Bill Gates',
+    inspirationQuote: 'Innovation distinguishes between a leader and a follower.',
+    inspirationQuoteThai: 'นวัตกรรมคือสิ่งที่แยกผู้นำออกจากผู้ตาม',
+    quoteAuthor: 'Steve Jobs',
     
     // About page education details
-    juniorHighDetail: 'โรงเรียนสวนกุหลาบวิทยาลัย - เกรดเฉลี่ย 3.78',
+    juniorHighDetail: 'โรงเรียนสวนกุหลาบวิทยาลัย - เกรดเฉลี่ย 3.62',
     mathGiftedDetail: 'เข้าร่วมแผน Math Gifted และได้รับการพัฒนาทักษะทางคณิตศาสตร์เป็นพิเศษ',
     
     // Loading component
@@ -298,7 +299,7 @@ const translations = {
     juniorHigh: 'Junior High School',
     seniorHigh: 'Senior High School',
     future: 'Goal: Study Computer Engineering at KMUTT',
-    seniorHighDesc: 'Suankularb Wittayalai School - Math Gifted Program',
+    seniorHighDesc: 'Suankularb Wittayalai School - Math Gifted Program - GPA 3.80',
     seniorHighFocus: 'Focus on Mathematics, Science',
     programmingStart: 'Started to become passionate about programming and developing various projects',
     futureGoal: 'Aiming to be an engineer who uses technology to solve world problems',
@@ -401,11 +402,12 @@ const translations = {
     workpiecesDesc: 'Projects and technology works',
     
     // Inspiration quote
-    inspirationQuote: 'Your most unhappy customers are your greatest source of learning',
-    quoteAuthor: 'Bill Gates',
+    inspirationQuote: 'Innovation distinguishes between a leader and a follower.',
+    inspirationQuoteThai: 'นวัตกรรมคือสิ่งที่แยกผู้นำออกจากผู้ตาม',
+    quoteAuthor: 'Steve Jobs',
     
     // About page education details
-    juniorHighDetail: 'Suankularb Wittayalai School - GPA 3.85',
+    juniorHighDetail: 'Suankularb Wittayalai School - GPA 3.62',
     mathGiftedDetail: 'Participated in Math Gifted Program and received special mathematical skills development',
     
     // Loading component

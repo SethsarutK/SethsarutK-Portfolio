@@ -6,7 +6,7 @@ import useSnapScroll from '../hooks/useSnapScroll';
 import '../styles/Home.css';
 
 function Home() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -86,7 +86,10 @@ function Home() {
             <div className="quote-content">
               <div className="quote-text">
                 <blockquote>"{t('inspirationQuote')}"</blockquote>
-                <cite>— {t('quoteAuthor')}</cite>
+                <p style={{ fontStyle: 'italic', color: 'var(--text-secondary)', marginBottom: '1rem', fontSize: '1.1rem' }}>
+                  ({t('inspirationQuoteThai')})
+                </p>
+                <cite>— {t('quoteAuthor')} —</cite>
               </div>
               <div className="quote-decoration">
                 <div className="quote-mark">"</div>

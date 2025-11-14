@@ -91,7 +91,7 @@ function About() {
               </div>
               <div className="info-item">
                 <strong>GPAX:</strong>
-                <span>3.78</span>
+                <span>3.80</span>
               </div>
               <div className="info-item">
                 <strong>{t('hobbies')}:</strong>
@@ -176,7 +176,6 @@ function About() {
                 <div className="timeline-content">
                   <h3>{t('juniorHigh')}</h3>
                   <p>{t('juniorHighDetail')}</p>
-                  <p>{t('mathGiftedDetail')}</p>
                 </div>
               </div>
               <div className="timeline-item">
