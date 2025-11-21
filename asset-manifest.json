@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/SethsarutK-Portfolio/static/css/main.de142527.css",
-    "main.js": "/SethsarutK-Portfolio/static/js/main.49f7a573.js",
+    "main.js": "/SethsarutK-Portfolio/static/js/main.d264068a.js",
     "static/css/481.5c8507f8.chunk.css": "/SethsarutK-Portfolio/static/css/481.5c8507f8.chunk.css",
     "static/js/481.64319297.chunk.js": "/SethsarutK-Portfolio/static/js/481.64319297.chunk.js",
     "static/css/938.ef561c64.chunk.css": "/SethsarutK-Portfolio/static/css/938.ef561c64.chunk.css",
@@ -21,6 +21,6 @@
   },
   "entrypoints": [
     "static/css/main.de142527.css",
-    "static/js/main.49f7a573.js"
+    "static/js/main.d264068a.js"
   ]
 }
