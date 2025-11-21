@@ -56,7 +56,7 @@ function Workpieces() {
           'โครงงานคณิตศาสตร์เกี่ยวกับทฤษฎีบทพีทาโกรัสโฉมใหม่ ของตอนมัธยมศึกษาปีที่ 4' : 
           'Mathematics Project about New Pythagoras Theorem from my M.4 year',
         tech: ['Mathematics', 'Research', 'Analysis'],
-        image: process.env.PUBLIC_URL + '/images/dog-golden.jpg',
+        image: process.env.PUBLIC_URL + '/images/รูปโครงงานพีธาโกรัส.png',
         pdfUrl: process.env.PUBLIC_URL + '/Pythagoras-New-Project.pdf',
         category: 'project'
       },
@@ -67,7 +67,7 @@ function Workpieces() {
           'โครงงานคณิตศาสตร์เกี่ยวกับการหาจำนวนวิธีการเดินทางในรูปสามเหลี่ยมหัวกลับ ของตอนมัธยมศึกษาปีที่ 5' : 
           'Mathematics Project about Counting Travel Methods in Inverted Triangle from my M.5 year',
         tech: ['Mathematics', 'Statistics', 'Data Analysis'],
-        image: process.env.PUBLIC_URL + '/images/cat-white.jpg',
+        image: process.env.PUBLIC_URL + '/images/รูปโครงงานสามเหลี่ยม.png',
         pdfUrl: process.env.PUBLIC_URL + '/Triangle-Path-Counting-Project.pdf',
         category: 'project'
       },
