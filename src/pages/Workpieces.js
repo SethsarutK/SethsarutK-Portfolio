@@ -38,13 +38,24 @@ function Workpieces() {
     games: [
       {
         id: 3,
-        title: language === 'th' ? 'กำลังดำเนินการ' : 'Loading',
-        description: language === 'th' ? 
-          'กำลังสร้าง มองข้ามไปก่อน' : 
-          'Please overlook, still in progress',
-        tech: ['Python', 'Pygame', 'Game Design'],
-        image: process.env.PUBLIC_URL + '/images/cat-gray.jpg',
-        link: '/coming-soon',
+        title: language === 'th' ? 'เกมปลาใหญ่กินปลาเล็ก' : 'Fish Eats Fish',
+        description: language === 'th' ?
+          'เกมฝึกทักษะการควบคุมตัวละครและหลบหลีกศัตรู' :
+          'An arcade game about controlling a fish and avoiding bigger fish',
+        tech: ['Scratch'],
+        image: process.env.PUBLIC_URL + '/images/fishgamepic.png',
+        link: 'https://sethsarut-fishgame.netlify.app',
+        category: 'game'
+      },
+      {
+        id: 7,
+        title: language === 'th' ? 'เกมใครไม่สอนแต่ลูกศร' : "Arrow Game (No Teacher, Just Arrows)",
+        description: language === 'th' ?
+          'เกมแนวแพลตฟอร์มที่ควบคุมด้วยลูกศร ช่วยตัวละครผ่านด่าน' :
+          'A platformer controlled only by arrow keys to guide the character through levels',
+        tech: ['Scratch'],
+        image: process.env.PUBLIC_URL + '/images/arrowgamepic.png',
+        link: 'https://sethsarut-arrowgame.netlify.app',
         category: 'game'
       }
     ],
@@ -66,7 +77,7 @@ function Workpieces() {
         description: language === 'th' ? 
           'โครงงานคณิตศาสตร์เกี่ยวกับการหาจำนวนวิธีการเดินทางในรูปสามเหลี่ยมหัวกลับ ของตอนมัธยมศึกษาปีที่ 5' : 
           'Mathematics Project about Counting Travel Methods in Inverted Triangle from my M.5 year',
-        tech: ['Mathematics', 'Statistics', 'Data Analysis'],
+        tech: ['Mathematics', 'Research', 'Analysis'],
         image: process.env.PUBLIC_URL + '/images/รูปโครงงานสามเหลี่ยม.png',
         pdfUrl: process.env.PUBLIC_URL + '/Triangle-Path-Counting-Project.pdf',
         category: 'project'
@@ -181,9 +192,15 @@ function Workpieces() {
                     </div>
                   ) : (
                     <div className="workpiece-overlay">
-                      <Link to={work.link} className="view-btn">
-                        {t('viewDetails')}
-                      </Link>
+                      {typeof work.link === 'string' && work.link.startsWith('http') ? (
+                        <a href={work.link} className="view-btn" target="_blank" rel="noreferrer">
+                          {t('viewDetails')}
+                        </a>
+                      ) : (
+                        <Link to={work.link} className="view-btn">
+                          {t('viewDetails')}
+                        </Link>
+                      )}
                     </div>
                   )}
                 </div>
