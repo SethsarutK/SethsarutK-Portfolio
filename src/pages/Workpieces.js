@@ -16,9 +16,9 @@ function Workpieces() {
         id: 1,
         title: language === 'th' ? 'เว็บไซต์พอร์ตโฟลิโอ' : 'Portfolio Website',
         description: language === 'th' ? 
-          'เว็บไซต์แสดงผลงานส่วนตัว สร้างด้วย React และ GitHub Pages' : 
+          'เว็บไซต์แสดงผลงานส่วนตัว สร้างด้วย React และ CSS' : 
           'Personal portfolio website built with React and deployed on GitHub Pages',
-        tech: ['HTML5', 'CSS3', 'JavaScript'],
+        tech: ['React', 'CSS3'],
         image: process.env.PUBLIC_URL + '/images/profile.jpg',
         link: '#',
         category: 'website'
@@ -28,10 +28,10 @@ function Workpieces() {
     games: [
       {
         id: 3,
-        title: language === 'th' ? 'เกมปลาใหญ่กินปลาเล็ก' : 'Fish Eats Fish',
+        title: language === 'th' ? 'เกมปลาใหญ่กินปลาเล็ก' : 'Big eats small game',
         description: language === 'th' ?
-          'เกมฝึกทักษะการควบคุมตัวละครและหลบหลีกศัตรู' :
-          'An arcade game about controlling a fish and avoiding bigger fish',
+          'เกมปลานีโม่ผจญภัย ซึ่งผู้เล่นจะได้ควบคุมปลานีโม่ ให้ว่ายเก็บแต้มด้วยการกินปลาขนาดเล็กกว่า พร้อมหลบหลีกฉลามที่คอยว่ายวนไปมา' :
+          'Nemo Adventure Game where players control Nemo the fish to collect points by eating smaller fish and avoiding sharks that swim around.',
         tech: ['Scratch'],
         image: process.env.PUBLIC_URL + '/images/fishgamepic.png',
         link: 'https://sethsarut-fishgame.netlify.app',
@@ -39,10 +39,10 @@ function Workpieces() {
       },
       {
         id: 7,
-        title: language === 'th' ? 'เกมใครไม่สอนแต่ลูกศร' : "Arrow Game (No Teacher, Just Arrows)",
+        title: language === 'th' ? 'เกมใครไม่สอนแต่ลูกศร' : "Arrow Game",
         description: language === 'th' ?
-          'เกมแนวแพลตฟอร์มที่ควบคุมด้วยลูกศร ช่วยตัวละครผ่านด่าน' :
-          'A platformer controlled only by arrow keys to guide the character through levels',
+          'เกมกดลูกศรตามจังหวะ ที่ผู้เล่นต้องกดลูกศรบนแป้มพิมพ์ให้ตรงกับเวลาที่ลูกศรหล่นลงมา และห้ามพลาดเกิน 5 ครั้ง' :
+          'A rhythm-based arrow-clicking game where players must press the arrows on the keyboard at the exact time they drop, and must not miss more than 5 times.',
         tech: ['Scratch'],
         image: process.env.PUBLIC_URL + '/images/arrowgamepic.png',
         link: 'https://sethsarut-arrowgame.netlify.app',
@@ -52,10 +52,10 @@ function Workpieces() {
     projects: [
       {
         id: 4,
-        title: language === 'th' ? 'โครงงานพีทาโกรัสโฉมใหม่' : 'Pythagoras New Theory Project',
+        title: language === 'th' ? 'โครงงานพีทาโกรัสโฉมใหม่' : 'New Pythagoras Project',
         description: language === 'th' ? 
-          'โครงงานคณิตศาสตร์เกี่ยวกับทฤษฎีบทพีทาโกรัสโฉมใหม่ ของตอนมัธยมศึกษาปีที่ 4' : 
-          'Mathematics Project about New Pythagoras Theorem from my M.4 year',
+          'โครงงานนี้เป็นการศึกษาสามเหลี่ยมมุมฉากของพีทาโกรัสเพื่อค้นหารูปแบบความสัมพันธ์ใหม่ที่สามารถหาความยาวของด้านอื่น ๆ ได้เมื่อทราบความยาวของด้านที่สั้นที่สุด' : 
+          'This project is a study of Pythagorean right triangles to find a new relationship pattern that can find the length of other sides when the length of the shortest side is known.',
         tech: ['Mathematics', 'Research', 'Analysis'],
         image: process.env.PUBLIC_URL + '/images/รูปโครงงานพีธาโกรัส.png',
         pdfUrl: process.env.PUBLIC_URL + '/Pythagoras-New-Project.pdf',
@@ -65,8 +65,8 @@ function Workpieces() {
         id: 5,
         title: language === 'th' ? 'โครงงานการหาจำนวนวิธีการเดินทางในรูปสามเหลี่ยมหัวกลับ' : 'Triangle Path Counting Project',
         description: language === 'th' ? 
-          'โครงงานคณิตศาสตร์เกี่ยวกับการหาจำนวนวิธีการเดินทางในรูปสามเหลี่ยมหัวกลับ ของตอนมัธยมศึกษาปีที่ 5' : 
-          'Mathematics Project about Counting Travel Methods in Inverted Triangle from my M.5 year',
+          'โครงงานนี้เป็นการนำความรู้เกี่ยวกับคอมบินาทอริกส์และทวินามที่ได้เรียนในห้องเรียนมาต่อยอด ผมได้ศึกษาหาความสัมพันธ์ระหว่างจำนวนวิธีการเดินทางบนสามเหลี่ยมหัวกลับกับจำนวนชั้นของสามเหลี่ยม' : 
+          'This project is an extension of the knowledge I learned about combinatorics and binomials in the classroom. I studied the relationship between the number of ways to travel on an inverted triangle and the number of levels in the triangle.',
         tech: ['Mathematics', 'Research', 'Analysis'],
         image: process.env.PUBLIC_URL + '/images/รูปโครงงานสามเหลี่ยม.png',
         pdfUrl: process.env.PUBLIC_URL + '/Triangle-Path-Counting-Project.pdf',
@@ -74,11 +74,11 @@ function Workpieces() {
       },
       {
         id: 6,
-        title: language === 'th' ? 'การแข่งขันโครงงาน ACRP ครั้งที่ 4' : '4th ACRP Project Competition',
+        title: language === 'th' ? 'โครงงานคณิตศาสตร์ เรื่อง ความสัมพันธ์ระหว่างระดับความเข้มเสียงที่จุดโฟกัส ตำแหน่งของแหล่งกำเนิดเสียง และความยาวจากจุดยอดไปยังจุดโฟกัสของพาราโบลา' : 'The Relationship Between the Sound Intensity Level at the Focus, the Position of the Sound Source and the Distance from the Vertex to the Focus of a Parabola',
         description: language === 'th' ? 
-          'การแข่งขันประกวดโครงงานคณิตศาสตร์ประเภทนำเสนอบนเวที ได้รับเหรียญทอง' : 
-          'Mathematics Project Competition, Stage Presentation Category - Gold Medal Winner',
-        tech: ['Mathematics', 'Research', 'Presentation'],
+          'โครงงานเกี่ยวกับการนำความรู้เรื่องพาราโบลาและคลื่นเสียงมาศึกษาหาความสัมพันธ์' : 
+          'This project is a study of parabolas and sound waves to find relationships.',
+        tech: ['Mathematics','Sciences', 'Research', 'Presentation'],
         image: process.env.PUBLIC_URL + '/images/acrpPIC.jpg',
         pdfUrl: process.env.PUBLIC_URL + '/ACRP-Project.pdf',
         category: 'project'
