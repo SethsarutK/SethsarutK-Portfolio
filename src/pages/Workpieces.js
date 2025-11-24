@@ -23,17 +23,7 @@ function Workpieces() {
         link: '#',
         category: 'website'
       },
-      {
-        id: 2,
-        title: language === 'th' ? 'กำลังดำเนินการ' : 'Loading',
-        description: language === 'th' ? 
-          'กำลังสร้าง มองข้ามไปก่อน' : 
-          'Please overlook, still in progress',
-        tech: ['HTML5', 'CSS3'],
-        image: process.env.PUBLIC_URL + '/images/cat-orange.jpg',
-        link: '/coming-soon',
-        category: 'website'
-      }
+      
     ],
     games: [
       {
